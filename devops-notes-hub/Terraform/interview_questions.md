@@ -17,7 +17,7 @@
 
 ---
 
-## 4. Variables and Outputs
+## 4. Variables
 
 ---
 
