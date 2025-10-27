@@ -332,6 +332,7 @@ export TF_LOG=DEBUG               # Enable debug logs
 export TF_LOG_PATH=tf-debug.log   # Save logs
 terraform apply                   # Apply configuration
 cat tf-debug.log | grep "Error"   # Check errors
+```
 
 ---
 ## 23. ⚠️ Common Errors and Solutions
