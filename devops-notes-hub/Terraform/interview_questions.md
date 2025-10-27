@@ -8,8 +8,10 @@
 3. **Easy Tracking** – Version control with Git for quick updates and rollbacks.
 
 ## 2. Terraform vs Other IaC Tools
+1. **Multi-Cloud Support** – Works with AWS, Azure, GCP, and many more.  
+2. **Declarative Language** – Uses simple HCL syntax to define desired state.  
+3. **Large Community** – Huge ecosystem with many providers and modules.
 
----
 
 ## 3. Providers and Resources
 
