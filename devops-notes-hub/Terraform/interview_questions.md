@@ -228,8 +228,110 @@
 ## 21. Managing Sensitive Data (e.g., Secrets)
 
 ---
-
 ## 22. Debugging Terraform Configurations
+
+Debugging in Terraform helps identify and resolve issues that occur during configuration, planning, or applying infrastructure changes. Terraform provides multiple ways to debug configurations, logs, and provider behavior.
+
+---
+
+### 🔍 Common Debugging Techniques
+
+1. **Validate Configuration**
+   - Run:
+     ```bash
+     terraform validate
+     ```
+   - Checks for syntax errors and invalid arguments in `.tf` files.
+
+2. **Dry Run with Plan**
+   - Run:
+     ```bash
+     terraform plan
+     ```
+   - Allows you to preview what changes Terraform will make before applying them.
+
+3. **Enable Debug Logs**
+   - Set the log level to capture detailed internal logs:
+     ```bash
+     export TF_LOG=TRACE
+     ```
+   - Other log levels:
+     - `TRACE` → Most detailed (shows all internal steps)
+     - `DEBUG` → Provider interactions and evaluations
+     - `INFO` → High-level information
+     - `WARN` → Warnings
+     - `ERROR` → Errors only
+
+   - You can also save logs to a file:
+     ```bash
+     export TF_LOG_PATH=terraform.log
+     terraform apply
+     ```
+
+4. **Use Terraform Console**
+   - A great tool to inspect variables and expressions:
+     ```bash
+     terraform console
+     ```
+   - Example:
+     ```hcl
+     > var.instance_type
+     "t2.micro"
+     > length(var.subnet_ids)
+     3
+     ```
+
+5. **Format and Validate Files**
+   - Helps catch small formatting or syntax issues:
+     ```bash
+     terraform fmt -check
+     terraform validate
+     ```
+
+6. **Check State Files**
+   - Sometimes issues occur due to stale or corrupt state.
+   - Use:
+     ```bash
+     terraform state list
+     terraform state show <resource_name>
+     ```
+
+7. **Use Targeted Apply**
+   - To isolate issues with a specific resource:
+     ```bash
+     terraform apply -target=aws_instance.example
+     ```
+
+8. **Provider Debugging**
+   - For provider-specific debugging:
+     ```bash
+     TF_LOG=DEBUG TF_LOG_PATH=provider.log terraform plan
+     ```
+
+9. **Dependency Graph**
+   - Visualize dependencies:
+     ```bash
+     terraform graph | dot -Tpng > graph.png
+     ```
+   - This helps identify circular dependencies or incorrect references.
+
+10. **Common Mistakes**
+    - Misspelled variable names
+    - Incorrect provider version
+    - Uninitialized backend
+    - Outdated state files
+
+---
+
+### 🧩 Example Debug Workflow
+
+```bash
+terraform validate                # Check syntax and structure
+terraform plan                    # Preview changes
+export TF_LOG=DEBUG               # Enable debug logs
+export TF_LOG_PATH=tf-debug.log   # Save logs
+terraform apply                   # Apply configuration
+cat tf-debug.log | grep "Error"   # Check errors
 
 ---
 ## 23. ⚠️ Common Errors and Solutions
@@ -282,8 +384,28 @@
 ✅ **Tip:** Always run `terraform fmt` and `terraform validate` before `plan` or `apply` to catch issues early.
 
 ---
+## 24.⚙️ Dynamic Blocks and Expressions
 
-## 24. Dynamic Blocks and Expressions
+- **Dynamic blocks** are used to **generate repeated nested blocks** inside a resource dynamically.  
+- Useful when the number of nested items (like `ingress` rules or `tags`) changes frequently.  
+- **Expressions** allow you to use variables, functions, and conditions within Terraform code.  
+- Common expressions include `for`, `if`, and interpolation `${}`.
+
+### 🧱 Example:
+```hcl
+resource "aws_security_group" "example" {
+  name = "dynamic-sg"
+
+  dynamic "ingress" {
+    for_each = var.rules
+    content {
+      from_port   = ingress.value.port
+      to_port     = ingress.value.port
+      protocol    = ingress.value.protocol
+      cidr_blocks = ingress.value.cidr
+    }
+  }
+}
 
 ---
 
@@ -298,8 +420,15 @@
 8. it is possible to use dynamic data source config fetched from external files.?
 
 ---
+## 26. 🧩 Custom Providers
 
-## 26. Custom Providers
+- Custom providers let you **extend Terraform** to manage any external system or API.  
+- You can create your own provider when an official one doesn’t exist.  
+- Written in **Go language** using the Terraform Plugin SDK.  
+- Must implement **CRUD operations** (Create, Read, Update, Delete) for each resource.  
+- Once built, it can be added to your Terraform setup using:  
+  ```bash
+  terraform init
 
 ---
 
