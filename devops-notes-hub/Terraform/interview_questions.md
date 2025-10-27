@@ -31,6 +31,11 @@
 ---
 
 ## 4. Variables
+1. Explain how variable validation work in terraform.?
+2. what is the purpose of locals in terraform and how can they be used with variables.?
+3. Difference between variables and local variables.?
+4. How do you handle situttion where a variable must not be left unset.?
+5. what are variable groups in terraform cloud or terraform enterprise.?
 
 ---
 
@@ -43,10 +48,19 @@
 ---
 
 ## 7. Terraform Resources
+1. Explain the purpose of the name attribute within an AWS resource block.?
+2. How can you reference attributes from one aws resource within another resource configuration.?
+3. How do you handle the creation of dependent resources such as ec2 instance that required a security group and subnet.?
+4. How do you use the provisioner block within a resource block for AWS resources.?
+5. How do you handle potential changes in aws resources config over time without cauing disruption.?
+6. Explain how terraform handles rolling updates or replacement of AWS resources with minimal downtime.?
 
 ---
 
 ## 8. Terraform Modules
+1. what is difference between calling a module with and without explict versioning.?
+2. Explain how terraform manages state files when using modules.?
+3. can you use community contributed modules in your terraform project and what precautions should you take.?
 
 ---
 
