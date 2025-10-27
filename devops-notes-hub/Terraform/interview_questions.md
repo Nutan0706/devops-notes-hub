@@ -43,7 +43,16 @@
 
 ---
 
-## 5. State Files and Their Importance
+## 5. State management 
+1. Default storage
+2. remote storage
+3. state locking
+4. sensitive data
+5. sate manipulation
+6. what command can be used to veiw the current state of your terraform configuration.?
+7. how can you modify terraform state for a particular resource manually.?
+8. Explain the concept of Tainted resources in terraform state.?
+9. Difference between terraform refresh and terraform apply.?
 
 
 ---
@@ -154,6 +163,12 @@
 
 ## 14. Variable Files (.tfvars)
 
+- `.tfvars` files are used to define variable values separately from the main configuration.  
+- They help manage different environments (like dev, test, prod) easily.  
+- You can pass them while running commands using:  
+  ```bash
+  terraform apply -var-file="dev.tfvars"
+
 ---
 
 ## 15. Purpose of Workspaces
@@ -215,7 +230,36 @@
 ## 27. Using Terraform with CI/CD Pipelines
 
 ---
+## 28.🏷️ Tags in Terraform
 
-## 28. Scenario Based Questions
+- **Tags** are key-value pairs used to organize and identify resources.  
+- Help in **cost tracking**, **management**, and **automation**.  
+- Can be added inside resource blocks like this:  
+  ```hcl
+  resource "aws_instance" "example" {
+    ami           = "ami-123456"
+    instance_type = "t2.micro"
+
+    tags = {
+      Name    = "MyServer"
+      Project = "DemoApp"
+      Env     = "Dev"
+    }
+  }
+
+---
+## 29. Terraform File Types
+
+- **.tf** – Main config files with resources, variables, and outputs.  
+- **.tf.json** – Same as `.tf` but written in JSON format.  
+- **.tfvars** – Stores variable values separately for different environments.  
+- **.tftest.hcl / .tftest.json** – Used for writing Terraform tests.  
+- **.terraform.lock.hcl** – Locks provider versions for consistent setups.  
+- **.tfstate** – Tracks the current state of your infrastructure.  
+- **.tfstate.backup** – Backup of the state file before changes.
+
+
+---
+## 30. Scenario Based Questions
 
 ---
