@@ -195,7 +195,7 @@ variable "region" {
 provider "aws" {
   region = var.region
 }
-
+```
 ---
 
 ## 13. Output
