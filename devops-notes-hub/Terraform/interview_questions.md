@@ -31,6 +31,10 @@
 ---
 
 ## 4. Variables
+1. primitive type :- string, number, bool
+2. complex type :- list, map, object
+3. important best practices
+  
 1. Explain how variable validation work in terraform.?
 2. what is the purpose of locals in terraform and how can they be used with variables.?
 3. Difference between variables and local variables.?
@@ -41,9 +45,57 @@
 
 ## 5. State Files and Their Importance
 
+
 ---
 
 ## 6. Terraform Commands (init, plan, apply, destroy, fmt, validate, refresh)
+1. Basic command
+   -> terraform init
+   -> terraform fmt
+   -> terraform validate
+   -> terraform plan
+   -> terraform apply
+   -> terrafrom destroy
+   -> terraform show
+   -> terraform state list
+   -> terraform taint <resources>
+   -> terraform import <resource> <resource_id>
+   -> terraform provider
+   -> terraform fmt -resursive
+   -> terraform output
+   -> terraform refresh
+   -> terraform console
+3. state management command
+    -> terraform state list
+    -> terraform state show <address>
+    -> terraform state mv <source> <dest>
+    -> terraform state rm <address>
+    -> terraform state pull
+    -> terraform state push
+4. provider, modules and plugins
+    -> terraform providers
+    -> terraform provider lock
+    -> terraform get
+    -> terraform login
+    -> terraform logout
+    -> terraform provider mirror
+5. Debug documentation and miss commands
+    -> terraform version
+    -> terraform help
+    -> terraform graph
+    -> terraform force-unlock <lock-id>
+    -> terraform provider schema
+    -> terraform workspace new <name>
+    -> terraform workspace select <name>
+    -> terraform workspace show
+    -> terraform workspace delete <name>
+ 6. special command
+    -> terraform plan -out=tfplan
+    -> terraform apply tfplan
+    -> terraform destroy -target=<resources>
+    -> terraform taint <resources>
+    -> terraform untaint <resources>
+   
 
 ---
 
@@ -80,7 +132,10 @@
 
 ---
 
-## 13. Output Variables
+## 13. Output
+1. How can you reference an output value in another terraform configuration.?
+2. how can you access nested output values.?
+3. how can you test the corretness of an output value in tf.?
 
 ---
 
@@ -129,6 +184,14 @@
 ---
 
 ## 25. Data Sources
+1. Fix existing infra
+2. dynamic config
+3. avoid hardcoding
+4. enables dependencies
+5. how do you handle data source errors such as when the requested resource is not found.?
+6. how do you prevent unnessessary data source fetch to optimize peformance
+7. how can you handle situation where data sources require complex fileing or quaries.?
+8. it is possible to use dynamic data source config fetched from external files.?
 
 ---
 
