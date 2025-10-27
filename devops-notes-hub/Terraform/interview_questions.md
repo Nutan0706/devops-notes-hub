@@ -14,6 +14,19 @@
 
 
 ## 3. Providers
+1. purpose of the provider block in tf with AWS.?
+2. can you use multiple AWS provider block in a single configuration.?
+3. How you handles AWS credentials when using AWS provider in terraform.?
+4. what happen if you don't specify the region in the AWS provider.?
+5. can you use an IAM role instead of AWS access and secret key when configurating the AWS provider.?
+6. How do you upgrade the AWS provider to a newer version in tf.?
+7. can you override the AWS provider region for specific resource.?
+8. how can you handle version constraints for the AWS provider in your terraform project.?
+9. How can you test validity of AWS provider config without applying changes.?
+10. How can you handle AWS provider authentication for a terraform module used by multiple team.?
+11. How can you view the current version of the AWS provider used in terraform configuration.?
+12. How does terraform handle AWS provider plugin updates.?
+13. can you import existing AWS resources into terraform using the AWS provider.?
 
 ---
 
