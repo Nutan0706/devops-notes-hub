@@ -137,20 +137,64 @@
 3. can you use community contributed modules in your terraform project and what precautions should you take.?
 
 ---
-
 ## 9. Local vs Remote State
 
----
+- **Local State**  
+  - Stored in a file named `terraform.tfstate` on your local machine.  
+  - Best for small projects or testing environments.  
+  - Risky for teams — state can get out of sync or lost if not backed up.  
 
+- **Remote State**  
+  - Stored in a shared backend like **S3**, **Azure Blob**, or **Terraform Cloud**.  
+  - Enables **team collaboration** and **state locking** to prevent conflicts.  
+  - Provides **better security, backup, and versioning** for production use.  
+
+✅ **Best Practice:** Always use **remote state** for team or production projects.
+
+---
 ## 10. State Locking
 
----
+- **Purpose:** Prevents multiple users from modifying the same Terraform state at the same time.  
+- **How it works:** When one operation (like `apply` or `plan`) is running, Terraform locks the state file.  
+- **Supported by:** Remote backends such as **AWS S3 with DynamoDB**, **Terraform Cloud**, and **Consul**.  
+- **Benefit:** Avoids race conditions and ensures consistent infrastructure updates.  
 
+✅ **Best Practice:** Always enable state locking when using remote backends.
+
+---
 ## 11. State File Structure
 
----
+- **Purpose:** The `terraform.tfstate` file stores the current state of your infrastructure.  
+- **Contains:**  
+  - Resource metadata (IDs, dependencies, attributes).  
+  - Module and provider details.  
+  - Output values from your configurations.  
+- **Format:** JSON structure managed automatically by Terraform.  
+- **Location:** Stored locally or remotely (depending on backend).  
 
-## 12. Input Variable
+⚠️ **Note:** Never edit the state file manually — use Terraform commands to manage changes safely.
+
+---
+## 12. Input Variables
+
+- **Purpose:** Allow you to customize Terraform configurations without changing code.  
+- **Defined in:** `variables.tf` file using the `variable` block.  
+- **Used for:** Passing dynamic values like region, instance type, or environment.  
+- **Can be set via:**  
+  - `.tfvars` files  
+  - Command-line flags (`-var`)  
+  - Environment variables  
+
+✅ **Example:**
+```hcl
+variable "region" {
+  description = "AWS region"
+  default     = "ap-south-1"
+}
+
+provider "aws" {
+  region = var.region
+}
 
 ---
 
