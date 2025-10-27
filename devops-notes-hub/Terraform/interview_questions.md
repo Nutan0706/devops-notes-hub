@@ -49,53 +49,66 @@
 ---
 
 ## 6. Terraform Commands (init, plan, apply, destroy, fmt, validate, refresh)
-1. Basic command
-   -> terraform init
-   -> terraform fmt
-   -> terraform validate
-   -> terraform plan
-   -> terraform apply
-   -> terrafrom destroy
-   -> terraform show
-   -> terraform state list
-   -> terraform taint <resources>
-   -> terraform import <resource> <resource_id>
-   -> terraform provider
-   -> terraform fmt -resursive
-   -> terraform output
-   -> terraform refresh
-   -> terraform console
-3. state management command
-    -> terraform state list
-    -> terraform state show <address>
-    -> terraform state mv <source> <dest>
-    -> terraform state rm <address>
-    -> terraform state pull
-    -> terraform state push
-4. provider, modules and plugins
-    -> terraform providers
-    -> terraform provider lock
-    -> terraform get
-    -> terraform login
-    -> terraform logout
-    -> terraform provider mirror
-5. Debug documentation and miss commands
-    -> terraform version
-    -> terraform help
-    -> terraform graph
-    -> terraform force-unlock <lock-id>
-    -> terraform provider schema
-    -> terraform workspace new <name>
-    -> terraform workspace select <name>
-    -> terraform workspace show
-    -> terraform workspace delete <name>
- 6. special command
-    -> terraform plan -out=tfplan
-    -> terraform apply tfplan
-    -> terraform destroy -target=<resources>
-    -> terraform taint <resources>
-    -> terraform untaint <resources>
-   
+## 🧠 Terraform Commands
+
+### 🏗️ Basic Commands
+- `terraform init`
+- `terraform fmt`
+- `terraform validate`
+- `terraform plan`
+- `terraform apply`
+- `terraform destroy`
+- `terraform show`
+- `terraform state list`
+- `terraform taint`
+- `terraform import <resource_id>`
+- `terraform providers`
+- `terraform fmt -recursive`
+- `terraform output`
+- `terraform refresh`
+- `terraform console`
+
+---
+
+### 📂 State Management Commands
+- `terraform state list`
+- `terraform state show`
+- `terraform state mv`
+- `terraform state rm`
+- `terraform state pull`
+- `terraform state push`
+
+---
+
+### ⚙️ Providers, Modules, and Plugins
+- `terraform providers`
+- `terraform provider lock`
+- `terraform get`
+- `terraform login`
+- `terraform logout`
+- `terraform provider mirror`
+
+---
+
+### 🧩 Debug, Documentation, and Misc Commands
+- `terraform version`
+- `terraform help`
+- `terraform graph`
+- `terraform force-unlock`
+- `terraform provider schema`
+- `terraform workspace new`
+- `terraform workspace select`
+- `terraform workspace show`
+- `terraform workspace delete`
+
+---
+
+### 🔐 Special Commands
+- `terraform plan -out=tfplan`
+- `terraform apply tfplan`
+- `terraform destroy -target=<resource_name>`
+- `terraform taint`
+- `terraform untaint`
 
 ---
 
