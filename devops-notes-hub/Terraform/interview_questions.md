@@ -171,7 +171,17 @@
 
 ---
 
-## 15. Purpose of Workspaces
+## 15.🧭 Purpose of Workspaces
+
+- Workspaces let you manage **multiple environments** (like dev, test, prod) in the same configuration.  
+- Each workspace has its **own state file**, keeping resources isolated.  
+- Useful for testing changes safely before deploying to production.  
+- Common commands:  
+  ```bash
+  terraform workspace new dev
+  terraform workspace select dev
+  terraform workspace list
+  terraform workspace show
 
 ---
 
@@ -190,8 +200,28 @@
 ## 19. Configuring Backends (e.g., S3, Azure Blob, etc.)
 
 ---
+## 20.🧱 Structuring Terraform Projects
 
-## 20. Structuring Terraform Projects
+- Organize Terraform code for **clarity, reusability, and scalability**.  
+- Keep separate folders for **environments** like `dev`, `staging`, and `prod`.  
+- Use **modules** to group related resources and avoid code duplication.  
+- Store **variables**, **outputs**, and **backend configs** in separate files.  
+
+### 📂 Example Project Structure
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── provider.tf
+├── terraform.tfvars
+├── modules/
+│ └── vpc/
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
+└── envs/
+├── dev/
+├── staging/
+└── prod/
 
 ---
 
@@ -202,8 +232,54 @@
 ## 22. Debugging Terraform Configurations
 
 ---
+## 23. ⚠️ Common Errors and Solutions
 
-## 23. Common Errors and Solutions
+### 🧩 Initialization & Configuration
+- **Backend initialization required** – Run `terraform init` first.  
+- **Required provider not found** – Run `terraform init -upgrade` to download providers.  
+- **Unsupported Terraform version** – Update Terraform to match `required_version`.
+
+---
+
+### 📦 Variable & Input Issues
+- **No value for required variable** – Define in `.tfvars` or pass with `-var`.  
+- **Invalid variable type** – Match correct type (string, number, list, etc.).  
+- **Missing variable file** – Use `terraform apply -var-file="dev.tfvars"`.
+
+---
+
+### 🔗 State & Locking
+- **State file locked** – Use `terraform force-unlock <LOCK_ID>` to unlock.  
+- **State file missing or corrupted** – Restore from `.tfstate.backup` or backend.  
+- **Resource already managed** – Use `terraform import <resource_id>`.
+
+---
+
+### 🏗️ Resource & Dependency Issues
+- **Resource already exists** – Import it instead of recreating.  
+- **Dependency cycle detected** – Remove circular dependencies between resources.  
+- **Invalid index or key** – Check your list/map index or key values.  
+- **Provider version mismatch** – Run `terraform init -upgrade`.
+
+---
+
+### 🧠 Logical & Syntax Errors
+- **Unsupported argument** – Remove or rename invalid arguments.  
+- **Invalid block definition** – Ensure blocks are properly nested and closed.  
+- **Unknown resource referenced** – Verify resource names and dependencies.  
+- **Invalid function call** – Check syntax and argument types.
+
+---
+
+### 🧹 Miscellaneous
+- **Timeout while applying changes** – Check network or increase timeout in config.  
+- **Insufficient permissions** – Verify cloud credentials or IAM roles.  
+- **Plan differs after apply** – Run `terraform refresh` to sync state.  
+- **Provider plugin not found** – Delete `.terraform` folder and reinit with `terraform init`.
+
+---
+
+✅ **Tip:** Always run `terraform fmt` and `terraform validate` before `plan` or `apply` to catch issues early.
 
 ---
 
