@@ -13,7 +13,7 @@
 3. **Large Community** – Huge ecosystem with many providers and modules.
 
 
-## 3. Providers and Resources
+## 3. Providers
 
 ---
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 7. Terraform Providers
+## 7. Terraform Resources
 
 ---
 
