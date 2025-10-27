@@ -407,7 +407,7 @@ resource "aws_security_group" "example" {
     }
   }
 }
-
+```
 ---
 
 ## 25. Data Sources
