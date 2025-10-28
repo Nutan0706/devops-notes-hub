@@ -101,6 +101,3 @@ This document contains **30 Docker Interview Questions** categorized into:
 ---
 
 
----
-
-Would you like me to also prepare a **“.md file for Docker + Kubernetes combined interview set”**?
