@@ -91,7 +91,3 @@ A well-structured set of **40 DynamoDB interview questions** categorized by diff
 </details>
 
 ---
-
-A) Answers  
-B) MCQs  
-C) Both
