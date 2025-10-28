@@ -92,8 +92,3 @@ This document contains **30+ Grafana interview questions** divided into levels f
 - Revise the **Grafana Stack**: Prometheus + Loki + Tempo  
 - Know about **Grafana On-Prem vs Cloud**  
 - Prepare 1-2 real-life dashboard design examples  
-
-
-A) “Grafana vs Kibana vs Splunk Comparison”  
-or  
-B) “Hands-on Grafana Practical Tasks for Interview”?
