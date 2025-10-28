@@ -641,6 +641,69 @@ resource "aws_security_group" "example" {
 
 
 ---
-## 30. Scenario Based Questions
+## 30. Scenario-Based Questions
+
+1. **You need to deploy the same infrastructure in Dev, Staging, and Prod. How will you design it in Terraform?**  
+   *Hint:* Use modules, separate `.tfvars`, and remote state with workspaces or folder-based environments.
+
+2. **Two team members ran `terraform apply` at the same time and the state got corrupted. How will you prevent this?**  
+   *Hint:* Use a remote backend with state locking (e.g., S3 + DynamoDB, Terraform Cloud).
+
+3. **Your Terraform apply failed halfway, leaving partial resources created. What will you do?**  
+   *Hint:* Use `terraform plan`, `terraform refresh`, and re-run apply; check state file for drift.
+
+4. **How do you handle a situation where a resource was created manually outside Terraform?**  
+   *Hint:* Bring it under Terraform management using `terraform import`.
+
+5. **You need to change a resource without destroying it (e.g., update an EC2 tag). How will you ensure no recreation happens?**  
+   *Hint:* Understand “force replacement” fields, use `lifecycle` block to prevent destroy (e.g., `prevent_destroy`, `ignore_changes`).
+
+6. **Your module is used by many teams; how will you ensure no breaking changes affect them?**  
+   *Hint:* Use versioning for modules, maintain backward compatibility, apply semantic versioning.
+
+7. **Your secrets (passwords, keys) are visible in logs. How will you fix it?**  
+   *Hint:* Mark variables as `sensitive = true`, move secrets to secret stores, avoid pushing secrets in `.tfvars`.
+
+8. **You need to roll back to a previous infrastructure version. How will you do it with Terraform?**  
+   *Hint:* Re-apply previous code version + use state snapshots; avoid manual state edits.
+
+9. **A resource was removed from code. What happens, and how to handle if you don’t want to delete it from cloud?**  
+   *Hint:* Terraform will destroy it; use `lifecycle { prevent_destroy = true }` or remove from state if needed (`state rm`).
+
+10. **Terraform is taking too long because of unnecessary plan on unchanged resources. How to optimize?**  
+   *Hint:* Use `targets`, organize modules, use `-refresh=false`, avoid overly deep dependencies.
+
+## 30. Scenario-Based Advanced 
+
+1. **You need to deploy identical infrastructure for Dev, Staging, and Prod. How will you structure your Terraform code?**
+2. **Two engineers ran `terraform apply` at the same time and the state got corrupted. How will you prevent this in future?**
+3. **Your `terraform apply` failed midway and created partial resources. What steps will you take to fix it?**
+4. **A resource was created manually outside Terraform. How will you bring it under Terraform management?**
+5. **Terraform wants to destroy and recreate a resource, but you only want to update it. How will you prevent recreation?**
+6. **Your module is consumed by multiple teams. How will you avoid breaking changes when updating it?**
+7. **Sensitive values like passwords are showing in logs. How will you hide them?**
+8. **You want to roll back infrastructure to a previous version. How will you do it using Terraform?**
+9. **Terraform shows a resource will be destroyed after code changes, but you want to keep it. What will you do?**
+10. **State refresh takes too long for large infra. How will you speed up the plan process?**
+11. **You need to run some custom script after resource creation. How will you do it?**
+12. **Two resources need to be created in a specific order. How will you enforce dependency?**
+13. **You want to provision resources across multiple regions but share common code. How will you do that?**
+14. **Your team is using Terraform open-source and wants cost estimation before deploying. How can this be achieved?**
+15. **Your `.tfstate` file is large and difficult to manage. How will you optimize it?**
+16. **You want to reuse the same module but with slight behavior differences per environment. How will you handle this?**
+17. **The S3 bucket storing Terraform remote state was accidentally deleted. How do you recover state?**
+18. **Your Terraform workspace setup became messy. How do you decide between Workspaces vs separate folders?**
+19. **You need to migrate Terraform state from local to remote backend. What steps will you follow?**
+20. **A resource was removed from code but must stay in cloud. How will you stop Terraform from deleting it?**
+21. **You need to move resources between modules without destroying them. How will you achieve state move?**
+22. **A colleague updated infra manually in cloud console, causing drift. How will you reconcile state?**
+23. **You need to run Terraform `plan` automatically on every PR and `apply` only after approval. How will you build this CI/CD flow?**
+24. **You want to dynamically create multiple similar resources (e.g., subnets). Which Terraform feature will you use?**
+25. **During deployment, external API rate limits cause provision failure. How will you handle retry logic?**
+26. **You need to share Terraform modules privately within the organization. What’s the best approach?**
+27. **How will you handle zero-downtime update for an application load-balanced EC2 setup using Terraform?**
+28. **Terraform is failing due to provider version mismatch across team members. How will you fix the provider version consistency?**
+29. **You want to track who made changes to infra using Terraform. How do you enable audit history?**
+30. **You need to create resources in multiple AWS accounts securely. What is the best strategy to authenticate and manage access?**
 
 ---
