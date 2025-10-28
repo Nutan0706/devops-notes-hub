@@ -18,6 +18,7 @@
 
 </details>
 
+---
 
 <details>
 <summary><h2>🟡 10 Moderate Level Questions</h2></summary>
@@ -37,6 +38,7 @@
 
 </details>
 
+---
 
 <details>
 <summary><h2>🔴 10 Advanced & Scenario-Based Questions</h2></summary>
@@ -58,10 +60,8 @@
 
 ---
 
-## 🧠 Scenario Based on "Serving `.mb` / Large Media Files"
-
 <details>
-<summary><h2>📂 Handling Large Media Files (.mp4 / .mkv / .mov / .mb etc.)</h2></summary>
+<summary><h2>📂  Scenario Based on "Serving `.mb` / Large Media Files</h2></summary>
 
 | Scenario | Question | Expected Thought Process |
 |----------|-----------|---------------------------|
