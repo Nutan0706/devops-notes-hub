@@ -112,5 +112,3 @@ Your NAT Gateway bill is too high. How do you reduce cost?
 </details>
 
 ---
-
-Would you like **answers included inside collapsible sections**, or **separate file for answers**?
