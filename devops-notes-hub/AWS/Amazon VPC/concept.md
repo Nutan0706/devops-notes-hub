@@ -23,8 +23,8 @@
 - [CLI Quick Commands](#16-aws-cli-quick-commands)
 
 ---
-
-## 1. VPC (Virtual Private Cloud)
+<details>
+<summary><h2>1. 🧩 VPC (Virtual Private Cloud)</h2></summary>
 
 > A **logically isolated virtual network** inside AWS where you launch and manage your resources securely.
 
@@ -33,7 +33,8 @@
 - Subnets  
 - Route tables  
 - Security  
-- Network connectivity  
+- Network connectivity
+</details>
 
 ---
 
@@ -223,8 +224,8 @@ Private access to AWS services **without IGW, NAT, VPN**
 </details>
 
 ---
-
-## 16. 🧑‍💻 AWS CLI Quick Commands
+<details>
+<summary><h2>16. 🧑‍💻 AWS CLI Quick Commands</h2></summary>
 
 ```bash
 # Create VPC
@@ -244,3 +245,4 @@ aws ec2 create-route-table --vpc-id vpc-xxxx
 
 # Associate Route Table
 aws ec2 associate-route-table --route-table-id rtb-xxxx --subnet-id subnet-xxxx
+</details>
