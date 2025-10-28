@@ -124,10 +124,9 @@ yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
 ```
-
+</details>
 ---
 
-</details>
 <details> <summary><strong>9️⃣ Monitoring & Logs</strong></summary>
 Tool	Purpose
 CloudWatch	Performance metrics (CPU, RAM, Disk, Network)
@@ -153,5 +152,6 @@ aws ec2 terminate-instances --instance-ids i-xxxx
 
 # Create AMI from Instance
 aws ec2 create-image --instance-id i-xxxx --name "my-ami"
-</details>
 ---
+</details>
+
