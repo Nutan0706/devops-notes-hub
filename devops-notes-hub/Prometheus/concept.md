@@ -130,6 +130,8 @@ B --> PagerDuty
 
 </details>
 
+---
+
 <details>
 <summary><strong>📂 7. Prometheus Architecture (Visual)</strong></summary>
 
@@ -148,6 +150,8 @@ D --> H[Grafana Dashboards]
 
 </details>
 
+---
+
 <details>
 <summary><strong>📈 8. Prometheus vs Other Monitoring Tools</strong></summary>
 
@@ -163,6 +167,8 @@ D --> H[Grafana Dashboards]
 
 </details>
 
+---
+
 ### ✅ Summary for Interviews
 
 - Prometheus uses a **pull-based model** for scraping metrics.
@@ -171,5 +177,6 @@ D --> H[Grafana Dashboards]
 - Works best with **Kubernetes** and cloud-native environments.
 - **Alertmanager** handles alerting and notification routing.
 - **Exporters** enable Prometheus to collect metrics from various systems and services.
+
 
 
