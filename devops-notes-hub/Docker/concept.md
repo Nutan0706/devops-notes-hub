@@ -94,6 +94,7 @@ A clean, developer-friendly, and interview-ready Docker notes sheet using tables
 docker volume create myvol
 docker run -v myvol:/app/data ...
 ```
+---
 
 ## 🌐 7. Docker Networking
 
@@ -111,6 +112,7 @@ docker network ls
 docker network create mynetwork
 docker run --network=mynetwork ...
 ```
+---
 
 <details>
 <summary><h2>🧩 8. Container Lifecycle</h2></summary>
@@ -127,6 +129,8 @@ docker run --network=mynetwork ...
 | **Remove**        | `docker rm`                       |
 
 </details>
+
+---
 
 <details>
 <summary><h2>🧬 9. Docker Compose (Click to Expand)</h2></summary>
@@ -150,6 +154,7 @@ services:
   redis:
     image: redis
 ```
+---
 
 <details>
 <summary><h2>🧊 10. Image Management (Click to Expand)</h2></summary>
@@ -163,6 +168,7 @@ services:
 | **Important Commands** | `docker pull`, `docker push` |
 
 </details>
+---
 
 <details>
 <summary><h2>✅ 11. Best Practices (Click to Expand)</h2></summary>
@@ -180,6 +186,8 @@ services:
 
 </details>
 
+---
+
 <details>
 <summary><h2>🧯 12. Common Issues & Fixes (Click to Expand)</h2></summary>
 
@@ -194,6 +202,8 @@ services:
 
 </details>
 
+---
+
 <details>
 <summary><h2>🆚 13. Docker vs Virtual Machines (Click to Expand)</h2></summary>
 
@@ -207,6 +217,8 @@ services:
 | **Consistency** | High consistency across environments | Varies per VM |
 
 </details>
+
+---
 
 <details>
 <summary><h2>🔐 14. Security Basics (Click to Expand)</h2></summary>
@@ -223,6 +235,8 @@ services:
 
 </details>
 
+---
+
 <details>
 <summary><h2>🌍 15. Registries (Click to Expand)</h2></summary>
 
@@ -234,6 +248,8 @@ services:
 | **Private** | AWS ECR, GitHub Container Registry (GHCR), Harbor, JFrog Artifactory |
 
 </details>
+
+---
 
 <details>
 <summary><h2>🚀 16. Real-World Scenarios (Click to Expand)</h2></summary>
@@ -248,6 +264,7 @@ services:
 | **Scaling** | Scale containers using Kubernetes or Docker Swarm |
 
 </details>
+
 
 
 
