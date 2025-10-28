@@ -108,6 +108,3 @@ A well-structured interview question bank for Jenkins covering fundamentals, int
 
 ---
 
-
-Would you like me to also create a **"Jenkins Hands-On Practical Tasks & Solutions"** `.md` file next?  
-(Example: write pipeline to build + test + dockerize + deploy)
