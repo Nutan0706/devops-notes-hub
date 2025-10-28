@@ -124,6 +124,7 @@ yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
 ```
+---
 
 </details>
 <details> <summary><strong>9️⃣ Monitoring & Logs</strong></summary>
