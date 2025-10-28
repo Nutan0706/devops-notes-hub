@@ -1,19 +1,20 @@
-# Amazon S3 Concepts
-
 # ☁️ AWS S3 (Simple Storage Service) – Complete Notes
 
-## ✨ 1. What is S3?
+<details>
+<summary><strong>1️⃣ What is S3?</strong></summary>
 
-> **Amazon S3 (Simple Storage Service)** is an object storage service used to store and retrieve any amount of data from anywhere.
-
+- **Amazon S3 (Simple Storage Service)** is an object storage service used to store and retrieve any amount of data from anywhere.
 - Object-based storage (not block/file storage)
 - Infinitely scalable
 - Highly available
 - **11 9’s durability** → `99.999999999%` (designed for 99.99% availability)
 
+</details>
+
 ---
 
-## 📌 2. Core Concepts
+<details>
+<summary><strong>2️⃣ Core Concepts</strong></summary>
 
 | Concept | Description |
 |--------|--------------|
@@ -25,9 +26,12 @@
 | **Versioning** | Stores multiple versions of the same object |
 | **Storage Classes** | Different cost vs access trade-off |
 
+</details>
+
 ---
 
-## 🧊 3. S3 Storage Classes
+<details>
+<summary><strong>3️⃣ S3 Storage Classes</strong></summary>
 
 | Storage Class | Use Case | Key Points |
 |---------------|-----------|-------------|
@@ -39,33 +43,40 @@
 | **Glacier Flexible Retrieval** | Archive with less frequent access | Minutes to hours |
 | **Glacier Deep Archive** | Long-term backup | Up to 12-hour retrieval, cheapest |
 
+</details>
+
 ---
 
-## 🔄 4. Data Consistency Model
+<details>
+<summary><strong>4️⃣ Data Consistency Model</strong></summary>
 
 ✅ **Strong Read-After-Write consistency** for:
-
 - PUTs of new objects
 - Overwrite PUTs & DELETEs
 
+</details>
+
 ---
 
-## 🔐 5. Security in S3
+<details>
+<summary><strong>5️⃣ Security in S3</strong></summary>
 
-- **Bucket Policy** → JSON policy applied to entire bucket
-- **IAM Policy** → User/role-based access
-- **ACL (Access Control List)** → Legacy, object-level permissions (avoid)
-- **Block Public Access** → Recommended to avoid accidental exposure
+- **Bucket Policy** → JSON policy applied to entire bucket  
+- **IAM Policy** → User/role-based access  
+- **ACL (Access Control List)** → Legacy, object-level permissions (avoid)  
+- **Block Public Access** → Recommended to avoid accidental exposure  
 - **Encryption** Options:  
-
   - **SSE-S3** → AES-256 (managed by AWS)  
   - **SSE-KMS** → KMS managed keys + audit trail  
   - **SSE-C** → Customer-provided keys  
   - **Client-Side Encryption** → You encrypt before upload  
 
+</details>
+
 ---
 
-## 🛡️ 6. Data Protection
+<details>
+<summary><strong>6️⃣ Data Protection</strong></summary>
 
 | Feature | Purpose |
 |--------|----------|
@@ -74,9 +85,12 @@
 | **Replication (CRR / SRR)** | Copy objects to another bucket (cross or same region) |
 | **Object Lock** | WORM (Write Once Read Many) compliance |
 
+</details>
+
 ---
 
-## 🌍 7. Public Access & Sharing
+<details>
+<summary><strong>7️⃣ Public Access & Sharing</strong></summary>
 
 - Default: **Private**
 - Can be made public using:
@@ -84,35 +98,46 @@
   - ACL (not recommended)
   - **Pre-Signed URLs** (temporary access without making it public)
 
+</details>
+
 ---
 
-## 🔁 8. Lifecycle Management
+<details>
+<summary><strong>8️⃣ Lifecycle Management</strong></summary>
 
 Automate:
-
 - Move objects to cheaper classes
 - Delete old versions
 - Expire unused data
 
+</details>
+
 ---
 
-## 🌐 9. Static Website Hosting
+<details>
+<summary><strong>9️⃣ Static Website Hosting</strong></summary>
 
 - Host static HTML, CSS, JS
-- Must enable **public read** or using CloudFront
+- Must enable **public read** or via CloudFront
 - Can use Route53 for custom domain
+
+</details>
 
 ---
 
-## ⚡ 10. Performance Optimization
+<details>
+<summary><strong>🔟 Performance Optimization</strong></summary>
 
 - Use **Multipart Upload** for >100 MB objects
 - Use **S3 Transfer Acceleration** for faster global uploads
 - Use multiple prefixes to improve throughput
 
+</details>
+
 ---
 
-## 🔔 11. S3 Event Notifications
+<details>
+<summary><strong>1️⃣1️⃣ S3 Event Notifications</strong></summary>
 
 Trigger events to:
 
@@ -122,9 +147,12 @@ Trigger events to:
 | **SNS** | Send notifications |
 | **SQS** | Queue for processing |
 
+</details>
+
 ---
 
-## 💰 12. Pricing Components
+<details>
+<summary><strong>1️⃣2️⃣ Pricing Components</strong></summary>
 
 You are charged for:
 
@@ -133,11 +161,14 @@ You are charged for:
 - **Data Transfer Out**
 - **Glacier retrieval**
 
-> TIP: Inbound data is **FREE**.
+> 💡 **Inbound data is FREE**
+
+</details>
 
 ---
 
-## 🧑‍💻 13. Useful CLI Commands
+<details>
+<summary><strong>1️⃣3️⃣ Useful CLI Commands</strong></summary>
 
 ```bash
 # List all buckets
