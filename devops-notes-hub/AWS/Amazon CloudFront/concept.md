@@ -86,6 +86,8 @@ Tip: Use versioning instead of frequent invalidations to reduce cost.
 
 </details>
 
+---
+
 <details>
 <summary><h2>🛡️ Security in CloudFront</h2></summary>
 
@@ -102,6 +104,8 @@ Tip: Use versioning instead of frequent invalidations to reduce cost.
 
 </details>
 
+---
+
 <details>
 <summary><h2>🔗 Integration with AWS Services</h2></summary>
 
@@ -116,6 +120,7 @@ Tip: Use versioning instead of frequent invalidations to reduce cost.
 
 </details>
 
+---
 
 <details>
 <summary><h2>💰 Pricing Model</h2></summary>
@@ -133,6 +138,8 @@ CloudFront pricing depends on multiple factors:
 
 </details>
 
+---
+
 <details>
 <summary><h2>📦 Common Use Cases</h2></summary>
 
@@ -143,6 +150,8 @@ CloudFront pricing depends on multiple factors:
 - 🛡️ **Secure Content Access** using Signed URLs / Cookies  
 
 </details>
+
+---
 
 <details>
 <summary><h2>🧑‍💻 Important CLI Commands</h2></summary>
@@ -158,4 +167,5 @@ CloudFront pricing depends on multiple factors:
 
 </details>
 
+---
 
