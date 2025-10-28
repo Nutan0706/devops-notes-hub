@@ -133,24 +133,29 @@ CloudFront pricing depends on multiple factors:
 
 </details>
 
+<details>
+<summary><h2>📦 Common Use Cases</h2></summary>
 
-<details> <summary><h2>📦 Common Use Cases</h2></summary>
-
-✅ Static website delivery (S3 + CloudFront)
-🎬 Video streaming (HLS/DASH)
-🌍 Global API acceleration
-🔐 DRM-based premium content delivery
-🛡️ Secure content access with Signed URLs/Cookies
+- ✅ **Static Website Delivery** (S3 + CloudFront)  
+- 🎬 **Video Streaming** (HLS / DASH)  
+- 🌍 **Global API Acceleration**  
+- 🔐 **DRM-Based Premium Content Delivery**  
+- 🛡️ **Secure Content Access** using Signed URLs / Cookies  
 
 </details>
 
-<details> <summary><h2>🧑‍💻 Important CLI Commands</h2></summary>
-Purpose	Command
-Create Invalidation	aws cloudfront create-invalidation
-List Distributions	aws cloudfront list-distributions
-Get Config	aws cloudfront get-distribution-config
-Update Config	aws cloudfront update-distribution
-</details>
+<details>
+<summary><h2>🧑‍💻 Important CLI Commands</h2></summary>
 
+| Purpose | Command |
+|---------|----------|
+| **Create Invalidation** | `aws cloudfront create-invalidation --distribution-id DIST_ID --paths "/*"` |
+| **List Distributions** | `aws cloudfront list-distributions` |
+| **Get Distribution Config** | `aws cloudfront get-distribution-config --id DIST_ID` |
+| **Update Distribution Config** | `aws cloudfront update-distribution --id DIST_ID --if-match E2QWRUHAPOMF69 --distribution-config file://config.json` |
+
+> 💡 Replace `DIST_ID` with your CloudFront Distribution ID.
+
+</details>
 
 
