@@ -154,9 +154,10 @@ services:
   redis:
     image: redis
 ```
----
 
 </details>
+
+---
 
 <details>
 
@@ -267,6 +268,7 @@ services:
 | **Scaling** | Scale containers using Kubernetes or Docker Swarm |
 
 </details>
+
 
 
 
