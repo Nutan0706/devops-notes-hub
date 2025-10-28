@@ -160,7 +160,6 @@ services:
 ---
 
 <details>
-
 <summary><h2>🧊 10. Image Management (Click to Expand)</h2></summary>
 
 ### 📌 Concepts
@@ -172,6 +171,8 @@ services:
 | **Important Commands** | `docker pull`, `docker push` |
 
 </details>
+
+
 ---
 
 <details>
@@ -268,6 +269,7 @@ services:
 | **Scaling** | Scale containers using Kubernetes or Docker Swarm |
 
 </details>
+
 
 
 
