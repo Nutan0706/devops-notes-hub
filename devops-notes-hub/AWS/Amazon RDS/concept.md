@@ -1,4 +1,4 @@
-# 📘 AWS RDS – Complete Notes (with Collapsible Sections)
+# 📘 AWS RDS – Complete Notes 
 
 Amazon RDS (Relational Database Service) is a **fully managed relational database service** that automates backups, patching, monitoring, and scaling.
 
