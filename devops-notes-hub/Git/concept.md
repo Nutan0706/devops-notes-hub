@@ -149,4 +149,4 @@ It stores the **entire history locally**, enabling offline usage.
 
 ---
 
-Would you like me to also prepare a **“Git + GitHub + GitLab Combined Interview Sheet”** in same collapsible `.md` format?
+
