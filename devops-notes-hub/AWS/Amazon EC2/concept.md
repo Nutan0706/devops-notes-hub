@@ -133,6 +133,8 @@ CloudTrail	API activity logs
 EC2 Status Checks	System & Instance-level health
 </details>
 
+---
+
 <details> 
 <summary><strong>🔟 Common AWS CLI Commands for EC2</strong></summary>
 # List Instances
@@ -150,3 +152,4 @@ aws ec2 terminate-instances --instance-ids i-xxxx
 # Create AMI from Instance
 aws ec2 create-image --instance-id i-xxxx --name "my-ami"
 </details>
+---
