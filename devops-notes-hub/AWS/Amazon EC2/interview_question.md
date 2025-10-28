@@ -80,8 +80,3 @@ This document contains **40+ EC2 interview questions** grouped by difficulty lev
 ---
 
 
-Would you like the following next?
-
-A) **Answer key with sample responses for each question**  
-B) Convert this into a **PDF + One-Page Revision Sheet**  
-C) Generate **MCQs with answers** for EC2?
