@@ -106,6 +106,9 @@ B --> Slack
 B --> Email
 B --> PagerDuty
 ```
+</details>
+
+---
 
 <details>
 <summary><strong>📦 6. Exporters (Most Used)</strong></summary>
@@ -168,4 +171,5 @@ D --> H[Grafana Dashboards]
 - Works best with **Kubernetes** and cloud-native environments.
 - **Alertmanager** handles alerting and notification routing.
 - **Exporters** enable Prometheus to collect metrics from various systems and services.
+
 
