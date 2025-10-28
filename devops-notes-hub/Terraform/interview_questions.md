@@ -673,7 +673,7 @@ resource "aws_security_group" "example" {
 10. **Terraform is taking too long because of unnecessary plan on unchanged resources. How to optimize?**  
    *Hint:* Use `targets`, organize modules, use `-refresh=false`, avoid overly deep dependencies.
 
-## 30. Scenario-Based Advanced 
+## 31. Scenario-Based Advanced 
 
 1. **You need to deploy identical infrastructure for Dev, Staging, and Prod. How will you structure your Terraform code?**
 2. **Two engineers ran `terraform apply` at the same time and the state got corrupted. How will you prevent this in future?**
@@ -706,4 +706,6 @@ resource "aws_security_group" "example" {
 29. **You want to track who made changes to infra using Terraform. How do you enable audit history?**
 30. **You need to create resources in multiple AWS accounts securely. What is the best strategy to authenticate and manage access?**
 
+
+## 32. Advanced Terraform project github link.
 ---
