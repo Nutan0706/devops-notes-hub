@@ -136,9 +136,3 @@ Add CLI output verifying successful cross-account access below:
 - [x] **Temporary credentials** generated and exported correctly.  
 - [x] Verified **access to target account resources** (e.g., S3 bucket listing works).
 
-
-
-
-
-
-
