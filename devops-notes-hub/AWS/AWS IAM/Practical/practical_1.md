@@ -12,7 +12,6 @@ Create a new IAM user in AWS Management Console with **console access** and enfo
 2. Navigate to **IAM** service.
 3. On the left panel, click **Users**.
 
-🖼️ _Add Screenshot: IAM Dashboard_
 <img width="1794" height="863" alt="image" src="https://github.com/user-attachments/assets/4da50935-cac5-4d17-9515-c10d9e2a31e1" />
 
 
@@ -27,7 +26,6 @@ Create a new IAM user in AWS Management Console with **console access** and enfo
 4. Choose **“Auto-generate password”** or create a custom password.
 5. Optionally, check the box **“User must create a new password at next sign-in”**.
 
-🖼️ _Add Screenshot:
 <img width="1668" height="715" alt="image" src="https://github.com/user-attachments/assets/218db65e-39ee-4598-b4f3-33e558363fca" />
 
 
@@ -83,6 +81,7 @@ You have 3 options:
   - MFA (if applied later) works correctly.
 
 ---
+
 
 
 
