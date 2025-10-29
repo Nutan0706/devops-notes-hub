@@ -29,11 +29,11 @@
 
 | # | Practical Task | Description |
 |---|----------------|-------------|
-| 11 | **Create IAM Role for Lambda Function** | Grant Lambda only minimal access (e.g., DynamoDB or S3). |
-| 12 | **Implement Identity Federation / SSO** | Integrate AWS IAM with Google Workspace or AWS SSO for unified login. |
-| 13 | **Use IAM Access Analyzer** | Identify and fix public or cross-account resource access. |
-| 14 | **Automate IAM Setup with Terraform / CloudFormation** | Use IaC to create users, roles, and policies automatically. |
-| 15 | **Implement Permission Boundaries & SCPs** | Manage multi-account setups using Organizations and SCPs. |
+| 10 | **Create IAM Role for Lambda Function** | Grant Lambda only minimal access (e.g., DynamoDB or S3). |
+| 11 | **Implement Identity Federation / SSO** | Integrate AWS IAM with Google Workspace or AWS SSO for unified login. |
+| 12 | **Use IAM Access Analyzer** | Identify and fix public or cross-account resource access. |
+| 13 | **Automate IAM Setup with Terraform / CloudFormation** | Use IaC to create users, roles, and policies automatically. |
+| 14 | **Implement Permission Boundaries & SCPs** | Manage multi-account setups using Organizations and SCPs. |
 
 ---
 
@@ -48,5 +48,6 @@
 
 > 💡 **Pro Tip:**  
 > Always follow the **Least Privilege Principle** — grant only what’s necessary, monitor with Access Analyzer, and automate everything with Terraform.
+
 
 
