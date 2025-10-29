@@ -25,6 +25,8 @@
  📁 This command creates configuration files at:
   ~/.aws/credentials and ~/.aws/config
 
+  <img width="742" height="198" alt="image" src="https://github.com/user-attachments/assets/10267b34-4673-4c1b-8c42-a64b3bf279d6" />
+
  ---
 
  ### **Step 2: Verify Configuration**
@@ -34,7 +36,8 @@
    aws sts get-caller-identity --profile dev-profile
    ```
 2. ✅ The output should display the User ARN, Account ID, and User ID, confirming a valid configuration.
-   🖼️ Add Screenshot: AWS CLI output showing user identity
+   <img width="789" height="166" alt="image" src="https://github.com/user-attachments/assets/97880267-76c4-4d8e-89f7-29542d1e8390" />
+
    
 ---
 
@@ -43,6 +46,7 @@
 2. Select **Another AWS Account** or **Service (e.g., EC2)** depending on your use case.  
 3. Attach a simple policy, e.g., **AmazonS3ReadOnlyAccess**.  
 4. Note down the **Role ARN**, for example: arn:aws:iam::123456789012:role/S3ReadRole
+<img width="1608" height="601" alt="image" src="https://github.com/user-attachments/assets/65258597-9eb4-4875-b470-ec9a0aaf2a52" />
 
 ---
 
@@ -84,3 +88,4 @@ You’ve successfully configured **AWS CLI** with multiple profiles, assumed an 
 
 
    
+
