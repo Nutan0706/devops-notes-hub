@@ -3,7 +3,7 @@
 ---
 
 <details>
-<strong>🧩 1. Benefits of Infrastructure as Code (IaC)</strong>
+## 1. Benefits of Infrastructure as Code (IaC)
 
 | Benefit | Description |
 |----------|-------------|
