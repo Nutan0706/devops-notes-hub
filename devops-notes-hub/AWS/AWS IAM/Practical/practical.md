@@ -7,10 +7,9 @@
 | # | Practical Task | Description |
 |---|----------------|-------------|
 | 1 | **Create IAM User** | Create a new IAM user with console access and apply password policy. |
-| 2 | **Attach Policy to User** | Attach a managed policy like `AmazonS3ReadOnlyAccess` to the user. |
-| 3 | **Create IAM Group** | Create a “Developers” group, attach policies, and add users to it. |
-| 4 | **Create IAM Role for EC2** | Create a role that allows EC2 instances to access S3. |
-| 5 | **Create Custom IAM Policy (JSON)** | Write a custom policy granting restricted access to a specific S3 bucket. |
+| 2 | **Create IAM Group** | Create a “Developers” group, attach policies, and add users to it. |
+| 3 | **Create IAM Role for EC2** | Create a role that allows EC2 instances to access S3. |
+| 4 | **Create Custom IAM Policy (JSON)** | Write a custom policy granting restricted access to a specific S3 bucket. |
 
 ---
 
@@ -49,3 +48,4 @@
 
 > 💡 **Pro Tip:**  
 > Always follow the **Least Privilege Principle** — grant only what’s necessary, monitor with Access Analyzer, and automate everything with Terraform.
+
