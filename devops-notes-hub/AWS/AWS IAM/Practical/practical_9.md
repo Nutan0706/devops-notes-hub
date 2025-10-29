@@ -24,3 +24,63 @@
    ```
  📁 This command creates configuration files at:
   ~/.aws/credentials and ~/.aws/config
+
+ ---
+
+ ### **Step 2: Verify Configuration**
+
+1. Run the following command:
+   ```bash
+   aws sts get-caller-identity --profile dev-profile
+   ```
+2. ✅ The output should display the User ARN, Account ID, and User ID, confirming a valid configuration.
+   🖼️ Add Screenshot: AWS CLI output showing user identity
+   
+---
+
+### **Step 3: Create IAM Role for Cross-Account or Role Assumption**
+1. Go to **AWS Console → IAM → Roles → Create Role**.  
+2. Select **Another AWS Account** or **Service (e.g., EC2)** depending on your use case.  
+3. Attach a simple policy, e.g., **AmazonS3ReadOnlyAccess**.  
+4. Note down the **Role ARN**, for example: arn:aws:iam::123456789012:role/S3ReadRole
+
+---
+
+### **Step 4: Add Role Assumption Configuration in CLI**
+1. Open the configuration file for editing: ~/.aws/config
+2. Add the following section:
+```ini
+[profile assumed-role]
+role_arn = arn:aws:iam::123456789012:role/S3ReadRole
+source_profile = dev-profile
+region = ap-south-1
+```
+3. This configuration means the assumed-role profile will assume the specified IAM role using credentials from dev-profile.
+
+---
+
+### **Step 5: Test Role Assumption**
+
+1. Run the following command:
+   ```bash
+   aws sts get-caller-identity --profile assumed-role
+   ```
+2. ✅ You should now see the Role ARN in the response, confirming that the role assumption worked successfully.
+
+---
+### **Step 6: Test API Access**
+
+1. For example, list S3 buckets using the assumed role:
+   ```bash
+   aws s3 ls --profile assumed-role
+   ```
+2. If permissions are correct, you’ll see the list of accessible S3 buckets.
+
+---
+
+## ✅ Outcome
+
+You’ve successfully configured **AWS CLI** with multiple profiles, assumed an **IAM Role**, and accessed **AWS services securely** through terminal-based authentication.
+
+
+   
