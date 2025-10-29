@@ -12,16 +12,14 @@ Create a **custom IAM policy** in JSON format that grants **restricted access** 
 2. Navigate to **IAM** service.
 3. In the left panel, click on **Policies**.
 4. Click **“Create policy”**.
-
-🖼️ _Add Screenshot: IAM → Policies page_
+<img width="1898" height="416" alt="image" src="https://github.com/user-attachments/assets/352e38b3-793f-4321-900e-fcc54ff0e106" />
 
 ---
 
 ### **Step 2: Switch to JSON Editor**
 1. In the **Create policy** wizard, select the **JSON** tab.  
 2. Remove any default JSON content.
-
-🖼️ _Add Screenshot: JSON editor screen_
+<img width="1825" height="605" alt="image" src="https://github.com/user-attachments/assets/66de0bd6-b839-405f-8d61-3000b36e2491" />
 
 ---
 
@@ -101,3 +99,4 @@ Paste the following JSON into the editor:
 - ✅ Policy grants access to only one specific S3 bucket.  
 - ✅ Correctly attached to user, group, or role.  
 - ✅ Permissions tested successfully via AWS CLI.
+
