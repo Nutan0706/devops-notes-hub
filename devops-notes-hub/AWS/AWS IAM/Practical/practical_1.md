@@ -27,7 +27,9 @@ Create a new IAM user in AWS Management Console with **console access** and enfo
 4. Choose **“Auto-generate password”** or create a custom password.
 5. Optionally, check the box **“User must create a new password at next sign-in”**.
 
-🖼️ _Add Screenshot: Add user details screen_
+🖼️ _Add Screenshot:
+<img width="1668" height="715" alt="image" src="https://github.com/user-attachments/assets/218db65e-39ee-4598-b4f3-33e558363fca" />
+
 
 ---
 
@@ -88,6 +90,7 @@ You have 3 options:
 
 > 📝 **Next Practical → [Create IAM Group and Add Users](#)**  
 > Continue documenting each practical and add screenshots for visual clarity.
+
 
 
 
