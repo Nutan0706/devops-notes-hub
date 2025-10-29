@@ -13,7 +13,8 @@ Create a new IAM user in AWS Management Console with **console access** and enfo
 3. On the left panel, click **Users**.
 
 🖼️ _Add Screenshot: IAM Dashboard_
-![Uploading image.png…]()
+<img width="1794" height="863" alt="image" src="https://github.com/user-attachments/assets/15efa00d-326d-44c2-88f2-f854e9e2c2c7" />
+
 
 
 ---
@@ -86,4 +87,5 @@ You have 3 options:
 
 > 📝 **Next Practical → [Create IAM Group and Add Users](#)**  
 > Continue documenting each practical and add screenshots for visual clarity.
+
 
