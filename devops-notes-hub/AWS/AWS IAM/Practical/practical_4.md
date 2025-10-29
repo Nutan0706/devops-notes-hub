@@ -53,16 +53,20 @@ Paste the following JSON into the editor:
 ```
 🔹 Replace my-devops-bucket with your actual S3 bucket name.
 
+<img width="1643" height="638" alt="image" src="https://github.com/user-attachments/assets/2d2c301b-8cfe-488f-bbe8-91d587cc31ae" />
+
+
 ---
 
-### *** Step 4: Review and Create Policy ***
-1.Click on **Next**.
-2.Add a **Policy name** — e.g., S3ReadOnlySpecificBucket.
-3.(Optional) Add a **description** like:
-   “Allows read-only access to a specific S3 bucket.”
-5.Click **Create policy**.
+### **Step 4: Review and Create Policy**
 
-🖼️ Add Screenshot: Review and create policy screen
+1. Click on **Next**.  
+2. Add a **Policy name** — e.g., `S3ReadOnlySpecificBucket`.  
+3. *(Optional)* Add a **description** like:  
+   _“Allows read-only access to a specific S3 bucket.”_  
+4. Click **Create policy**.  
+
+<img width="1681" height="525" alt="image" src="https://github.com/user-attachments/assets/1c2f3c90-23e9-4da7-8121-2becaf0c04db" />
 
 ---
 
@@ -73,7 +77,7 @@ Paste the following JSON into the editor:
 3. Navigate to **Permissions → Add permissions → Attach existing policies directly**.  
 4. Search for your custom policy **S3ReadOnlySpecificBucket** and attach it.
 
-🖼️ _Add Screenshot: Attach custom policy to user_
+<img width="1900" height="576" alt="image" src="https://github.com/user-attachments/assets/569d3f84-649d-4061-b9ec-a16c2bc254a2" />
 
 ---
 
@@ -99,4 +103,5 @@ Paste the following JSON into the editor:
 - ✅ Policy grants access to only one specific S3 bucket.  
 - ✅ Correctly attached to user, group, or role.  
 - ✅ Permissions tested successfully via AWS CLI.
+
 
