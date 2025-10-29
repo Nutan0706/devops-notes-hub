@@ -26,7 +26,7 @@ This enables secure access **without sharing credentials** between accounts.
 4. Enter **Account A’s AWS Account ID** (e.g., `111111111111`).
 5. (Optional) Enable **Require external ID** for extra security (commonly used in CI/CD setups).
 
-🖼️ _Add Screenshot: Trusted entity setup with Account A ID_
+<img width="1901" height="669" alt="image" src="https://github.com/user-attachments/assets/4309c752-209c-4d6d-af75-2bbf687130c3" />
 
 ---
 
@@ -37,14 +37,13 @@ This enables secure access **without sharing credentials** between accounts.
 2. Click **Next** → **Name the role** as `CrossAccountS3AccessRole`.
 3. Click **Create role**.
 
-🖼️ _Add Screenshot: Role creation with attached policy_
+<img width="1687" height="411" alt="image" src="https://github.com/user-attachments/assets/733cd368-5b2d-4a97-baff-e1f76694d4c5" />
 
 ---
 
 ### **Step 3: Copy the Role ARN**
 1. After creation, open the role you just made.  
 2. Copy its **Role ARN**, e.g.: arn:aws:iam::222222222222:role/CrossAccountS3AccessRole
-🖼️ _Add Screenshot: Role ARN from role summary page_
 
 ---
 
@@ -69,7 +68,7 @@ This enables secure access **without sharing credentials** between accounts.
 5. Name the policy → AllowCrossAccountRoleAssume.
 6. Click **Create policy**.
 
-🖼️ Add Screenshot: JSON for AssumeRole policy
+<img width="1436" height="542" alt="image" src="https://github.com/user-attachments/assets/61a09623-af61-4a48-8c5d-f0dd17cc24f7" />
 
 ---
 
@@ -81,7 +80,7 @@ This enables secure access **without sharing credentials** between accounts.
 4. Select the policy **AllowCrossAccountRoleAssume**.  
 5. Click **Save changes**.  
 
-🖼️ _Add Screenshot: Policy attached to user_
+<img width="1703" height="447" alt="image" src="https://github.com/user-attachments/assets/f34b2155-0f66-4501-9788-de38f3df3bc4" />
 
 ---
 
@@ -106,7 +105,6 @@ This enables secure access **without sharing credentials** between accounts.
   }
 }
 ```
-🖼️ Add Screenshot: CLI output for assume-role command
 
 ---
 ## 🧩 Step 7: Use Temporary Credentials
@@ -124,15 +122,11 @@ aws s3 ls
 ```
 ✅ If the configuration is correct, you’ll see the list of S3 buckets or objects accessible via the assumed role.
 
-🖼️ Screenshot:
-Add CLI output verifying successful cross-account access below:
-
-```
-
 ## ✅ Verification Checklist
 
 - [x] **IAM Role** created in the target account with the correct **trust policy**.  
 - [x] **IAM User** in the source account can **assume the role** successfully.  
 - [x] **Temporary credentials** generated and exported correctly.  
 - [x] Verified **access to target account resources** (e.g., S3 bucket listing works).
+
 
