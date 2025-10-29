@@ -2,16 +2,13 @@
 
 ---
 
-<details>
-## 1. Benefits of Infrastructure as Code (IaC)
+### 🧩 1. Benefits of Infrastructure as Code (IaC)
 
 | Benefit | Description |
 |----------|-------------|
 | **Consistent Setup** | Same environment every time, avoiding manual configuration errors. |
 | **Faster Deployment** | Automates infrastructure setup, saving time and effort. |
 | **Easy Tracking** | Version control with Git enables quick updates and rollbacks. |
-
-</details>
 
 ## 2. Terraform vs Other IaC Tools
 1. **Multi-Cloud Support** – Works with AWS, Azure, GCP, and many more.  
