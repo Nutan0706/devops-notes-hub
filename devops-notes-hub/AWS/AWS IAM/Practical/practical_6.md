@@ -13,8 +13,6 @@ This ensures users must authenticate using both a **password** and a **temporary
 2. Navigate to **IAM → Users**.
 3. Select the user (e.g., `devops-user`) who needs MFA enabled.
 
-🖼️ _Add Screenshot: IAM → Users page_
-
 ---
 
 ### **Step 2: Assign MFA Device**
@@ -24,7 +22,7 @@ This ensures users must authenticate using both a **password** and a **temporary
    - **Virtual MFA device** (recommended for testing, e.g., Google Authenticator or Authy)
    - **Hardware MFA device** (physical key)
 
-🖼️ _Add Screenshot: MFA device selection screen_
+<img width="1775" height="850" alt="image" src="https://github.com/user-attachments/assets/606b1ce8-f5f7-402f-b6eb-ac58fb5b4bf6" />
 
 ---
 
@@ -43,7 +41,7 @@ Once successful:
 - The MFA device will show as **Assigned**.
 - You can see the **device name** and **ARN** (e.g., `arn:aws:iam::111111111111:mfa/devops-user`).
 
-🖼️ _Add Screenshot: MFA assigned successfully_
+<img width="969" height="807" alt="image" src="https://github.com/user-attachments/assets/235c0b56-dab0-4f40-b36f-8b50a1d066d2" />
 
 ---
 
@@ -80,7 +78,6 @@ Now, enforce MFA using a **policy condition** that allows access only when MFA i
 
 ```
 3. Click Next, name the policy → EnforceMFAAccessPolicy, and Create policy.
-🖼️ Add Screenshot: Custom policy JSON
 
 ---
 
@@ -91,11 +88,9 @@ Now, enforce MFA using a **policy condition** that allows access only when MFA i
 3. Under the **Permissions** tab, click **Add permissions → Attach existing policies directly**.  
 4. Search for and select **EnforceMFAAccessPolicy**.  
 5. Click **Add permissions** to attach the policy.
+<img width="1674" height="424" alt="image" src="https://github.com/user-attachments/assets/1ce187b2-17dc-4ba4-ae67-7cc2ceec940c" />
 
 ---
-
-🖼️ **Screenshot:**
-
 ## 🧩 Step 7: Test MFA Enforcement
 
 1. **Log in as the IAM user without MFA** — you should see **AccessDenied** for most operations.  
@@ -121,8 +116,6 @@ aws s3 ls
 ✅ Expected output:
 Lists available S3 buckets, confirming MFA enforcement works properly.
 
-🖼️ Screenshot:
-
 ---
 ### ✅ **Verification Checklist**
 
@@ -130,6 +123,4 @@ Lists available S3 buckets, confirming MFA enforcement works properly.
 - ✅ Conditional policy created and attached.  
 - ✅ Verified that access is blocked without MFA.  
 - ✅ Confirmed successful access after MFA login.
-
-
 
