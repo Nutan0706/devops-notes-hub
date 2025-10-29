@@ -17,11 +17,11 @@
 
 | # | Practical Task | Description |
 |---|----------------|-------------|
-| 6 | **Cross-Account IAM Role Access** | Allow one AWS account to access resources in another via role assumption. |
-| 7 | **Enable MFA (Multi-Factor Authentication)** | Enforce MFA for IAM users with conditional policy. |
-| 8 | **Use IAM Policy Variables** | Add `${aws:username}` in policy to dynamically restrict access per user. |
-| 9 | **Implement Least Privilege Principle** | Audit and reduce unnecessary permissions using Access Advisor. |
-| 10 | **Integrate IAM with AWS CLI** | Configure CLI profiles, assume roles, and test API access via terminal. |
+| 5 | **Cross-Account IAM Role Access** | Allow one AWS account to access resources in another via role assumption. |
+| 6 | **Enable MFA (Multi-Factor Authentication)** | Enforce MFA for IAM users with conditional policy. |
+| 7 | **Use IAM Policy Variables** | Add `${aws:username}` in policy to dynamically restrict access per user. |
+| 8 | **Implement Least Privilege Principle** | Audit and reduce unnecessary permissions using Access Advisor. |
+| 9 | **Integrate IAM with AWS CLI** | Configure CLI profiles, assume roles, and test API access via terminal. |
 
 ---
 
@@ -48,4 +48,5 @@
 
 > 💡 **Pro Tip:**  
 > Always follow the **Least Privilege Principle** — grant only what’s necessary, monitor with Access Analyzer, and automate everything with Terraform.
+
 
