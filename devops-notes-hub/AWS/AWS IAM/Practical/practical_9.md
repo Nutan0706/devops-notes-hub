@@ -60,6 +60,7 @@ source_profile = dev-profile
 region = ap-south-1
 ```
 3. This configuration means the assumed-role profile will assume the specified IAM role using credentials from dev-profile.
+<img width="644" height="309" alt="image" src="https://github.com/user-attachments/assets/2942e2dc-4881-46b9-a64d-d37f1f190910" />
 
 ---
 
@@ -70,6 +71,7 @@ region = ap-south-1
    aws sts get-caller-identity --profile assumed-role
    ```
 2. ✅ You should now see the Role ARN in the response, confirming that the role assumption worked successfully.
+<img width="904" height="176" alt="image" src="https://github.com/user-attachments/assets/6e8fa641-2391-4b66-ace5-4c7c0b946250" />
 
 ---
 ### **Step 6: Test API Access**
@@ -79,6 +81,7 @@ region = ap-south-1
    aws s3 ls --profile assumed-role
    ```
 2. If permissions are correct, you’ll see the list of accessible S3 buckets.
+<img width="721" height="98" alt="image" src="https://github.com/user-attachments/assets/1235fb0c-038e-4622-8511-b4d425a7dfa1" />
 
 ---
 
@@ -88,4 +91,5 @@ You’ve successfully configured **AWS CLI** with multiple profiles, assumed an 
 
 
    
+
 
