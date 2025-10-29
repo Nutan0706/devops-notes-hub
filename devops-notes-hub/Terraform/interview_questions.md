@@ -36,16 +36,50 @@
 
 ---
 
-## 4. Variables
-1. primitive type :- string, number, bool
-2. complex type :- list, map, object
-3. important best practices
-  
-1. Explain how variable validation work in terraform.?
-2. what is the purpose of locals in terraform and how can they be used with variables.?
-3. Difference between variables and local variables.?
-4. How do you handle situttion where a variable must not be left unset.?
-5. what are variable groups in terraform cloud or terraform enterprise.?
+### 🧩 4. Variables
+
+| Type | Description | Example |
+|------|--------------|----------|
+| **Primitive Types** | Basic data types used in Terraform. | `string`, `number`, `bool` |
+| **Complex Types** | Data structures that hold multiple values. | `list`, `map`, `object` |
+
+---
+
+#### 🧠 Best Practices
+- Always define **default values** where possible.  
+- Use **variable validation** to ensure correct input.  
+- Keep **sensitive values** (like passwords, keys) marked as `sensitive = true`.  
+- Group variables logically and use **naming conventions**.  
+- Store environment-specific variables in separate files (e.g., `dev.tfvars`, `prod.tfvars`).  
+
+---
+
+#### 📘 Common Interview Questions
+
+| No. | Question |
+|-----|-----------|
+| 1 | Explain how **variable validation** works in Terraform. |
+| 2 | What is the **purpose of locals** in Terraform, and how can they be used with variables? |
+| 3 | What’s the **difference between variables and local variables**? |
+| 4 | How do you handle a situation where a **variable must not be left unset**? |
+| 5 | What are **variable groups** in Terraform Cloud or Terraform Enterprise? |
+
+---
+
+#### ⚙️ Extra Concepts (Recommended to Know)
+
+| Concept | Description |
+|----------|-------------|
+| **Variable Files (`.tfvars`)** | Used to set values for variables outside the main `.tf` file. |
+| **Environment Variables** | Terraform automatically loads variables prefixed with `TF_VAR_`. |
+| **Input vs Output Variables** | Inputs define external values; Outputs share computed results. |
+| **Sensitive Variables** | Hide values from CLI output to protect credentials. |
+| **Default Values** | Provide fallback values when inputs are not given. |
+
+---
+
+📝 **Pro Tip:**  
+Combine variables, locals, and outputs efficiently — variables for **inputs**, locals for **logic**, and outputs for **results**. This keeps your Terraform code **modular and reusable**.
 
 ---
 
