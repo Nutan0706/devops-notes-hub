@@ -4,9 +4,10 @@
 
 🔹 Step-by-Step Guide
 ### Step 1: Open IAM Console
-1.Go to AWS Management Console → IAM → Roles → Create Role
-2.Under Trusted Entity Type, choose AWS Service.
-3.Select Lambda as the trusted service and click Next.
+
+1. Go to **AWS Management Console → IAM → Roles → Create Role**  
+2. Under **Trusted Entity Type**, choose **AWS Service**.  
+3. Select **Lambda** as the trusted service and click **Next**.
 
 ---
 ### Step 2: Attach Minimal Permission Policy
@@ -102,6 +103,7 @@ Your Lambda function can now securely interact with **only the required resource
 - 🔹 Keep **separate roles** for different Lambda functions.  
 - 📊 Use **AWS CloudWatch Logs** to verify access and monitor **denied actions**.  
 - 🔄 **Rotate roles** and review access regularly using **IAM Access Advisor**.
+
 
 
 
