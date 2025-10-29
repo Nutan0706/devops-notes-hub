@@ -42,16 +42,18 @@ You have 3 options:
 ✅ For this practical, choose **Attach policies directly**  
 ✅ Select **`AmazonS3ReadOnlyAccess`** policy.
 
-🖼️ _Add Screenshot: Permission selection screen_
+<img width="1369" height="632" alt="image" src="https://github.com/user-attachments/assets/0417b199-4c1b-4e05-b1c3-478a184f927d" />
+
 
 ---
 
 ### **Step 4: Review and Create User**
 1. Review all the details carefully.
-2. Click **Create user**.
+2. Click **Next then Create user**.
 3. Note down the **Console sign-in URL** and **username/password** (for first login).
 
-🖼️ _Add Screenshot: User creation success page_
+<img width="1661" height="546" alt="image" src="https://github.com/user-attachments/assets/1258b33c-f98c-4c1a-a36c-a9e1bdf810a5" />
+
 
 ---
 
@@ -68,7 +70,8 @@ You have 3 options:
 
 4. Click **Save changes**.
 
-🖼️ _Add Screenshot: Password policy settings_
+<img width="1625" height="608" alt="image" src="https://github.com/user-attachments/assets/2a00e702-4ce8-4668-b536-d8d73eeb487a" />
+
 
 ---
 
@@ -81,15 +84,7 @@ You have 3 options:
 
 ---
 
-## 🧠 **Key Learnings**
-- Difference between **IAM user**, **group**, and **role**.  
-- How password policies improve AWS account security.  
-- Importance of granting **least privilege** access.
 
----
-
-> 📝 **Next Practical → [Create IAM Group and Add Users](#)**  
-> Continue documenting each practical and add screenshots for visual clarity.
 
 
 
