@@ -1,7 +1,6 @@
 # 🪣 Create an S3 Bucket — Step-by-step Guide (Console + AWS CLI)
 
-> **Goal:** Provide a clear, GitHub-ready, stepwise `.md` document to create an Amazon S3 bucket using both the **AWS Management Console** and the **AWS CLI**.  
-> After each step you'll add a snapshot — placeholders are included (`<!-- Add snapshot here -->`).
+> **Goal:** create an Amazon S3 bucket using both the **AWS Management Console** and the **AWS CLI**.  
 
 ---
 
@@ -215,4 +214,5 @@ Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
 
