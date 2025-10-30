@@ -58,7 +58,7 @@ aws s3api get-bucket-acl --bucket my-first-devops-bucket
 
 ---
 
-## Step 2: Make Bucket Public (ACL-Based)
+### Step 2: Make Bucket Public (ACL-Based)
 To make your bucket public using ACLs:
 ```bash 
 aws s3api put-bucket-acl \
@@ -111,3 +111,4 @@ And re-enable “Block all public access” in the Console.
 <!-- Add snapshot here -->
 
 ✅ Best Practice: Always keep production buckets private. Use IAM roles and bucket policies for controlled access.
+
