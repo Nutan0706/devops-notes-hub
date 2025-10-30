@@ -14,7 +14,7 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
 2. Select the bucket for which you want to create the lifecycle rule (e.g., `my-lifecycle-demo-bucket`).
 3. Click on the **Management** tab.
 
-<!-- Add snapshot here -->
+<img width="1589" height="430" alt="image" src="https://github.com/user-attachments/assets/fa003088-16e7-4a07-890b-d4c9b6d804ae" />
 
 > 💡 **Tip:** Lifecycle rules help automate storage cost optimization by moving infrequently accessed data to cheaper storage classes.
 
@@ -26,7 +26,8 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
 3. Enter a rule name — for example, `TransitionToGlacier`.  
 4. Choose **Apply to all objects in the bucket**, or define filters if you want to target specific prefixes or tags.
 
-<!-- Add snapshot here -->
+<img width="1525" height="382" alt="image" src="https://github.com/user-attachments/assets/8da16d5c-5af3-41af-851b-3ab0eec779db" />
+
 
 > ✅ **Note:** Using filters is useful when you want to apply different rules to different folders or file types.
 
@@ -39,7 +40,7 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
    - **Transition to Glacier Instant Retrieval** after **30 days** (example).  
    - Optionally, add further transitions, such as **Glacier Deep Archive** after **90 days**.
 
-<!-- Add snapshot here -->
+<img width="1533" height="676" alt="image" src="https://github.com/user-attachments/assets/4ee75d9b-2633-4ac2-a2f5-0d8602812496" />
 
 > 💡 **Tip:** Choose the right storage class based on your data access frequency — Glacier Instant Retrieval is faster but slightly more expensive than Deep Archive.
 
@@ -50,8 +51,6 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
 2. Set the **Days after creation** — for example, `180 days`.  
    This will permanently delete the objects after 180 days.
 
-<!-- Add snapshot here -->
-
 > ✅ **Note:** Expiration rules are irreversible — use them carefully for non-critical or versioned data.
 
 ---
@@ -60,9 +59,6 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
 1. Review your lifecycle configuration summary.  
 2. Ensure the rule status is set to **Enabled**.  
 3. Click **Create rule**.
-
-<!-- Add snapshot here -->
-
 > 💡 **Tip:** You can create multiple rules per bucket, each handling different folders, prefixes, or tags.
 
 ---
@@ -72,7 +68,8 @@ Configure **S3 Lifecycle Rules** to automatically transition objects from **Stan
 2. Confirm your rule is listed and **Enabled**.  
 3. Objects will automatically transition or expire as per your configuration after the set duration.
 
-<!-- Add snapshot here -->
+<img width="1513" height="443" alt="image" src="https://github.com/user-attachments/assets/ac37e6a0-ac24-4c4f-aa57-9bd552d3f117" />
+
 
 > ✅ **Note:** Lifecycle transitions are executed once per day by S3 — so effects may not be immediate.
 
@@ -134,4 +131,5 @@ Expected output will display your active lifecycle rule in JSON format.
    Optimize storage costs using lifecycle transitions
    Manage long-term retention with Glacier or Deep Archive
    Learn both console and CLI approaches for lifecycle configuration
+
 
