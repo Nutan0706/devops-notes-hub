@@ -12,11 +12,9 @@ Host a simple HTML website on an **S3 bucket** and access it via the **bucket we
 ### Step 1: Create a New S3 Bucket
 1. Go to **AWS Management Console → S3 → Create Bucket**.  
 2. Enter a globally unique bucket name (e.g., `my-static-website-demo`).  
-3. Choose your preferred region (e.g., `ap-south-1`).  
+3. Choose your preferred region (e.g., `us-east-1`).  
 4. **Uncheck** “Block all public access” (since we need public access for static hosting).  
 5. Acknowledge the warning and click **Create Bucket**.
-
-<!-- Add snapshot here -->
 
 > 💡 **Tip:** S3 static websites must be public to serve content to browsers. For secure use, combine with CloudFront later.
 
@@ -28,7 +26,7 @@ Host a simple HTML website on an **S3 bucket** and access it via the **bucket we
 3. Click **Upload → Add files** and select your `index.html` and `error.html`.  
 4. Click **Upload** to add the files to your bucket.
 
-<!-- Add snapshot here -->
+<img width="770" height="295" alt="image" src="https://github.com/user-attachments/assets/616b4a0e-02b3-4423-8664-33af6ec7b470" />
 
 ---
 
@@ -100,3 +98,4 @@ aws s3 sync ./website s3://my-static-website-demo/ --acl public-read
 ```
 This uploads all files in your local website directory and makes them publicly readable.
 <!-- Add snapshot here -->
+
