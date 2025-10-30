@@ -121,7 +121,7 @@ Create a file named `lifecycle.json` with the following content:
   --bucket my-lifecycle-demo-bucket
 ```
 Expected output will display your active lifecycle rule in JSON format.
-<!-- Add snapshot here -->
+<img width="909" height="335" alt="image" src="https://github.com/user-attachments/assets/2c6dc236-821c-44b1-b238-002bd50b6456" />
 
 ---
 
@@ -131,5 +131,6 @@ Expected output will display your active lifecycle rule in JSON format.
    Optimize storage costs using lifecycle transitions
    Manage long-term retention with Glacier or Deep Archive
    Learn both console and CLI approaches for lifecycle configuration
+
 
 
