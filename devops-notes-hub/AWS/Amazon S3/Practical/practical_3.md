@@ -13,8 +13,6 @@ Configure public/private access for S3 bucket objects and experiment with **Acce
 1. Go to **AWS Management Console → S3**.  
 2. Select your bucket (e.g., `my-first-devops-bucket`).
 
-<!-- Add snapshot here -->
-
 > 💡 **Tip:** Always double-check the bucket name — modifying wrong bucket permissions can cause data leaks.
 
 ---
@@ -24,15 +22,14 @@ Configure public/private access for S3 bucket objects and experiment with **Acce
 2. Scroll down to **Block Public Access (Bucket Settings)**.  
 3. Click **Edit**.
 
-<!-- Add snapshot here -->
+<img width="1627" height="708" alt="image" src="https://github.com/user-attachments/assets/a15dbc13-3ed7-47c5-b452-895427d2d514" />
+
 
 ---
 
 ### Step 3: Configure Public or Private Access
 - To **make the bucket private**, ensure all checkboxes are **enabled** (block all public access).  
 - To **make it public**, uncheck the boxes for “Block all public access” and confirm the warning.
-
-<!-- Add snapshot here -->
 
 > ✅ **Note:** Public buckets expose your data on the internet. Use only for testing or static website hosting.
 
@@ -41,8 +38,6 @@ Configure public/private access for S3 bucket objects and experiment with **Acce
 ### Step 4: Save Changes
 Click **Save Changes** and confirm your choice.  
 You’ll see the **Public access status** updated on the bucket overview page.
-
-<!-- Add snapshot here -->
 
 ---
 
@@ -111,4 +106,5 @@ And re-enable “Block all public access” in the Console.
 <!-- Add snapshot here -->
 
 ✅ Best Practice: Always keep production buckets private. Use IAM roles and bucket policies for controlled access.
+
 
