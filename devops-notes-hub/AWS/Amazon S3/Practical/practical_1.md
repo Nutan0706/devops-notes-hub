@@ -18,20 +18,18 @@
 ### Step 1 — Open the S3 Console
 1. Sign in to the [AWS Management Console].  
 2. In the Services search, type **S3** and click **S3** to open the S3 console.
-<!-- Add snapshot here -->
-
+<img width="1802" height="489" alt="image" src="https://github.com/user-attachments/assets/cc370292-c0c8-4d39-adb5-2b25b7c6b2b2" />
 ---
 
 ### Step 2 — Click **Create bucket**
 1. In the S3 dashboard, click **Create bucket** (blue button).
-<!-- Add snapshot here -->
-
+<img width="1739" height="632" alt="image" src="https://github.com/user-attachments/assets/45709dcd-f6f9-4d92-854a-079eee195078" />
 ---
 
 ### Step 3 — Configure basic bucket details
 1. **Bucket name**: Enter a globally unique name (e.g., `my-company-devops-bucket-2025`).  
-2. **Region**: Choose desired region (e.g., **Asia Pacific (Mumbai) ap-south-1**).  
-<!-- Add snapshot here -->
+2. **Region**: Choose desired region (e.g., **us-east-1**).  
+<img width="1600" height="631" alt="image" src="https://github.com/user-attachments/assets/5716a2c6-8058-4653-b584-ba89bed4a9e0" />
 
 > 💡 **Tip:** Keep a naming convention that includes environment and purpose, e.g., `acme-prod-logs-ap-south-1`.
 ---
@@ -40,7 +38,7 @@
 1. **Versioning** — Enable if you want to keep multiple versions of objects (useful for accidental deletes).  
 2. **Tags** — Add key/value tags for cost allocation (e.g., `Environment:dev`, `Owner:team-x`).  
 3. **Default encryption** — Enable and choose AWS-SSE-KMS or SSE-S3. KMS gives more control (key rotation, IAM policies).  
-<!-- Add snapshot here -->
+<img width="1499" height="710" alt="image" src="https://github.com/user-attachments/assets/59e6b4a2-e6f7-4e0d-b568-c253188eddf0" />
 
 > 🔐 **Tip:** For production buckets, set **Default encryption** to `aws:kms` and choose an appropriate KMS key.
 
@@ -49,8 +47,7 @@
 ### Step 5 — Block Public Access settings
 1. By default, **Block all public access** is enabled — keep this enabled unless you *explicitly* need public objects (e.g., static website).  
 2. If you need public access for specific objects, prefer object ACLs or bucket policy with careful scoping instead of disabling block in full.
-<!-- Add snapshot here -->
-
+<img width="1503" height="335" alt="image" src="https://github.com/user-attachments/assets/852a21a7-ac09-4c4d-acb4-f8e9da591f09" />
 > ⚠️ **Note:** Disabling Block Public Access without strict policies may expose data publicly. Double-check before proceeding.
 
 ---
@@ -58,7 +55,7 @@
 ### Step 6 — Review and Create
 1. Review all settings.  
 2. Click **Create bucket**.
-<!-- Add snapshot here -->
+<img width="1491" height="367" alt="image" src="https://github.com/user-attachments/assets/572c232c-a555-49a7-8280-3c5cf5614344" />
 
 > ✅ **Note:** After creation you will see your bucket listed in the S3 console.
 
@@ -71,7 +68,7 @@
 ### Step 1 — Choose a unique bucket name & region
 > Example:
 - Bucket name: `my-first-devops-bucket-2025`
-- Region: `ap-south-1`
+- Region: `us-east-1`
 
 ---
 
@@ -214,5 +211,6 @@ Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
 
 
