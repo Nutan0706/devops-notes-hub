@@ -42,7 +42,8 @@ This command:
    Uploads new files that don’t exist in the bucket
    Updates changed files
    Skips unchanged files
-<!-- Add snapshot here -->
+<img width="940" height="113" alt="image" src="https://github.com/user-attachments/assets/e2c7457e-ec05-40b2-b9c0-817b83a55db6" />
+
 💡 Tip: The sync command is ideal for incremental backups — it only uploads modified or missing files.
 
 ---
@@ -57,7 +58,7 @@ Expected output:
 2025-10-30 11:42:01     22 file1.txt
 2025-10-30 11:42:01     22 file2.txt
 ```
-<!-- Add snapshot here -->
+<img width="659" height="95" alt="image" src="https://github.com/user-attachments/assets/9306411d-4fa1-4b5b-b46e-85c1a919c0cc" />
 
 ---
 
@@ -69,7 +70,6 @@ aws s3 sync s3://my-devops-sync-bucket/ ./local-restore
 
 This will:
 Download all files from the S3 bucket into a new folder named local-restore.
-<!-- Add snapshot here -->
 ✅ Note: Use this method for restoring backups from S3 to your system.
 
 ---
@@ -128,3 +128,4 @@ By completing this task, you’ll:
   Understand how to use aws s3 sync for efficient backups
   Be able to upload, download, and mirror directories between local and S3
   Confidently automate periodic backups using AWS CLI commands
+
