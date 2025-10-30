@@ -92,6 +92,9 @@ Copy this link — this is your live website URL.
 💡 Tip: Bookmark this endpoint or add it to a README file for quick testing.
 <img width="1472" height="833" alt="image" src="https://github.com/user-attachments/assets/dc15557c-b29f-452a-ad64-afe74ef720b0" />
 
+for Error.
+<img width="1377" height="745" alt="image" src="https://github.com/user-attachments/assets/b699621e-bbd4-4169-99ba-8d0b89a88397" />
+
 ---
 
 ### Step 6: Test the Website
@@ -112,6 +115,7 @@ You can also upload your entire website folder from the CLI:
 aws s3 sync ./website s3://my-static-website-demo/ --acl public-read
 ```
 This uploads all files in your local website directory and makes them publicly readable.
-<!-- Add snapshot here -->
+
+
 
 
