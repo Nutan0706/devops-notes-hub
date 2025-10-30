@@ -35,6 +35,20 @@ Make the uploaded files publicly readable so users can access them via the websi
 
 #### Option 1: Using AWS Console
 - Select the uploaded files → Click **Actions → Make public using ACL**.
+``` bash
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::my-static-website-demo-877046/*"
+    }
+  ]
+}
+```
 
 #### Option 2: Using AWS CLI
 ```bash
@@ -64,7 +78,7 @@ aws s3api put-object-acl \
    Index document: index.html
    Error document: error.html
 6. Click Save Changes.
-<!-- Add snapshot here -->
+<img width="1509" height="552" alt="image" src="https://github.com/user-attachments/assets/843eab57-93ab-4502-a901-0023c8a1bb3c" />
 
 ---
 
@@ -76,6 +90,7 @@ http://my-static-website-demo.s3-website.ap-south-1.amazonaws.com
 Copy this link — this is your live website URL.
 <!-- Add snapshot here -->
 💡 Tip: Bookmark this endpoint or add it to a README file for quick testing.
+<img width="1472" height="833" alt="image" src="https://github.com/user-attachments/assets/dc15557c-b29f-452a-ad64-afe74ef720b0" />
 
 ---
 
@@ -98,4 +113,5 @@ aws s3 sync ./website s3://my-static-website-demo/ --acl public-read
 ```
 This uploads all files in your local website directory and makes them publicly readable.
 <!-- Add snapshot here -->
+
 
