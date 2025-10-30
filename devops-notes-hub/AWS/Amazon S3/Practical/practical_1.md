@@ -207,15 +207,16 @@ Fix: Choose a globally unique name (append timestamp or org id).
 Cause: IAM policy denies s3:CreateBucket.
 Fix: Ask your admin for the required permissions or adjust IAM policy.
 
-3 .Region mismatch errors with CLI
+ 3 .Region mismatch errors with CLI
 Cause: Using wrong --region or not specifying LocationConstraint for certain regions.
 Fix: Add --region or --create-bucket-configuration LocationConstraint=<region>.
 
-4. Public exposure when unintended
+ 4. Public exposure when unintended
 Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
 
 
 
