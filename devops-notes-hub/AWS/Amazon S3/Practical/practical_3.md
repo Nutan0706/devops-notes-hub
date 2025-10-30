@@ -49,6 +49,9 @@ Use this command to view your bucket’s current ACL:
 ```bash
 aws s3api get-bucket-acl --bucket my-first-devops-bucket
 ```
+
+<img width="627" height="280" alt="image" src="https://github.com/user-attachments/assets/0156a5fe-4d23-43d4-adf4-7f8718aa725d" />
+
 💡 Tip: ACLs define who can access your bucket and what actions they can perform.
 
 ---
@@ -106,5 +109,6 @@ And re-enable “Block all public access” in the Console.
 <!-- Add snapshot here -->
 
 ✅ Best Practice: Always keep production buckets private. Use IAM roles and bucket policies for controlled access.
+
 
 
