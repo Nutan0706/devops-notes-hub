@@ -78,7 +78,8 @@
 aws s3 mb s3://my-first-devops-bucket-2025 --region ap-south-1
 ```
 
-<!-- Add snapshot here -->
+<img width="703" height="259" alt="image" src="https://github.com/user-attachments/assets/28d6d3db-f236-4524-b737-7165228bd817" />
+
 ✅ Note: For us-east-1 the --region argument behaves differently; prefer specifying --create-bucket-configuration LocationConstraint=us-east-1 for CreateBucket calls when needed.
 
 ---
@@ -89,7 +90,6 @@ aws s3api put-bucket-versioning \
   --bucket my-first-devops-bucket-2025 \
   --versioning-configuration Status=Enabled
 ```
-<!-- Add snapshot here -->
 ---
 
 ### Step 4 — Enable default encryption with AWS KMS (example)
@@ -107,7 +107,6 @@ aws s3api put-bucket-encryption \
     }]
   }'
 ```
-<!-- Add snapshot here -->
 
 🔐 Tip: If you don’t want to manage KMS keys, use SSE-S3 by setting "SSEAlgorithm": "AES256".
 
@@ -142,8 +141,6 @@ aws s3api put-bucket-policy --bucket my-first-devops-bucket-2025 --policy file:/
 
 ```
 
-<!-- Add snapshot here -->
-
 ✅ Note: Replace my-first-devops-bucket-2025 with your bucket name. Test policies in a non-production environment first.
 
 ---
@@ -157,15 +154,19 @@ Verify via CLI
 # List buckets
 ```bash 
 aws s3 ls
+<img width="655" height="165" alt="image" src="https://github.com/user-attachments/assets/36627463-1c75-493b-a9fd-64df3fd70759" />
+
 
 # Check versioning
 aws s3api get-bucket-versioning --bucket my-first-devops-bucket-2025
+<img width="769" height="132" alt="image" src="https://github.com/user-attachments/assets/ba90ebae-5683-4983-a076-93ef92e6b466" />
+
 
 # Check encryption
 aws s3api get-bucket-encryption --bucket my-first-devops-bucket-2025
 ```
+<img width="852" height="266" alt="image" src="https://github.com/user-attachments/assets/6cd2cd02-5bc8-4806-882d-60cc3fd91080" />
 
-<!-- Add snapshot here -->
 ---
 
 ### Post-creation Recommendations
@@ -189,8 +190,7 @@ aws s3 rm s3://my-first-devops-bucket-2025 --recursive
 
 3. Remove the bucket
 aws s3 rb s3://my-first-devops-bucket-2025 --force
-
-<!-- Add snapshot here -->
+<img width="545" height="81" alt="image" src="https://github.com/user-attachments/assets/07570f7f-24e2-4b37-9a55-a7dc06b268ae" />
 
 ---
 ### Troubleshooting & Common Errors
@@ -211,6 +211,7 @@ Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
 
 
 
