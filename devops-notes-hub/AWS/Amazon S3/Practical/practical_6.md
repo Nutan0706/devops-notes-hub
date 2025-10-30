@@ -119,7 +119,7 @@ Create a file named `lifecycle.json` with the following content:
 
 ---
 ### Step 3: Verify the Applied Configuration
-'''bash 
+```bash 
    aws s3api get-bucket-lifecycle-configuration \
   --bucket my-lifecycle-demo-bucket
 ```
@@ -134,3 +134,4 @@ Expected output will display your active lifecycle rule in JSON format.
    Optimize storage costs using lifecycle transitions
    Manage long-term retention with Glacier or Deep Archive
    Learn both console and CLI approaches for lifecycle configuration
+
