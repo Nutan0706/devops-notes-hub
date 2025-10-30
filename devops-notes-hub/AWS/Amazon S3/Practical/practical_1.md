@@ -5,25 +5,6 @@
 
 ---
 
-## Table of Contents
-1. [Prerequisites](#prerequisites)
-2. [Naming & Region Best Practices](#naming--region-best-practices)
-3. [Console: Step-by-step](#console-step-by-step)
-4. [CLI: Step-by-step](#cli-step-by-step)
-5. [Verify the Bucket](#verify-the-bucket)
-6. [Post-creation Recommendations](#post-creation-recommendations)
-7. [Cleanup (Optional)](#cleanup-optional)
-8. [Troubleshooting & Tips](#troubleshooting--tips)
-
----
-
-## Prerequisites
-- An AWS account with permissions to create S3 buckets (`s3:CreateBucket`, `s3:PutBucket*` as needed).  
-- If using AWS CLI: AWS CLI installed and configured (`aws configure`) with an IAM user or role that has S3 permissions.  
-> 💡 **Tip:** Use an IAM user with least privilege required for this task (do not use root credentials).
-
----
-
 ## Naming & Region Best Practices
 - Bucket names must be globally unique across **all** AWS accounts.  
 - Use only lowercase letters, numbers, hyphens (`-`) and periods (`.`) (avoid underscores).  
@@ -204,33 +185,34 @@ aws s3api get-bucket-encryption --bucket my-first-devops-bucket-2025
 If this bucket was created for testing and you want to remove it:
 ⚠️ Warning: Deleting a bucket will permanently delete all objects (including versions) unless retained elsewhere.
 
-# Remove all objects (non-versioned)
+1. Remove all objects (non-versioned)
 aws s3 rm s3://my-first-devops-bucket-2025 --recursive
 
-# If versioned, remove versions (careful!)
+2. If versioned, remove versions (careful!)
 # Use the aws s3api delete-object with VersionId in a loop or use lifecycle to expire versions.
 
-# Remove the bucket
+3. Remove the bucket
 aws s3 rb s3://my-first-devops-bucket-2025 --force
 
 <!-- Add snapshot here -->
 
 ---
 ### Troubleshooting & Common Errors
-# Bucket name already exists
+1. Bucket name already exists
 Error: BucketAlreadyOwnedByYou or BucketAlreadyExists
 Fix: Choose a globally unique name (append timestamp or org id).
 
-# AccessDenied when creating bucket
+ 2. AccessDenied when creating bucket
 Cause: IAM policy denies s3:CreateBucket.
 Fix: Ask your admin for the required permissions or adjust IAM policy.
 
-# Region mismatch errors with CLI
+3 .Region mismatch errors with CLI
 Cause: Using wrong --region or not specifying LocationConstraint for certain regions.
 Fix: Add --region or --create-bucket-configuration LocationConstraint=<region>.
 
-# Public exposure when unintended
+4. Public exposure when unintended
 Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
