@@ -154,15 +154,20 @@ Verify via CLI
 # List buckets
 ```bash 
 aws s3 ls
+
+```
+
 <img width="655" height="165" alt="image" src="https://github.com/user-attachments/assets/36627463-1c75-493b-a9fd-64df3fd70759" />
 
-
 # Check versioning
+```bash
 aws s3api get-bucket-versioning --bucket my-first-devops-bucket-2025
+```
 <img width="769" height="132" alt="image" src="https://github.com/user-attachments/assets/ba90ebae-5683-4983-a076-93ef92e6b466" />
 
 
 # Check encryption
+```bash 
 aws s3api get-bucket-encryption --bucket my-first-devops-bucket-2025
 ```
 <img width="852" height="266" alt="image" src="https://github.com/user-attachments/assets/6cd2cd02-5bc8-4806-882d-60cc3fd91080" />
@@ -211,6 +216,7 @@ Cause: Bucket policy, ACL, or disabled Block Public Access.
 Fix: Re-enable Block Public Access, remove public ACLs/policies, and validate using AWS Trusted Advisor or S3 console warnings.
 
 ✅ Tip: Use the AWS CLI aws s3api get-bucket-policy and the S3 console "Permissions" tab to review effective access.
+
 
 
 
