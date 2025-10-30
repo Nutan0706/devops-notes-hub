@@ -2,8 +2,6 @@
 
 Replicate objects automatically from a **source** S3 bucket in one AWS region to a **destination** bucket in another region for **disaster recovery** and **low-latency access**.
 
-> ✅ **Note:** This guide uses AWS CLI and is designed to be pasted as a single GitHub `.md` file. After each numbered step, you’ll see an HTML comment placeholder to add a snapshot.
-
 ---
 
 ## 📦 Prerequisites
@@ -442,3 +440,4 @@ aws s3api head-object --bucket "$DST_BUCKET" --key "demo/${TEST_FILE}" \
 7. Monitor with S3 Inventory/CloudWatch. Clean up when done.
 
 > 💡 **Tip:** Commit this `.md` to your repo as `s3-crr-setup.md`. As your environment evolves, parameterize with tools like **Make**, **Terraform**, or **AWS CDK** for repeatability.
+
