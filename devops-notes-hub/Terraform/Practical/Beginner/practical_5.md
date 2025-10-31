@@ -34,8 +34,6 @@ provider "aws" {
 # Create S3 bucket
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "terraform-demo-bucket-12345"  # Bucket name must be globally unique
-  acl    = "private"
-
   tags = {
     Name        = "Terraform Demo Bucket"
     Environment = "Dev"
@@ -115,6 +113,7 @@ Verify from AWS Console:
 
 1. Go to **AWS Console → S3**
 2. Check if the bucket named **terraform-demo-bucket-12345** is created.
+<img width="1466" height="280" alt="image" src="https://github.com/user-attachments/assets/6d3bb320-cb4f-49c6-bf15-c8b741d3dbad" />
 
 Or verify using the AWS CLI:
 
@@ -127,6 +126,7 @@ aws s3 ls | grep terraform-demo-bucket
 ```
 2025-10-31 15:23:45 terraform-demo-bucket-12345
 ```
+<img width="467" height="44" alt="image" src="https://github.com/user-attachments/assets/407cdaa5-88d7-4d87-a3b3-6097500ba5de" />
 
 ---
 
@@ -190,20 +190,25 @@ Create **`outputs.tf`** to display bucket details after creation:
 ```hcl
 output "bucket_name" {
   description = "Name of the S3 bucket"
-  value       = aws_s3_bucket.my_bucket.bucket
+  value       = aws_s3_bucket.demo_bucket.bucket
 }
 
 output "bucket_arn" {
   description = "ARN of the S3 bucket"
-  value       = aws_s3_bucket.my_bucket.arn
+  value       = aws_s3_bucket.demo_bucket.arn
 }
 ```
 
 After applying, run:
 
 ```bash
+terraform validate
+terraform plan
+terraform apply -auto-approve
 terraform output
 ```
+<img width="556" height="62" alt="image" src="https://github.com/user-attachments/assets/374da207-05f4-4d8f-b8f4-f0722d52aa1b" />
+
 
 ✅ Expected Output:
 
@@ -240,4 +245,5 @@ Destroy complete! Resources: 1 destroyed.
 | 4    | Apply to Create S3   | `terraform apply -auto-approve`   |
 | 5    | View Outputs         | `terraform output`                |
 | 6    | Destroy Bucket       | `terraform destroy -auto-approve` |
+
 
