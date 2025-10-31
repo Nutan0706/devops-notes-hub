@@ -27,53 +27,55 @@ This file defines the actual resources that will use variables.
 
 ```hcl
 provider "aws" {
-  region = var.aws_region
+    region = var.aws_region
+}
+
+resource "aws_key_pair" "ec2_key" {
+    key_name = var.key_name
+    public_key = file("C:/Users/Nutan.patel/Desktop/All/terraform/terraform-variables-demo/id_rsa.pub")
 }
 
 resource "aws_security_group" "ec2_sg" {
-  name        = "terraform-sg"
-  description = "Allow SSH access"
+    name = "terraform-sg"
+    description = "Allow SSH access"
 
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = var.sg_name
-  }
+    ingress {
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    tags = {
+        Name = var.sg_name
+    }
 }
 
 resource "aws_instance" "ec2_instance" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
-  security_groups = [aws_security_group.ec2_sg.name]
-
-  tags = {
-    Name = var.instance_name
-  }
+    ami = var.ami_id
+    instance_type = var.instance_type
+    key_name = var.key_name
+    security_groups = [aws_security_group.ec2_sg.name]
+    tags = {
+        Name = var.instance_name
+    }
 }
 
-# Output values
 output "instance_id" {
-  description = "EC2 Instance ID"
-  value       = aws_instance.ec2_instance.id
+    description = "EC2 Instance ID"
+    value = aws_instance.ec2_instance.id
 }
 
 output "instance_public_ip" {
-  description = "EC2 Public IP Address"
-  value       = aws_instance.ec2_instance.public_ip
+    description = "EC2 Instance Public IP"
+    value = aws_instance.ec2_instance.public_ip
 }
+
 ```
 
 ---
@@ -249,5 +251,6 @@ Destroy complete! Resources: 2 destroyed.
 | 6    | Destroy Resources      | `terraform destroy -auto-approve` |
 
 ---
+
 
 
