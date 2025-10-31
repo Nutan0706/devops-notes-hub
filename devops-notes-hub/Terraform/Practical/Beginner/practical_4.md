@@ -67,6 +67,7 @@ aws sts get-caller-identity
     "Arn": "arn:aws:iam::123456789012:user/your-username"
 }
 ```
+<img width="519" height="117" alt="image" src="https://github.com/user-attachments/assets/897c466c-c46f-4e0f-8b2b-6fe244752b4f" />
 
 This ensures your credentials file (`~/.aws/credentials`) is set up correctly.
 
@@ -119,6 +120,7 @@ Providers required by configuration:
 .
 └── provider[registry.terraform.io/hashicorp/aws] ~> 5.0
 ```
+<img width="510" height="118" alt="image" src="https://github.com/user-attachments/assets/ff1f3975-7869-444c-a586-4bd819bd5933" />
 
 ---
 
@@ -197,4 +199,5 @@ Success! The configuration is valid.
 | 5    | List Providers         | `terraform providers`         |
 
 ---
+
 
