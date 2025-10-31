@@ -17,6 +17,7 @@
    ```bash
    terraform -version
    ```
+   <img width="453" height="60" alt="image" src="https://github.com/user-attachments/assets/ad7cd0cd-a92c-4f04-9e31-53ecf4f1f6ea" />
 
 #### 🧩 For macOS:
 
@@ -59,6 +60,8 @@ Terraform needs provider credentials to interact with cloud services.
    ```bash
    sudo apt install awscli -y
    ```
+   <img width="679" height="359" alt="image" src="https://github.com/user-attachments/assets/e8d63e68-2278-4b80-86fe-e6370bfa8724" />
+
 2. Configure it:
 
    ```bash
@@ -104,6 +107,7 @@ terraform init
 ```
 Terraform has been successfully initialized!
 ```
+<img width="612" height="219" alt="image" src="https://github.com/user-attachments/assets/69f59beb-4d4d-41c1-b737-e1e5d3d95d4b" />
 
 ---
 
@@ -120,6 +124,7 @@ terraform validate
 ```
 Success! The configuration is valid.
 ```
+<img width="378" height="51" alt="image" src="https://github.com/user-attachments/assets/856edd60-1cd1-4b14-952f-d48fada906e8" />
 
 ---
 
@@ -138,6 +143,7 @@ Providers required by configuration:
 .
 └── provider[registry.terraform.io/hashicorp/aws]
 ```
+<img width="497" height="104" alt="image" src="https://github.com/user-attachments/assets/f38d3bda-124f-49f7-ace6-91db7f41bb22" />
 
 ---
 
@@ -175,6 +181,7 @@ rm -rf .terraform .terraform.lock.hcl
 
 ✅ **Practical Completed Successfully!**
 You’ve now installed, configured, and verified Terraform setup for AWS provider integration.
+
 
 
 
