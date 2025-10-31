@@ -16,7 +16,7 @@
 5. Open a new terminal and verify:
    ```bash
    terraform -version
-```
+   ```
 
 #### 🧩 For macOS:
 
@@ -175,5 +175,6 @@ rm -rf .terraform .terraform.lock.hcl
 
 ✅ **Practical Completed Successfully!**
 You’ve now installed, configured, and verified Terraform setup for AWS provider integration.
+
 
 
