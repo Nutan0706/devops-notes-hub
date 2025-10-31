@@ -251,5 +251,3 @@ Destroy complete! Resources: 2 destroyed.
 ---
 
 
-Would you like me to include the **next practical (#4 – Use Terraform State & Backend Configuration)** in the same consistent `.md` format?
-```
