@@ -95,6 +95,7 @@ terraform init
 ```
 Terraform has been successfully initialized!
 ```
+<img width="719" height="348" alt="image" src="https://github.com/user-attachments/assets/f584c85b-0ecf-4bb4-93c8-d4655b02b42f" />
 
 ---
 
@@ -105,12 +106,21 @@ Validate syntax and configuration:
 ```bash
 terraform validate
 ```
+You may issue like 
+```
+Invalid value for "path" parameter: no file exists at this function works only with files │ that are distributed as part of the configuration source code, so if this file will be created by a resource in this configuration you must instead obtain this result │ from an attribute of that resource.
+```
+if yes just run this command in your terminal
+```bash
+ssh-keygen -t rsa -b 4096 -f id_rsa
+```
 
 ✅ Expected Output:
 
 ```
 Success! The configuration is valid.
 ```
+<img width="364" height="51" alt="image" src="https://github.com/user-attachments/assets/f626eb90-2b9d-4e2f-b382-d5ec1867fdce" />
 
 ---
 
@@ -127,6 +137,7 @@ terraform plan
 ```
 Plan: 3 to add, 0 to change, 0 to destroy.
 ```
+<img width="461" height="395" alt="image" src="https://github.com/user-attachments/assets/4548c099-0271-4c05-83b9-01793ef9dbb8" />
 
 ---
 
@@ -143,6 +154,7 @@ terraform apply -auto-approve
 ```
 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 ```
+<img width="566" height="454" alt="image" src="https://github.com/user-attachments/assets/4f131602-1e98-476a-9be7-cd0f2b99fbd8" />
 
 You’ll see your EC2 instance ID and public IP in the output.
 
@@ -153,6 +165,7 @@ You’ll see your EC2 instance ID and public IP in the output.
 1. Go to **AWS Console → EC2 → Instances**
 2. Check that a new instance named **Terraform-EC2** is running
 3. Copy its **Public IP**
+<img width="1528" height="754" alt="image" src="https://github.com/user-attachments/assets/86cdd1ee-9153-4742-bb4a-cf2d831c99d2" />
 
 ---
 
@@ -169,6 +182,7 @@ Example:
 ```bash
 ssh -i ~/.ssh/id_rsa ec2-user@54.210.99.123
 ```
+<img width="735" height="503" alt="image" src="https://github.com/user-attachments/assets/0d5e6817-6dbf-4413-84c1-0768df33480f" />
 
 ---
 
@@ -185,6 +199,7 @@ terraform destroy -auto-approve
 ```
 Destroy complete! Resources: 3 destroyed.
 ```
+<img width="608" height="444" alt="image" src="https://github.com/user-attachments/assets/d25bae5b-dc3e-43b2-a44e-73221cf0e4d5" />
 
 ---
 
@@ -203,3 +218,4 @@ Destroy complete! Resources: 3 destroyed.
 
 ✅ **Practical Completed Successfully!**
 You’ve successfully created, verified, and destroyed an EC2 instance using Terraform — including key pairs and security groups.
+
