@@ -1,4 +1,3 @@
-Excellent 💡 — here’s your **complete single `.md` file** for **Terraform Advanced Practical #4 — Use Terraform Modules**, written in your consistent GitHub documentation format.
 ## 🎯 Practical Task: **Use Terraform Modules**
 
 **Key Focus / Concept:**  
@@ -373,4 +372,5 @@ Destroy complete! Resources: 5 destroyed.
 | 5    | Initialize Terraform         | `terraform init`                         |
 | 6    | Validate and Apply           | `terraform apply -auto-approve`          |
 | 7    | Destroy Infrastructure       | `terraform destroy -auto-approve`        |
+
 
