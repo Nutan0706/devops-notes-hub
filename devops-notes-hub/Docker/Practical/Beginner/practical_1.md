@@ -166,6 +166,6 @@ You should see the **NGINX welcome page** — meaning Docker is working perfectl
 * [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 * [Install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
 
-Would you like me to make similar `.md` GitHub-ready content for **Practical 2: Build and Run Your First Docker Container** next?
-```
+
+
 
