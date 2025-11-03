@@ -145,6 +145,7 @@ aws ec2 describe-security-groups --query "SecurityGroups[*].{Name:GroupName,ID:G
 
 ✅ Example Output:
 
+```
 ----------------------------------------------------------
 |                DescribeSecurityGroups                  |
 +----------------+-----------------+----------------------+
@@ -152,7 +153,7 @@ aws ec2 describe-security-groups --query "SecurityGroups[*].{Name:GroupName,ID:G
 +----------------+-----------------+----------------------+
 | Allow SSH/HTTP | sg-0a12b3c4d5e6 | terraform-web-sg     |
 +----------------+-----------------+----------------------+
-
+```
 ---
 
 ### **Step 9 — Add Variables for Flexibility**
@@ -294,5 +295,6 @@ Destroy complete! Resources: 1 destroyed.
 | 4    | Apply Configuration   | `terraform apply -auto-approve`    |
 | 5    | Verify Security Group | `aws ec2 describe-security-groups` |
 | 6    | Destroy Resources     | `terraform destroy -auto-approve`  |
+
 
 
