@@ -164,6 +164,7 @@ terraform apply -auto-approve
 ```
 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 ```
+<img width="607" height="236" alt="image" src="https://github.com/user-attachments/assets/c17abeb4-a0af-4151-a911-9f9eb4e24c1f" />
 
 ---
 
@@ -172,6 +173,10 @@ Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 1. Go to **AWS Console → EC2 → Instances**
 2. Check that your EC2 instance is running
 3. Navigate to the **Storage** tab and verify that your **EBS volume** is attached
+
+<img width="1440" height="320" alt="image" src="https://github.com/user-attachments/assets/6349f096-fc8c-4dd2-8dac-9185f4da567e" />
+
+<img width="1483" height="410" alt="image" src="https://github.com/user-attachments/assets/e2ed20e0-28b3-4306-8d33-472e819c7341" />
 
 Or verify via AWS CLI:
 
@@ -190,6 +195,7 @@ aws ec2 describe-volumes --filters Name=tag:Name,Values=Terraform-EBS-Volume --q
 | us-east-1a | vol-0abc12345def6789 | in-use |
 +----------+--------------+---------------------+
 ```
+<img width="1144" height="162" alt="image" src="https://github.com/user-attachments/assets/a9519332-df48-407e-84dd-319ad9d0a912" />
 
 ---
 
@@ -216,6 +222,7 @@ xvdh    202:112  0    5G  0 disk
 ```
 
 The extra device (`/dev/xvdh`) is your attached EBS volume.
+<img width="498" height="177" alt="image" src="https://github.com/user-attachments/assets/244cb492-9fe7-4a15-baf7-c48cc38d3390" />
 
 ---
 
@@ -253,6 +260,8 @@ instance_id = "i-0abc123def456"
 volume_id = "vol-0abc12345def6789"
 attachment_state = "/dev/sdh"
 ```
+<img width="322" height="90" alt="image" src="https://github.com/user-attachments/assets/b5f20029-f7f7-4dda-b902-2fa0f2b96b37" />
+
 
 ---
 
@@ -294,3 +303,4 @@ Destroy complete! Resources: 3 destroyed.
 | 5    | Verify Volume          | `aws ec2 describe-volumes`        |
 | 6    | SSH & Check            | `lsblk`                           |
 | 7    | Destroy Resources      | `terraform destroy -auto-approve` |
+
