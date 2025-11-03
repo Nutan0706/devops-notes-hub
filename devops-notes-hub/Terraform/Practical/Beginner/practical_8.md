@@ -147,6 +147,9 @@ bucket_name = "terraform-dev-bucket-12345"
 environment = "dev"
 ```
 
+<img width="511" height="121" alt="image" src="https://github.com/user-attachments/assets/03318c8f-3ed6-4678-9374-5bea2a169cb2" />
+
+
 ---
 
 ### **Step 8 — Apply for Production Environment**
@@ -235,4 +238,5 @@ Destroy complete! Resources: 1 destroyed.
 | 3    | Apply Prod Configuration | `terraform apply -var-file="prod.tfvars" -auto-approve`  |
 | 4    | Verify Buckets           | `aws s3 ls`                                              |
 | 5    | Destroy Environment      | `terraform destroy -var-file="dev.tfvars" -auto-approve` |
+
 
