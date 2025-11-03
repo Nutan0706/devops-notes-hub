@@ -257,5 +257,3 @@ Check the S3 bucket again — the state file remains stored, now updated to refl
 | 6    | Verify State in S3         | AWS Console or CLI                |
 | 7    | Destroy Resources          | `terraform destroy -auto-approve` |
 
-Would you like me to continue with **Advanced Practical #4 — Configure Auto Scaling and Load Balancer (ALB + ASG)** next in the same `.md` format?
-```
