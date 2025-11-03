@@ -147,6 +147,8 @@ terraform state rm aws_s3_bucket.main_bucket
 Removed aws_s3_bucket.main_bucket
 Successfully removed 1 resource instance(s).
 ```
+<img width="708" height="386" alt="image" src="https://github.com/user-attachments/assets/b0aad4d3-ea3d-4ae1-8823-d2b4087d66b0" />
+
 
 After removal, check the list again:
 
@@ -159,6 +161,7 @@ terraform state list
 ```
 (no resources found)
 ```
+<img width="286" height="53" alt="image" src="https://github.com/user-attachments/assets/6fef61ce-38ca-43e2-951a-e465d8fa61e3" />
 
 ---
 
@@ -234,4 +237,5 @@ Destroy complete! Resources: 1 destroyed.
 | 6    | Remove Resource       | `terraform state rm <resource>`   |
 | 7    | Refresh State         | `terraform refresh`               |
 | 8    | Destroy Resources     | `terraform destroy -auto-approve` |
+
 
