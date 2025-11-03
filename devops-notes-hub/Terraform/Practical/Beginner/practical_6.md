@@ -143,6 +143,9 @@ or use the AWS CLI command:
 aws ec2 describe-security-groups --query "SecurityGroups[*].{Name:GroupName,ID:GroupId,Description:Description}" --output table
 ```
 
+<img width="1688" height="70" alt="image" src="https://github.com/user-attachments/assets/97473c10-31c6-4a2f-9057-d19bacb023ad" />
+
+
 ✅ Example Output:
 
 ```
@@ -154,6 +157,8 @@ aws ec2 describe-security-groups --query "SecurityGroups[*].{Name:GroupName,ID:G
 | Allow SSH/HTTP | sg-0a12b3c4d5e6 | terraform-web-sg     |
 +----------------+-----------------+----------------------+
 ```
+<img width="979" height="166" alt="image" src="https://github.com/user-attachments/assets/1f5a4743-c0a0-4651-8d81-1d0d3273b4d5" />
+
 ---
 
 ### **Step 9 — Add Variables for Flexibility**
@@ -295,6 +300,7 @@ Destroy complete! Resources: 1 destroyed.
 | 4    | Apply Configuration   | `terraform apply -auto-approve`    |
 | 5    | Verify Security Group | `aws ec2 describe-security-groups` |
 | 6    | Destroy Resources     | `terraform destroy -auto-approve`  |
+
 
 
 
