@@ -271,6 +271,7 @@ Outputs:
 security_group_id = "sg-0a12b3c4d5e6"
 security_group_name = "terraform-web-sg"
 ```
+<img width="702" height="141" alt="image" src="https://github.com/user-attachments/assets/e0bde924-4304-464d-ac04-e2e5d2e7ba0e" />
 
 ---
 
@@ -300,6 +301,7 @@ Destroy complete! Resources: 1 destroyed.
 | 4    | Apply Configuration   | `terraform apply -auto-approve`    |
 | 5    | Verify Security Group | `aws ec2 describe-security-groups` |
 | 6    | Destroy Resources     | `terraform destroy -auto-approve`  |
+
 
 
 
