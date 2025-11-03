@@ -36,6 +36,9 @@ Before installation, ensure your system meets these requirements:
    docker --version
    docker run hello-world
    ```
+   <img width="250" height="52" alt="image" src="https://github.com/user-attachments/assets/e0579fdc-5a52-485d-8740-0df3561404ec" />
+   
+
 
 7. You should see a message:
 
@@ -43,6 +46,7 @@ Before installation, ensure your system meets these requirements:
    Hello from Docker!
    This message shows that your installation appears to be working correctly.
    ```
+   <img width="506" height="96" alt="image" src="https://github.com/user-attachments/assets/bb8ee0a8-16c9-4d50-897a-b4bb009941b9" />
 
 ---
 
@@ -165,6 +169,7 @@ You should see the **NGINX welcome page** — meaning Docker is working perfectl
 * [Docker Official Documentation](https://docs.docker.com/)
 * [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 * [Install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
+
 
 
 
