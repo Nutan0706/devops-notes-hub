@@ -1,0 +1,191 @@
+# 🧩 Practical 3 — Pull and Run Images from Docker Hub
+
+### 🎯 **Objective**
+Learn how to pull images from Docker Hub, run containers from those images, and manage them using essential Docker commands like `docker pull`, `docker run`, and `docker ps`.
+
+---
+
+## 🧠 Key Concepts
+
+- **Docker Hub:** A public cloud-based registry where you can find and share container images.
+- **docker pull:** Downloads an image from Docker Hub to your local system.
+- **docker run:** Creates and starts a new container from an image.
+- **docker ps:** Lists running containers.
+
+---
+
+## 🪟 Step 1: Verify Docker Setup
+
+Before starting, make sure Docker is installed and running properly.
+
+```bash
+docker --version
+docker info
+```
+
+If you get outputs without errors, Docker is ready to use.
+
+---
+
+## 🧭 Step 2: Search for Images on Docker Hub
+
+You can search for popular images using:
+
+```bash
+docker search nginx
+```
+
+Example output:
+
+```
+NAME                      DESCRIPTION                                     STARS     OFFICIAL
+nginx                     Official build of Nginx.                        18000     [OK]
+```
+
+---
+
+## 🐳 Step 3: Pull an Image from Docker Hub
+
+Use the `docker pull` command to download an image to your system.
+
+```bash
+docker pull nginx
+```
+
+You can also specify a version (tag):
+
+```bash
+docker pull nginx:latest
+```
+
+Check downloaded images:
+
+```bash
+docker images
+```
+
+Expected output:
+
+```
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    605c77e624dd   2 weeks ago    142MB
+```
+
+---
+
+## ⚙️ Step 4: Run a Container from the Pulled Image
+
+Now, create and start a container using the `nginx` image.
+
+```bash
+docker run -d -p 8080:80 --name mynginx nginx
+```
+
+### Explanation:
+
+* `-d` → Run container in detached mode (in background)
+* `-p 8080:80` → Map container’s port 80 to host port 8080
+* `--name mynginx` → Assigns a custom name to the container
+* `nginx` → Name of the image
+
+Check if it’s running:
+
+```bash
+docker ps
+```
+
+You’ll see output like:
+
+```
+CONTAINER ID   IMAGE     COMMAND                  STATUS         PORTS                  NAMES
+a1b2c3d4e5f6   nginx     "/docker-entrypoint.…"   Up 10 seconds  0.0.0.0:8080->80/tcp   mynginx
+```
+
+---
+
+## 🌐 Step 5: Verify the Container
+
+Open your browser and go to:
+
+👉 [http://localhost:8080](http://localhost:8080)
+
+You should see the **Nginx Welcome Page**, confirming that your container is running successfully.
+
+---
+
+## 🧩 Step 6: Manage Containers
+
+* **List all containers (running + stopped)**
+
+  ```bash
+  docker ps -a
+  ```
+
+* **Stop a running container**
+
+  ```bash
+  docker stop mynginx
+  ```
+
+* **Restart a container**
+
+  ```bash
+  docker start mynginx
+  ```
+
+* **Remove a container**
+
+  ```bash
+  docker rm mynginx
+  ```
+
+---
+
+## 🧹 Step 7: Manage Images
+
+* **List all images**
+
+  ```bash
+  docker images
+  ```
+
+* **Remove an image**
+
+  ```bash
+  docker rmi nginx
+  ```
+
+---
+
+## 🔄 Step 8: Combine Pull + Run (Shortcut)
+
+You can directly run an image without manually pulling it:
+
+```bash
+docker run hello-world
+```
+
+👉 Docker automatically pulls the image if it’s not available locally.
+
+---
+
+## ✅ Step 9: Practical Summary
+
+| Step | Task            | Command                                       | Description                          |
+| ---- | --------------- | --------------------------------------------- | ------------------------------------ |
+| 1    | Verify Setup    | `docker --version`                            | Ensure Docker is working             |
+| 2    | Search Images   | `docker search <image>`                       | Find available images                |
+| 3    | Pull Image      | `docker pull <image>`                         | Download image locally               |
+| 4    | Run Container   | `docker run -d -p <host>:<container> <image>` | Start container                      |
+| 5    | List Containers | `docker ps`                                   | View running containers              |
+| 6    | Stop/Remove     | `docker stop` / `docker rm`                   | Manage containers                    |
+| 7    | Remove Images   | `docker rmi <image>`                          | Clean up                             |
+| 8    | Auto Pull       | `docker run <image>`                          | Pulls image automatically if missing |
+
+---
+
+## 📘 References
+
+* [Docker Hub — Official Registry](https://hub.docker.com/)
+* [Docker CLI Documentation](https://docs.docker.com/engine/reference/commandline/docker/)
+* [Docker Run Command Guide](https://docs.docker.com/engine/reference/run/)
