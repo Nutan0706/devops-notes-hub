@@ -88,6 +88,7 @@ terraform state list
 ```
 aws_s3_bucket.demo_bucket
 ```
+<img width="380" height="56" alt="image" src="https://github.com/user-attachments/assets/009d3fb0-26f2-423b-9ba3-9c77d24ed30b" />
 
 ---
 
@@ -111,6 +112,7 @@ resource "aws_s3_bucket" "demo_bucket" {
   ...
 }
 ```
+<img width="665" height="661" alt="image" src="https://github.com/user-attachments/assets/512151b9-8915-465f-912d-ca69a62a29cb" />
 
 ---
 
@@ -232,3 +234,4 @@ Destroy complete! Resources: 1 destroyed.
 | 6    | Remove Resource       | `terraform state rm <resource>`   |
 | 7    | Refresh State         | `terraform refresh`               |
 | 8    | Destroy Resources     | `terraform destroy -auto-approve` |
+
