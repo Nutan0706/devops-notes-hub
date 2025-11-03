@@ -169,6 +169,7 @@ Outputs:
 bucket_name = "terraform-prod-bucket-12345"
 environment = "prod"
 ```
+<img width="483" height="137" alt="image" src="https://github.com/user-attachments/assets/b035ddc5-0efc-4acc-a3d0-04653152b526" />
 
 ---
 
@@ -184,6 +185,8 @@ Or verify via AWS CLI:
 ```bash
 aws s3 ls | grep terraform
 ```
+<img width="435" height="63" alt="image" src="https://github.com/user-attachments/assets/4a974924-da3e-404e-b512-4a6619d65934" />
+
 
 ✅ Example Output:
 
@@ -238,5 +241,6 @@ Destroy complete! Resources: 1 destroyed.
 | 3    | Apply Prod Configuration | `terraform apply -var-file="prod.tfvars" -auto-approve`  |
 | 4    | Verify Buckets           | `aws s3 ls`                                              |
 | 5    | Destroy Environment      | `terraform destroy -var-file="dev.tfvars" -auto-approve` |
+
 
 
