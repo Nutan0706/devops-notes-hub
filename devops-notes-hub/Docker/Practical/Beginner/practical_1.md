@@ -35,7 +35,7 @@ Before installation, ensure your system meets these requirements:
    ```bash
    docker --version
    docker run hello-world
-```
+   ```
 
 7. You should see a message:
 
@@ -168,3 +168,4 @@ You should see the **NGINX welcome page** — meaning Docker is working perfectl
 
 Would you like me to make similar `.md` GitHub-ready content for **Practical 2: Build and Run Your First Docker Container** next?
 ```
+
