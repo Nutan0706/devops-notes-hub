@@ -1,147 +1,221 @@
 ## 🎯 Practical Task: **Integrate Terraform with Jenkins**
 
 **Key Focus / Concept:**  
-Automate **Terraform Plan** and **Apply** operations using a **Jenkins CI/CD pipeline** — enabling infrastructure provisioning through version-controlled, repeatable, and auditable workflows.
+Automate **Terraform plan and apply** operations using a **Jenkins CI/CD pipeline**, enabling continuous infrastructure deployment and reducing manual intervention.
 
 ---
 
 ## 🪜 Step-by-Step Implementation
 
-### **Step 1 — Prerequisites**
+### **Goal**
 
-Before starting:
-- Jenkins server is installed and running  
-- Terraform is installed on the Jenkins node  
-- AWS CLI and credentials are configured on Jenkins  
-- Git repository contains your Terraform code (e.g., `main.tf`, `variables.tf`, etc.)
-
----
-
-### **Step 2 — Install Required Plugins in Jenkins**
-
-Navigate to **Manage Jenkins → Plugins → Available Plugins** and install:
-
-✅ **Plugins to Install:**
-- **Terraform Plugin**
-- **Pipeline Plugin**
-- **Git Plugin**
-- **Credentials Binding Plugin**
-
-Once installed, restart Jenkins.
+✅ Configure Jenkins to:
+1. Clone Terraform code from GitHub  
+2. Initialize Terraform  
+3. Run `terraform plan` and `terraform apply`  
+4. Manage credentials securely using Jenkins credentials store  
+5. Automate infrastructure provisioning with every commit
 
 ---
 
-### **Step 3 — Configure AWS Credentials in Jenkins**
+## 🌍 Part 1 — Terraform Configuration
 
-1. Go to **Manage Jenkins → Credentials → Global → Add Credentials**  
-2. Select **Kind: AWS Credentials**  
-3. Enter your:
-   - **Access Key ID**
-   - **Secret Access Key**
-4. Add an ID like:  
-```
+### **Step 1 — Create Working Directory**
 
-aws-terraform-creds
-
+```bash
+mkdir terraform-jenkins-integration
+cd terraform-jenkins-integration
 ```
 
 ---
 
-### **Step 4 — Prepare Terraform Code in GitHub**
+### **Step 2 — Create Terraform Code**
 
-Your Git repository structure should look like:
-
-```
-
-terraform-jenkins-demo/
-├── main.tf
-├── variables.tf
-├── outputs.tf
-└── Jenkinsfile
-
-````
-
-Example `main.tf`:
+#### File: `main.tf`
 
 ```hcl
 provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "jenkins_demo_bucket" {
-  bucket = "terraform-jenkins-demo-bucket-12345"
-  acl    = "private"
+resource "aws_instance" "jenkins_demo_ec2" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  key_name      = var.key_name
 
   tags = {
-    Name        = "Terraform-Jenkins-Demo"
-    Environment = "CI-CD"
+    Name = "Terraform-Jenkins-Demo"
+    Environment = var.environment
   }
 }
-````
+```
+
+#### File: `variables.tf`
+
+```hcl
+variable "key_name" {
+  description = "AWS key pair name"
+  type        = string
+  default     = "terraform-key"
+}
+
+variable "environment" {
+  description = "Environment name"
+  type        = string
+  default     = "dev"
+}
+```
+
+#### File: `outputs.tf`
+
+```hcl
+output "instance_public_ip" {
+  description = "Public IP of the EC2 instance"
+  value       = aws_instance.jenkins_demo_ec2.public_ip
+}
+```
+
+✅ Push this Terraform code to your GitHub repository.
+Example:
+
+```
+https://github.com/<your-username>/terraform-jenkins-demo.git
+```
 
 ---
 
-### **Step 5 — Create a Jenkinsfile**
+## 🤖 Part 2 — Jenkins Configuration
 
-Create a **`Jenkinsfile`** in your repo root to define the Terraform pipeline.
+### **Step 3 — Install Jenkins (if not installed)**
+
+#### On Ubuntu EC2 (recommended)
+
+```bash
+sudo apt update -y
+sudo apt install openjdk-17-jdk -y
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt update -y
+sudo apt install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+```
+
+Access Jenkins at:
+
+```
+http://<jenkins-server-ip>:8080
+```
+
+---
+
+### **Step 4 — Install Required Plugins**
+
+Go to:
+**Manage Jenkins → Plugins → Available Plugins**
+
+Install the following:
+
+* 🧩 **Git Plugin**
+* ⚙️ **Pipeline Plugin**
+* ☁️ **Terraform Plugin** (optional, but recommended)
+* 🔐 **Credentials Binding Plugin**
+
+---
+
+### **Step 5 — Configure AWS Credentials in Jenkins**
+
+1. Go to **Manage Jenkins → Credentials → System → Global Credentials (unrestricted)**
+2. Click **Add Credentials**
+3. Choose **Kind: AWS Credentials**
+4. Enter:
+
+   * **Access Key ID** → `<your-aws-access-key>`
+   * **Secret Access Key** → `<your-aws-secret-key>`
+   * **ID** → `aws_creds`
+   * **Description** → `AWS credentials for Terraform`
+
+✅ Jenkins now securely stores your AWS credentials for pipeline use.
+
+---
+
+### **Step 6 — Create Jenkins Pipeline Job**
+
+1. Go to **Jenkins Dashboard → New Item**
+2. Enter job name → `terraform-jenkins-pipeline`
+3. Select **Pipeline** → Click **OK**
+
+---
+
+## 🚀 Part 3 — Jenkins Pipeline Setup
+
+### **Step 7 — Write Jenkinsfile**
+
+#### File: `Jenkinsfile`
 
 ```groovy
 pipeline {
     agent any
 
     environment {
-        AWS_DEFAULT_REGION = 'us-east-1'
-        TF_WORKSPACE = 'default'
+        AWS_CREDS = credentials('aws_creds')
     }
 
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                echo '📦 Checking out code from Git...'
-                git branch: 'main', url: 'https://github.com/your-username/terraform-jenkins-demo.git'
+                echo "Cloning Terraform project from GitHub..."
+                git branch: 'main', url: 'https://github.com/<your-username>/terraform-jenkins-demo.git'
             }
         }
 
-        stage('Setup Terraform') {
+        stage('Init') {
             steps {
-                echo '⚙️ Initializing Terraform...'
-                sh 'terraform init'
+                echo "Initializing Terraform..."
+                sh '''
+                terraform init
+                '''
             }
         }
 
-        stage('Validate Terraform') {
+        stage('Validate') {
             steps {
-                echo '✅ Validating Terraform configuration...'
+                echo "Validating Terraform configuration..."
                 sh 'terraform validate'
             }
         }
 
-        stage('Plan Infrastructure') {
+        stage('Plan') {
             steps {
-                echo '🧠 Generating Terraform plan...'
-                sh 'terraform plan -out=tfplan'
+                echo "Running Terraform Plan..."
+                sh '''
+                export AWS_ACCESS_KEY_ID=${AWS_CREDS_USR}
+                export AWS_SECRET_ACCESS_KEY=${AWS_CREDS_PSW}
+                terraform plan -out=tfplan
+                '''
             }
         }
 
-        stage('Approval for Apply') {
+        stage('Apply') {
+            when {
+                expression { return params.APPLY_INFRA }
+            }
             steps {
-                timeout(time: 1, unit: 'HOURS') {
-                    input message: 'Approve Terraform Apply?', ok: 'Apply Now'
-                }
+                echo "Applying Terraform configuration..."
+                sh '''
+                export AWS_ACCESS_KEY_ID=${AWS_CREDS_USR}
+                export AWS_SECRET_ACCESS_KEY=${AWS_CREDS_PSW}
+                terraform apply -auto-approve tfplan
+                '''
             }
         }
 
-        stage('Apply Infrastructure') {
+        stage('Output') {
             steps {
-                echo '🚀 Applying Terraform changes...'
-                sh 'terraform apply -auto-approve tfplan'
-            }
-        }
-
-        stage('Post Apply') {
-            steps {
-                echo '🧾 Terraform Apply Completed Successfully!'
+                echo "Fetching Outputs..."
                 sh 'terraform output'
             }
         }
@@ -149,8 +223,7 @@ pipeline {
 
     post {
         always {
-            echo '🧹 Cleaning workspace...'
-            deleteDir()
+            echo "Pipeline execution completed."
         }
     }
 }
@@ -158,129 +231,137 @@ pipeline {
 
 ---
 
-### **Step 6 — Create a New Jenkins Pipeline Job**
+### **Step 8 — Add Pipeline Parameters (Optional)**
 
-1. Go to **Jenkins Dashboard → New Item → Pipeline**
-2. Enter name: `Terraform-CI-CD`
-3. Choose **Pipeline**
-4. Under **Pipeline → Definition**, select:
+To control deployments manually:
 
-   * **Pipeline script from SCM**
-   * **SCM: Git**
-   * Enter your **repository URL**
-   * Branch: `main`
-5. Save the configuration.
+In Jenkins UI:
+
+1. Open Job → Click **Configure**
+2. Under **Pipeline → This project is parameterized**
+3. Add **Boolean Parameter**
+
+   * Name: `APPLY_INFRA`
+   * Default: `false`
+   * Description: "Check this to apply Terraform infrastructure"
+
+✅ Now, you can run **only plan** or **plan + apply** as needed.
 
 ---
 
-### **Step 7 — Trigger the Pipeline**
+### **Step 9 — Configure Jenkins Environment**
 
-Now click **“Build Now”** on your Jenkins job.
-Jenkins will automatically:
+In Jenkins UI:
 
-1. Clone your repo
-2. Initialize Terraform
-3. Validate configuration
-4. Generate a plan
-5. Wait for manual approval
-6. Apply changes on approval
+1. Go to **Manage Jenkins → Global Tool Configuration**
+2. Under **Terraform**, click **Add Terraform**
 
-✅ Example Console Output:
+   * Name: `terraform`
+   * Install automatically: ✅ Checked
 
-```
-[Checkout Code] Checking out code from Git...
-[Setup Terraform] Initializing the backend...
-Terraform has been successfully initialized!
-[Validate Terraform] Success! The configuration is valid.
-[Plan Infrastructure] Plan: 1 to add, 0 to change, 0 to destroy.
-[Approval for Apply] Waiting for manual confirmation...
-[Apply Infrastructure] Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+Alternatively, install manually on Jenkins server:
+
+```bash
+sudo apt-get install unzip -y
+wget https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip
+sudo unzip terraform_1.7.0_linux_amd64.zip -d /usr/local/bin/
+terraform -version
 ```
 
 ---
 
-### **Step 8 — Verify in AWS Console**
+## 🧩 Part 4 — Pipeline Execution
+
+### **Step 10 — Run the Pipeline**
+
+1. Go to Jenkins Dashboard → Select job → Click **Build with Parameters**
+2. Keep `APPLY_INFRA` unchecked to just test `plan`
+3. Check `APPLY_INFRA` for full deployment
+
+✅ Example Pipeline Flow:
+
+```
+[Checkout] → [Init] → [Validate] → [Plan] → [Apply] → [Output]
+```
+
+---
+
+### **Step 11 — Verify in AWS Console**
 
 Go to:
 
-* **S3 → Buckets**
-  Check for the newly created bucket:
+* **EC2 → Instances**
+* Check for instance: `Terraform-Jenkins-Demo`
 
-  ```
-  terraform-jenkins-demo-bucket-12345
-  ```
+✅ Tags:
+
+```
+Name = Terraform-Jenkins-Demo
+Environment = dev
+```
 
 Or verify via CLI:
 
 ```bash
-aws s3 ls | grep terraform-jenkins-demo-bucket
-```
-
-✅ Output:
-
-```
-2025-10-31 12:34:56 terraform-jenkins-demo-bucket-12345
+aws ec2 describe-instances --filters "Name=tag:Name,Values=Terraform-Jenkins-Demo" \
+--query "Reservations[*].Instances[*].PublicIpAddress"
 ```
 
 ---
 
-### **Step 9 — Optional Enhancements**
+### **Step 12 — Clean Up Resources**
 
-#### ✅ Add Backend Configuration
+In Jenkins, create a destroy stage or run manually:
 
-You can configure **remote backend** (S3 + DynamoDB) for shared state management.
-
-#### ✅ Add Terraform Workspace Support
-
-```groovy
-sh 'terraform workspace select dev || terraform workspace new dev'
+```bash
+terraform destroy -auto-approve
 ```
 
-#### ✅ Add Notifications (Slack/Email)
-
-Integrate Jenkins post-build steps for alerts after successful Terraform apply.
-
----
-
-### **Step 10 — Destroy Infrastructure (CI/CD Controlled)**
-
-Add a manual cleanup stage in Jenkins for environment destruction.
+To automate in pipeline, add a **"Destroy"** stage at the end:
 
 ```groovy
-stage('Destroy Infrastructure') {
+stage('Destroy') {
+    when {
+        expression { return params.DESTROY_INFRA }
+    }
     steps {
-        input message: 'Confirm Destroy?', ok: 'Destroy Now'
-        sh 'terraform destroy -auto-approve'
+        echo "Destroying Terraform resources..."
+        sh '''
+        export AWS_ACCESS_KEY_ID=${AWS_CREDS_USR}
+        export AWS_SECRET_ACCESS_KEY=${AWS_CREDS_PSW}
+        terraform destroy -auto-approve
+        '''
     }
 }
 ```
+
+Then add another boolean parameter:
+`DESTROY_INFRA` → default `false`
 
 ---
 
 ## 🧠 Key Concepts Learned
 
-| Concept                                   | Description                                                                         |
-| ----------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Terraform Automation**                  | Running `terraform plan` and `apply` automatically through Jenkins.                 |
-| **Infrastructure as Code (IaC) Pipeline** | Ensures infrastructure is tested and deployed through version-controlled pipelines. |
-| **Manual Approval**                       | Prevents accidental deployment with Jenkins `input` step.                           |
-| **Terraform Plugin in Jenkins**           | Simplifies Terraform integration with Jenkins jobs.                                 |
-| **Environment Variables**                 | Manage AWS region, workspace, and credentials dynamically.                          |
+| Concept                            | Description                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------- |
+| **Terraform Automation**           | Using Jenkins to automatically run Terraform commands (init, plan, apply). |
+| **Pipeline as Code (Jenkinsfile)** | Defines CI/CD flow in code format for version control.                     |
+| **AWS Credentials Binding**        | Securely inject AWS keys using Jenkins credentials plugin.                 |
+| **Terraform Plan/Apply Stages**    | Separate planning from applying for safer deployments.                     |
+| **Conditional Parameters**         | Allows manual control of infrastructure changes in Jenkins.                |
 
 ---
 
 ## 🧾 Summary
 
-| Step | Task                      | Command / Action                    |
-| ---- | ------------------------- | ----------------------------------- |
-| 1    | Install Plugins           | Terraform, Git, Pipeline            |
-| 2    | Configure AWS Credentials | `aws-terraform-creds`               |
-| 3    | Create Jenkinsfile        | Define CI/CD stages                 |
-| 4    | Create Jenkins Job        | Type: Pipeline (SCM)                |
-| 5    | Run Pipeline              | Auto Terraform Init → Plan → Apply  |
-| 6    | Verify AWS Resource       | Check S3 bucket                     |
-| 7    | Destroy Infrastructure    | Manual stage or `terraform destroy` |
+| Step | Task                      | Command / Action                                |
+| ---- | ------------------------- | ----------------------------------------------- |
+| 1    | Setup Jenkins & Terraform | Install both on server                          |
+| 2    | Add AWS Credentials       | Jenkins → Credentials → Add AWS                 |
+| 3    | Clone GitHub Repo         | `git branch: 'main'` in Jenkinsfile             |
+| 4    | Create Jenkinsfile        | Define stages (init, plan, apply)               |
+| 5    | Run Pipeline              | Jenkins → Build with Parameters                 |
+| 6    | Verify EC2                | AWS Console or CLI                              |
+| 7    | Destroy Resources         | Add Destroy stage or manual `terraform destroy` |
 
-
-Would you like me to continue with **Advanced Practical #9 — Implement Terraform Workspaces (Dev, Stage, Prod Environments)** next in the same `.md` format?
-```
+---
