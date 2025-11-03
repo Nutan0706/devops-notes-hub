@@ -22,12 +22,14 @@ docker --version
 ```
 
 If you see a version output like `Docker version 27.0.0, build ...`, Docker is installed correctly.
+<img width="247" height="35" alt="image" src="https://github.com/user-attachments/assets/964c91fa-901f-48c1-8a51-9fbf031f62ea" />
 
 Next, check the Docker service status (Linux only):
 
 ```bash
 sudo systemctl status docker
 ```
+<img width="515" height="160" alt="image" src="https://github.com/user-attachments/assets/0df809c3-a21a-4ec0-b962-432b4c6c8ba9" />
 
 If it’s inactive, start it using:
 
@@ -44,6 +46,8 @@ Run the default test image to confirm everything works correctly.
 ```bash
 docker run hello-world
 ```
+<img width="473" height="62" alt="image" src="https://github.com/user-attachments/assets/7893981e-f19b-4ecd-98e7-605bcfbd07ec" />
+
 
 ### 🔍 What Happens Internally:
 
@@ -70,6 +74,7 @@ You should see something like:
 REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
 hello-world    latest    d1165f221234   2 weeks ago     13.3kB
 ```
+<img width="371" height="50" alt="image" src="https://github.com/user-attachments/assets/ddf82c93-9f3b-433e-97e0-1e0a81edb875" />
 
 ---
 
@@ -80,6 +85,7 @@ List **running containers**:
 ```bash
 docker ps
 ```
+<img width="424" height="28" alt="image" src="https://github.com/user-attachments/assets/211dd196-252f-4db5-b7ce-2a851f486674" />
 
 List **all containers** (including stopped ones):
 
@@ -88,6 +94,7 @@ docker ps -a
 ```
 
 You’ll see the `hello-world` container with a status like `Exited (0)`.
+<img width="563" height="73" alt="image" src="https://github.com/user-attachments/assets/b2e7e843-1b19-41a0-a893-b5e1b928c2a7" />
 
 ---
 
@@ -104,6 +111,7 @@ To remove the image:
 ```bash
 docker rmi hello-world
 ```
+<img width="529" height="102" alt="image" src="https://github.com/user-attachments/assets/04811206-2c00-41c8-9c6d-1f96afbe1d1a" />
 
 ---
 
@@ -163,3 +171,4 @@ If you see this message, Docker is fully functional and ready for further practi
 
 * [Docker Documentation — Get Started](https://docs.docker.com/get-started/)
 * [Docker CLI Reference](https://docs.docker.com/engine/reference/commandline/docker/)
+
