@@ -63,8 +63,8 @@ WORKDIR /app
 # Step 4: Copy files from local to image
 COPY message.txt /app/message.txt
 
-# Step 5: Run command during build
-RUN apt-get update && apt-get install -y cat
+# Step 5: (Optional) Update system — no need to install cat
+RUN apt-get update -y && apt-get install -y coreutils
 
 # Step 6: Expose port (for reference)
 EXPOSE 8080
@@ -120,7 +120,8 @@ Output:
 Hello from Dockerfile Demo!
 ```
 
-🎉 You just built and ran a container from your custom Dockerfile!
+<img width="619" height="42" alt="image" src="https://github.com/user-attachments/assets/bfa5a6db-769c-468e-bcb1-48db63262ee2" />
+
 
 ---
 
@@ -179,6 +180,7 @@ IMAGE          CREATED        CREATED BY                                      SI
 ```
 
 Each instruction in your Dockerfile adds a new **layer** to the image.
+<img width="861" height="237" alt="image" src="https://github.com/user-attachments/assets/5ebfab15-72af-4c46-9df8-91986b8118b4" />
 
 ---
 
@@ -242,4 +244,5 @@ Both output the same, but `ENTRYPOINT` locks the executable while `CMD` can be r
 * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 * [Docker Build Command](https://docs.docker.com/engine/reference/commandline/build/)
 * [Best Practices for Writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
 
