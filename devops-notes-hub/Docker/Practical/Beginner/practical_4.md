@@ -29,6 +29,7 @@ my-docker-app/
 ├── Dockerfile
 └── index.html
 ```
+<img width="389" height="55" alt="image" src="https://github.com/user-attachments/assets/85801afc-eb80-483a-aa86-481137e46fa9" />
 
 ---
 
@@ -88,6 +89,8 @@ Run the following command from the same directory as your Dockerfile:
 ```bash
 docker build -t my-custom-nginx .
 ```
+<img width="678" height="251" alt="image" src="https://github.com/user-attachments/assets/617c789e-dec5-4d36-8bae-bda19f3b2fed" />
+
 
 ### 🔍 Explanation:
 
@@ -117,6 +120,7 @@ Expected output:
 REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
 my-custom-nginx     latest    a1b2c3d4e5f6   1 minute ago     144MB
 ```
+<img width="517" height="61" alt="image" src="https://github.com/user-attachments/assets/ac3e5fa3-96a2-4365-a2dc-063d45f56b81" />
 
 ---
 
@@ -127,6 +131,7 @@ Run the image as a container and map it to port 8080 on your host:
 ```bash
 docker run -d -p 8080:80 --name myweb my-custom-nginx
 ```
+<img width="717" height="35" alt="image" src="https://github.com/user-attachments/assets/8c098cf4-47e1-40e2-9820-68b589080751" />
 
 Check if it’s running:
 
@@ -153,6 +158,7 @@ You should see:
 ```
 Hello from My Custom Docker Image!
 ```
+<img width="663" height="736" alt="image" src="https://github.com/user-attachments/assets/4ff06fd3-09de-48f4-9201-155dd6eeb3bc" />
 
 ---
 
@@ -175,6 +181,7 @@ Remove the custom image:
 ```bash
 docker rmi my-custom-nginx
 ```
+<img width="584" height="119" alt="image" src="https://github.com/user-attachments/assets/ba81a66f-658d-45ed-a55d-0cc74f921edf" />
 
 ---
 
@@ -198,3 +205,4 @@ docker rmi my-custom-nginx
 * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 * [Docker Build Command](https://docs.docker.com/engine/reference/commandline/build/)
 * [Nginx Official Image on Docker Hub](https://hub.docker.com/_/nginx)
+
