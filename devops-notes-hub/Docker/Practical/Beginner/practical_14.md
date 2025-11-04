@@ -87,6 +87,8 @@ Output:
 Hello from the Docker container!
 Arguments passed:
 ```
+<img width="399" height="42" alt="image" src="https://github.com/user-attachments/assets/5d7a49c2-cf88-4c3a-8a39-74e45ef09c0c" />
+
 
 Now try passing an argument:
 
@@ -287,3 +289,4 @@ docker rmi cmd-demo entrypoint-demo combo-demo
 * [Docker CMD Command](https://docs.docker.com/engine/reference/builder/#cmd)
 * [Docker ENTRYPOINT Command](https://docs.docker.com/engine/reference/builder/#entrypoint)
 * [Docker Best Practices for Image Builds](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
