@@ -1,0 +1,227 @@
+# 🧩 Practical 12 — Environment Variables in Containers
+
+### 🎯 **Objective**
+Learn how to set and manage environment variables in Docker containers using the `-e` flag and `.env` files.
+
+---
+
+## 🧠 Key Concepts
+
+| Concept | Description |
+|----------|--------------|
+| **Environment Variable (ENV)** | A key-value pair that configures container behavior at runtime. |
+| **-e flag** | Used with `docker run` to set environment variables directly from CLI. |
+| **.env file** | A file containing environment variables, automatically loaded during container creation. |
+| **Dockerfile ENV** | Sets default values inside the image build. |
+
+---
+
+## ⚙️ Step 1: Verify Docker Installation
+
+Before starting, check that Docker is up and running:
+```bash
+docker --version
+docker info
+```
+
+---
+
+## 🧱 Step 2: Use `-e` Flag to Pass Environment Variables
+
+Run a container with environment variables using `-e`:
+
+```bash
+docker run -d --name env-demo -e USERNAME=admin -e PASSWORD=secret alpine sleep 3600
+```
+
+### Explanation:
+
+| Flag                | Description                                      |
+| ------------------- | ------------------------------------------------ |
+| `-d`                | Run container in detached mode                   |
+| `--name env-demo`   | Assigns a name to the container                  |
+| `-e KEY=VALUE`      | Sets environment variables                       |
+| `alpine sleep 3600` | Lightweight image running a simple sleep command |
+
+---
+
+## 🧩 Step 3: Verify Environment Variables Inside the Container
+
+Check environment variables inside the container:
+
+```bash
+docker exec -it env-demo env
+```
+
+Output:
+
+```
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+USERNAME=admin
+PASSWORD=secret
+```
+
+You can also inspect specific variables:
+
+```bash
+docker exec -it env-demo printenv USERNAME
+docker exec -it env-demo printenv PASSWORD
+```
+
+---
+
+## 🗂️ Step 4: Create a `.env` File
+
+Instead of passing variables manually, create a `.env` file for cleaner management.
+
+Create a file named **`.env`** in your current directory:
+
+```bash
+touch .env
+```
+
+Add the following content:
+
+```
+APP_NAME=EnvDemoApp
+APP_ENV=development
+DB_USER=root
+DB_PASS=admin123
+```
+
+Your directory should look like:
+
+```
+.
+├── .env
+```
+
+---
+
+## 🧱 Step 5: Run Container Using `.env` File
+
+Use the `--env-file` option to load environment variables from the `.env` file.
+
+```bash
+docker run -d --name env-file-demo --env-file .env alpine sleep 3600
+```
+
+Check variables inside the container:
+
+```bash
+docker exec -it env-file-demo env
+```
+
+Expected output:
+
+```
+APP_NAME=EnvDemoApp
+APP_ENV=development
+DB_USER=root
+DB_PASS=admin123
+```
+
+---
+
+## 🧩 Step 6: Using Environment Variables in a Dockerfile
+
+Create a simple **Dockerfile**:
+
+```Dockerfile
+# Use Ubuntu base image
+FROM ubuntu:latest
+
+# Set environment variable inside image
+ENV APP_VERSION=1.0 AUTHOR="DevOps Student"
+
+# Default command
+CMD ["bash", "-c", "echo App Version: $APP_VERSION && echo Author: $AUTHOR"]
+```
+
+Build the image:
+
+```bash
+docker build -t env-dockerfile-demo .
+```
+
+Run the container:
+
+```bash
+docker run --name env-test env-dockerfile-demo
+```
+
+Output:
+
+```
+App Version: 1.0
+Author: DevOps Student
+```
+
+---
+
+## 🧠 Step 7: Override Environment Variables at Runtime
+
+You can override Dockerfile ENV variables at runtime using `-e`:
+
+```bash
+docker run --name override-demo -e APP_VERSION=2.5 env-dockerfile-demo
+```
+
+Output:
+
+```
+App Version: 2.5
+Author: DevOps Student
+```
+
+✅ Dockerfile defaults are overridden by runtime environment variables.
+
+---
+
+## 🧹 Step 8: Clean Up
+
+Stop and remove containers:
+
+```bash
+docker stop env-demo env-file-demo env-test override-demo
+docker rm env-demo env-file-demo env-test override-demo
+```
+
+Remove image:
+
+```bash
+docker rmi env-dockerfile-demo
+```
+
+---
+
+## ✅ Step 9: Summary
+
+| Step | Task                   | Command / File                    | Description                |
+| ---- | ---------------------- | --------------------------------- | -------------------------- |
+| 1    | Pass Variables via CLI | `docker run -e KEY=VALUE`         | Set env vars manually      |
+| 2    | Inspect Variables      | `docker exec -it <container> env` | View inside container      |
+| 3    | Use .env File          | `.env` + `--env-file`             | Load from file             |
+| 4    | Use in Dockerfile      | `ENV KEY=value`                   | Set during build           |
+| 5    | Override Variables     | `-e KEY=value`                    | Change defaults at runtime |
+| 6    | Clean Up               | `docker rm` / `docker rmi`        | Remove containers/images   |
+
+---
+
+## 🧩 Pro Tip
+
+You can mix `.env` and CLI variables — CLI takes **higher priority**:
+
+```bash
+docker run --env-file .env -e APP_ENV=production alpine env
+```
+
+Result → `.env` values + overridden `APP_ENV=production`.
+
+---
+
+## 📘 References
+
+* [Docker Environment Variables](https://docs.docker.com/compose/environment-variables/)
+* [Docker Run Command Reference](https://docs.docker.com/engine/reference/run/)
+* [Dockerfile ENV Instruction](https://docs.docker.com/engine/reference/builder/#env)
