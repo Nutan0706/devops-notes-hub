@@ -43,6 +43,7 @@ NETWORK ID     NAME      DRIVER    SCOPE
 b6f9cd345abc   host      host      local
 a9c8b7d2efgh   none      null      local
 ```
+<img width="253" height="69" alt="image" src="https://github.com/user-attachments/assets/46468303-3e16-48d5-bf8d-7272f43c9d56" />
 
 ### Explanation:
 
@@ -108,6 +109,7 @@ b6f9cd345abc   host        host      local
 a9c8b7d2efgh   none        null      local
 d4e5f6g7h8i9   mynetwork   bridge    local
 ```
+<img width="293" height="83" alt="image" src="https://github.com/user-attachments/assets/444b4e56-f09f-41f6-abc3-da9fa2f2a70d" />
 
 Inspect the new network:
 
@@ -195,6 +197,7 @@ Output:
 PING web2 (172.19.0.3): 56 data bytes
 64 bytes from 172.19.0.3: icmp_seq=0 ttl=64 time=0.046 ms
 ```
+<img width="435" height="130" alt="image" src="https://github.com/user-attachments/assets/5b47d171-f875-4105-a7fc-a15a1435bfdc" />
 
 ✅ Containers can communicate by **container name** because they share the same user-defined network.
 
@@ -257,3 +260,4 @@ docker network disconnect mynetwork web1
 * [Docker Network Overview](https://docs.docker.com/network/)
 * [Docker Network Inspect](https://docs.docker.com/engine/reference/commandline/network_inspect/)
 * [Bridge Network Concepts](https://docs.docker.com/network/bridge/)
+
