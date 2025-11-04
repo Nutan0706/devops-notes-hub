@@ -46,12 +46,14 @@ Example output:
 DRIVER    VOLUME NAME
 local     mydata
 ```
+<img width="379" height="55" alt="image" src="https://github.com/user-attachments/assets/a34a965a-4051-4d93-9a46-f66fac6c382c" />
 
 Inspect the volume:
 
 ```bash
 docker volume inspect mydata
 ```
+<img width="434" height="205" alt="image" src="https://github.com/user-attachments/assets/f4712e6c-5d06-418e-90ac-20a92db07371" />
 
 ---
 
@@ -100,6 +102,7 @@ Search for the `Mounts` section in the output:
   }
 ]
 ```
+<img width="559" height="210" alt="image" src="https://github.com/user-attachments/assets/5d964169-68d1-4050-8114-06071ed7d0d0" />
 
 ---
 
@@ -130,6 +133,7 @@ You should see:
 ```
 Hello from Persistent Volume!
 ```
+<img width="811" height="169" alt="image" src="https://github.com/user-attachments/assets/ad1a3d85-9aaf-4fbc-a93d-7150480b1462" />
 
 ---
 
@@ -152,6 +156,7 @@ Visit again in the browser:
 👉 [http://localhost:8080](http://localhost:8080)
 
 ✅ You’ll still see **“Hello from Persistent Volume!”**, proving the data is stored in the volume.
+<img width="721" height="175" alt="image" src="https://github.com/user-attachments/assets/7b2a11fa-add0-415d-878b-27b3bfa7eddb" />
 
 ---
 
@@ -191,3 +196,4 @@ docker volume rm mydata
 * [Docker Volumes Documentation](https://docs.docker.com/storage/volumes/)
 * [Docker Exec Command](https://docs.docker.com/engine/reference/commandline/exec/)
 * [Nginx Docker Hub Page](https://hub.docker.com/_/nginx)
+
