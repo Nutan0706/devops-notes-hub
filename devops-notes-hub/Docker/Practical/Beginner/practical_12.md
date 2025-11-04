@@ -43,6 +43,8 @@ docker run -d --name env-demo -e USERNAME=admin -e PASSWORD=secret alpine sleep 
 | `-e KEY=VALUE`      | Sets environment variables                       |
 | `alpine sleep 3600` | Lightweight image running a simple sleep command |
 
+<img width="560" height="101" alt="image" src="https://github.com/user-attachments/assets/87ce1223-eb90-4325-930a-8c6537fcc6d5" />
+
 ---
 
 ## 🧩 Step 3: Verify Environment Variables Inside the Container
@@ -60,6 +62,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 USERNAME=admin
 PASSWORD=secret
 ```
+<img width="372" height="94" alt="image" src="https://github.com/user-attachments/assets/463e4aab-22a4-4bdd-9d1e-197626b5b1fa" />
 
 You can also inspect specific variables:
 
@@ -67,6 +70,7 @@ You can also inspect specific variables:
 docker exec -it env-demo printenv USERNAME
 docker exec -it env-demo printenv PASSWORD
 ```
+<img width="395" height="53" alt="image" src="https://github.com/user-attachments/assets/86754473-165c-44f4-b5c6-93cfad237fe9" />
 
 ---
 
@@ -120,6 +124,7 @@ APP_ENV=development
 DB_USER=root
 DB_PASS=admin123
 ```
+<img width="407" height="117" alt="image" src="https://github.com/user-attachments/assets/bc09e33b-0fb1-424c-8b08-799b15776b9d" />
 
 ---
 
@@ -143,6 +148,7 @@ Build the image:
 ```bash
 docker build -t env-dockerfile-demo .
 ```
+<img width="416" height="230" alt="image" src="https://github.com/user-attachments/assets/69850c48-974f-4117-86b1-37908539d0b5" />
 
 Run the container:
 
@@ -156,6 +162,7 @@ Output:
 App Version: 1.0
 Author: DevOps Student
 ```
+<img width="473" height="40" alt="image" src="https://github.com/user-attachments/assets/60cf418c-fcd5-4d22-a6c2-24dac9556c88" />
 
 ---
 
@@ -173,6 +180,7 @@ Output:
 App Version: 2.5
 Author: DevOps Student
 ```
+<img width="568" height="53" alt="image" src="https://github.com/user-attachments/assets/b2f4774f-8cf5-45d2-a764-bb962f09b485" />
 
 ✅ Dockerfile defaults are overridden by runtime environment variables.
 
@@ -192,6 +200,7 @@ Remove image:
 ```bash
 docker rmi env-dockerfile-demo
 ```
+<img width="524" height="132" alt="image" src="https://github.com/user-attachments/assets/eb9faffe-4a40-449e-9063-f5ec88b7dc1e" />
 
 ---
 
@@ -225,3 +234,4 @@ Result → `.env` values + overridden `APP_ENV=production`.
 * [Docker Environment Variables](https://docs.docker.com/compose/environment-variables/)
 * [Docker Run Command Reference](https://docs.docker.com/engine/reference/run/)
 * [Dockerfile ENV Instruction](https://docs.docker.com/engine/reference/builder/#env)
+
