@@ -76,5 +76,3 @@ These simulate **real-world production environments**, focusing on automation, d
 * [AWS CloudWatch for RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/monitoring-cloudwatch.html)
 
 
-Would you like me to extend this with a **GitHub folder structure** (like `/practicals/beginner/`, `/intermediate/`, `/advanced/`) each containing individual `README.md` files for every practical (with AWS Console + CLI steps)?
-That would make your repo look professional and ready for public showcase.
