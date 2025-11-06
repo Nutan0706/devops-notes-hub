@@ -1,9 +1,5 @@
 # 🧩 Jenkins – Complete Concepts Sheet
 
-A structured overview of Jenkins with collapsible sections, tables, and visuals for easy GitHub reading.
-
----
-
 ## ✅ What is Jenkins?
 
 > **Jenkins** is an open-source **CI/CD automation server** that helps automate **build, test, and deploy** workflows.
@@ -178,3 +174,4 @@ A structured overview of Jenkins with collapsible sections, tables, and visuals 
 /var/lib/jenkins/config.xml      # main Jenkins config
 ```
 </details>
+
