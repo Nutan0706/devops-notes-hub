@@ -29,6 +29,7 @@ Changes not staged for commit:
 Untracked files:
   newfile.txt
 ```
+<img width="272" height="74" alt="image" src="https://github.com/user-attachments/assets/3cab1130-776d-43ef-987d-6a57fb5e5372" />
 
 ---
 
@@ -49,6 +50,7 @@ Date:   Wed Nov 6 12:34:56 2025 +0530
 
     Initial commit
 ```
+<img width="327" height="74" alt="image" src="https://github.com/user-attachments/assets/e3756ff4-3112-44f3-8555-a46dd6ec6333" />
 
 **Useful variations:**
 
@@ -56,6 +58,7 @@ Date:   Wed Nov 6 12:34:56 2025 +0530
 git log --oneline       # Shows concise one-line commit summary
 git log --graph --decorate --all   # Shows visual branch structure
 ```
+<img width="243" height="151" alt="image" src="https://github.com/user-attachments/assets/564d7af6-12f0-4b4b-97d0-a7695ac6f77b" />
 
 ---
 
@@ -72,6 +75,8 @@ Example:
 ```bash
 git show 6e3a12b
 ```
+<img width="590" height="119" alt="image" src="https://github.com/user-attachments/assets/5db6d9a2-7f76-4c95-9f25-82ba7292e4e0" />
+
 
 **This command displays:**
 
@@ -88,3 +93,4 @@ git show 6e3a12b
 | `git status`           | View changes in working directory & staging area | `git status`        |
 | `git log`              | View all commit history                          | `git log --oneline` |
 | `git show <commit-id>` | View details of a specific commit                | `git show a1b2c3d`  |
+
