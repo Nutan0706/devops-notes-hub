@@ -28,7 +28,7 @@ A clean, developer-friendly, and interview-ready Docker notes sheet using tables
 
 ---
 
-## 🧱 3. Docker Architecture (Missing – Added)
+## 🧱 3. Docker Architecture 
 
 | Component | Role |
 |------------|-------|
@@ -269,6 +269,7 @@ services:
 | **Scaling** | Scale containers using Kubernetes or Docker Swarm |
 
 </details>
+
 
 
 
