@@ -1,24 +1,8 @@
 # 🐳 Docker Interview Questions – Complete Sheet
 
-This document contains **30 Docker Interview Questions** categorized into:
-- ✅ Commonly Asked (10)
-- 🔸 Moderate Level (10)
-- 🚀 Advanced & Scenario-Based (10)
-
 ---
 
-## 📌 Quick Summary Table
-
-| Level | Questions Count | Difficulty |
-|--------|----------------|--------------|
-| ✅ Common | 10 | Easy |
-| 🔸 Moderate | 10 | Medium |
-| 🚀 Advanced & Scenario Based | 10 | Hard |
-
----
-
-<details>
-<summary><strong>✅ 1. Commonly Asked Docker Interview Questions (Click to Expand)</strong></summary>
+## ✅ 1. Commonly Asked Docker Interview Questions
 
 | No. | Question |
 |-----|-----------|
@@ -33,12 +17,9 @@ This document contains **30 Docker Interview Questions** categorized into:
 | 9 | What is the difference between `CMD` and `ENTRYPOINT`? |
 | 10 | How do you expose ports in Docker? |
 
-</details>
-
 ---
 
-<details>
-<summary><strong>🔸 2. Moderate Level Docker Questions (Click to Expand)</strong></summary>
+## 🔸 2. Moderate Level Docker Questions
 
 | No. | Question |
 |-----|-----------|
@@ -53,12 +34,9 @@ This document contains **30 Docker Interview Questions** categorized into:
 | 19 | How do you reduce Docker image size? |
 | 20 | What is the difference between `docker stop` and `docker kill`? |
 
-</details>
-
 ---
 
-<details>
-<summary><strong>🚀 3. Advanced + Scenario-Based Docker Interview Questions (Click to Expand)</strong></summary>
+## 🚀 3. Advanced + Scenario-Based Docker Interview Questions
 
 | No. | Question |
 |-----|-----------|
@@ -72,8 +50,6 @@ This document contains **30 Docker Interview Questions** categorized into:
 | 28 | A container restarts again & again — how do you debug it? |
 | 29 | Scenario: Your image size is 2GB. DevOps team asks to reduce to < 400MB. What steps will you take? |
 | 30 | Scenario: Container needs to connect with a DB running on host machine. How will you setup networking? |
-
-</details>
 
 ---
 
@@ -92,12 +68,9 @@ This document contains **30 Docker Interview Questions** categorized into:
 
 ## 📚 Recommended Practice Scenarios
 
-- Build a Dockerfile for a Python or Node app
-- Convert a monolithic application into multi-container with Docker Compose
-- Reduce a large image from 1GB → 250MB using Alpine & multi-stage builds
-- Setup container networking for microservices
+- Build a Dockerfile for a Python or Node app  
+- Convert a monolithic application into multi-container with Docker Compose  
+- Reduce a large image from 1GB → 250MB using Alpine & multi-stage builds  
+- Setup container networking for microservices  
 - Deploy containerized app to AWS ECS/Kubernetes later
-
----
-
 
