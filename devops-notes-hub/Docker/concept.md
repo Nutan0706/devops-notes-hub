@@ -1,4 +1,4 @@
-# 🐳 Docker – Complete Dev Notes (For GitHub)
+# 🐳 Docker – Complete Dev Notes
 
 ## 📍 1. What is Docker?
 
@@ -220,4 +220,5 @@ services:
 | **Microservices**     | One container per service for independent development & deployment |
 | **Local Development** | Same image used across Dev, Stage & Prod for consistency           |
 | **Scaling**           | Scale containers using Kubernetes or Docker Swarm                  |
+
 
