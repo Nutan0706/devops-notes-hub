@@ -1,9 +1,5 @@
 # 🐳 Docker – Complete Dev Notes (For GitHub)
 
-A clean, developer-friendly, and interview-ready Docker notes sheet using tables, collapses, and GitHub-optimized formatting.
-
----
-
 ## 📍 1. What is Docker?
 
 | Feature | Description |
@@ -41,9 +37,6 @@ A clean, developer-friendly, and interview-ready Docker notes sheet using tables
 
 ## 🧑‍🍳 4. Dockerfile Must-Knows
 
-<details>
-<summary>Click to Expand</summary>
-
 | Instruction | Purpose |
 |-------------|-----------|
 | `FROM` | Base image |
@@ -56,10 +49,8 @@ A clean, developer-friendly, and interview-ready Docker notes sheet using tables
 | `.dockerignore` | Ignore files from build context |
 
 > 💡 **CMD vs ENTRYPOINT**  
-- Use **ENTRYPOINT** for fixed command  
-- Use **CMD** for default arguments  
-
-</details>
+> - Use **ENTRYPOINT** for fixed command  
+> - Use **CMD** for default arguments  
 
 ---
 
@@ -88,59 +79,43 @@ A clean, developer-friendly, and interview-ready Docker notes sheet using tables
 | Bind Mount | Use host path | Great for local dev |
 | tmpfs | Temp in-memory storage | Removed on stop |
 
-**Commands**
-
-```bash
-docker volume create myvol
-docker run -v myvol:/app/data ...
-```
 ---
 
 ## 🌐 7. Docker Networking
 
-| Network Mode | Description |
-|--------------|--------------|
-| **Bridge (default)** | Containers communicate within the same host |
-| **Host** | Container shares host machine’s network stack |
-| **None** | Fully isolated container with no network |
+| Network Mode            | Description                                             |
+| ----------------------- | ------------------------------------------------------- |
+| **Bridge (default)**    | Containers communicate within the same host             |
+| **Host**                | Container shares host machine’s network stack           |
+| **None**                | Fully isolated container with no network                |
 | **User-Defined Bridge** | Custom network for container-to-container communication |
 
-**Commands**
-
-```bash
-docker network ls
-docker network create mynetwork
-docker run --network=mynetwork ...
-```
----
-
-<details>
-<summary><h2>🧩 8. Container Lifecycle</h2></summary>
-
-| Stage            | Action                           |
-|------------------|-----------------------------------|
-| **Create**        | `docker create`                   |
-| **Start**         | `docker start`                    |
-| **Run**           | `docker run`                      |
-| **Pause/Unpause** | `docker pause`, `docker unpause`  |
-| **Stop**          | `docker stop`                     |
-| **Restart**       | `docker restart`                  |
-| **Kill**          | `docker kill`                     |
-| **Remove**        | `docker rm`                       |
-
-</details>
 
 ---
 
-<details>
-<summary><h2>🧬 9. Docker Compose (Click to Expand)</h2></summary>
+## 🧩 8. Container Lifecycle
+
+| Stage             | Action                           |
+| ----------------- | -------------------------------- |
+| **Create**        | `docker create`                  |
+| **Start**         | `docker start`                   |
+| **Run**           | `docker run`                     |
+| **Pause/Unpause** | `docker pause`, `docker unpause` |
+| **Stop**          | `docker stop`                    |
+| **Restart**       | `docker restart`                 |
+| **Kill**          | `docker kill`                    |
+| **Remove**        | `docker rm`                      |
+
+---
+
+## 🧬 9. Docker Compose
 
 ### 📌 Features
 
-| Feature   | Description |
-|-----------|-------------|
-| **File**  | `docker-compose.yml` |
-| **Use**   | Run multi-container applications |
+| Feature      | Description                                   |
+| ------------ | --------------------------------------------- |
+| **File**     | `docker-compose.yml`                          |
+| **Use**      | Run multi-container applications              |
 | **Commands** | `docker compose up -d`, `docker compose down` |
 
 ### 🧱 Example
@@ -155,127 +130,94 @@ services:
     image: redis
 ```
 
-</details>
-
 ---
 
-<details>
-<summary><h2>🧊 10. Image Management (Click to Expand)</h2></summary>
+## 🧊 10. Image Management
 
 ### 📌 Concepts
 
-| Concept | Description |
-|---------|--------------|
-| **Layered Architecture** | Each Dockerfile instruction creates a new layer |
-| **Cache** | Speeds up build time by reusing unchanged layers |
-| **Important Commands** | `docker pull`, `docker push` |
-
-</details>
-
+| Concept                  | Description                                      |
+| ------------------------ | ------------------------------------------------ |
+| **Layered Architecture** | Each Dockerfile instruction creates a new layer  |
+| **Cache**                | Speeds up build time by reusing unchanged layers |
+| **Important Commands**   | `docker pull`, `docker push`                     |
 
 ---
 
-<details>
-<summary><h2>✅ 11. Best Practices (Click to Expand)</h2></summary>
+## ✅ 11. Best Practices
 
 ### 🏆 Docker Best Practices
 
-| Best Practice | Why? |
-|-------------------------------|--------------------------------|
-| **Use small base images (e.g., Alpine)** | Reduces image size |
-| **Keep containers stateless** | Enables easy scaling and replacement |
-| **Minimize layers** | Faster build time and smaller image |
-| **Use `.dockerignore`** | Cleaner & faster build context |
-| **Use Multi-Stage Builds** | Reduces final image size |
-| **Don’t run as root** | Improves container security |
-
-</details>
+| Best Practice                            | Why?                                 |
+| ---------------------------------------- | ------------------------------------ |
+| **Use small base images (e.g., Alpine)** | Reduces image size                   |
+| **Keep containers stateless**            | Enables easy scaling and replacement |
+| **Minimize layers**                      | Faster build time and smaller image  |
+| **Use `.dockerignore`**                  | Cleaner & faster build context       |
+| **Use Multi-Stage Builds**               | Reduces final image size             |
+| **Don’t run as root**                    | Improves container security          |
 
 ---
 
-<details>
-<summary><h2>🧯 12. Common Issues & Fixes (Click to Expand)</h2></summary>
+## 🧯 12. Common Issues & Fixes
 
 ### 🚨 Frequent Docker Issues & Solutions
 
-| Issue | Reason | Fix |
-|--------|---------|------|
-| **Container exits immediately** | App finishes execution with no running process | Add a `CMD` or `ENTRYPOINT` to keep it running |
-| **Port conflicts** | Port already in use on host machine | Change the host mapped port |
-| **File permission errors** | Incorrect file/user permissions inside container | Set proper user or use `chmod` |
-| **Large image size** | Using heavy base image or unnecessary layers | Use Alpine + Multi-stage builds |
-
-</details>
+| Issue                           | Reason                                           | Fix                                            |
+| ------------------------------- | ------------------------------------------------ | ---------------------------------------------- |
+| **Container exits immediately** | App finishes execution with no running process   | Add a `CMD` or `ENTRYPOINT` to keep it running |
+| **Port conflicts**              | Port already in use on host machine              | Change the host mapped port                    |
+| **File permission errors**      | Incorrect file/user permissions inside container | Set proper user or use `chmod`                 |
+| **Large image size**            | Using heavy base image or unnecessary layers     | Use Alpine + Multi-stage builds                |
 
 ---
 
-<details>
-<summary><h2>🆚 13. Docker vs Virtual Machines (Click to Expand)</h2></summary>
+## 🆚 13. Docker vs Virtual Machines
 
 ### ⚔️ Key Differences: Docker vs Virtual Machines
 
-| Feature | Docker | Virtual Machine (VM) |
-|---------|---------|------------------------|
-| **Virtualization Type** | OS-level | Hardware-level |
-| **OS** | Shares host kernel | Runs a full guest OS |
-| **Size & Speed** | Lightweight & fast | Heavy and slower |
-| **Consistency** | High consistency across environments | Varies per VM |
-
-</details>
+| Feature                 | Docker                               | Virtual Machine (VM) |
+| ----------------------- | ------------------------------------ | -------------------- |
+| **Virtualization Type** | OS-level                             | Hardware-level       |
+| **OS**                  | Shares host kernel                   | Runs a full guest OS |
+| **Size & Speed**        | Lightweight & fast                   | Heavy and slower     |
+| **Consistency**         | High consistency across environments | Varies per VM        |
 
 ---
 
-<details>
-<summary><h2>🔐 14. Security Basics (Click to Expand)</h2></summary>
+## 🔐 14. Security Basics
 
 ### 🛡️ Secure Your Docker Environment
 
-| Practice | Description |
-|----------|--------------|
-| **Use trusted base images** | Avoid vulnerabilities by pulling images from verified sources (e.g., Docker Hub Official, AWS, GitHub Registry) |
-| **Run non-root containers** | Ensure least privilege access — avoid running as `root` inside containers |
-| **Read-only file system** | Prevent unauthorized or accidental writes to the container FS |
-| **Scan images** | Use `docker scan` (or tools like Trivy, Anchore) to find vulnerabilities |
-| **Update Docker engine regularly** | Get the latest security patches and fixes |
-
-</details>
+| Practice                           | Description                                                                                                     |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Use trusted base images**        | Avoid vulnerabilities by pulling images from verified sources (e.g., Docker Hub Official, AWS, GitHub Registry) |
+| **Run non-root containers**        | Ensure least privilege access — avoid running as `root` inside containers                                       |
+| **Read-only file system**          | Prevent unauthorized or accidental writes to the container FS                                                   |
+| **Scan images**                    | Use `docker scan` (or tools like Trivy, Anchore) to find vulnerabilities                                        |
+| **Update Docker engine regularly** | Get the latest security patches and fixes                                                                       |
 
 ---
 
-<details>
-<summary><h2>🌍 15. Registries (Click to Expand)</h2></summary>
+## 🌍 15. Registries
 
 ### 🏷️ Types of Docker Registries
 
-| Type | Examples |
-|-------|------------|
-| **Public** | Docker Hub |
+| Type        | Examples                                                             |
+| ----------- | -------------------------------------------------------------------- |
+| **Public**  | Docker Hub                                                           |
 | **Private** | AWS ECR, GitHub Container Registry (GHCR), Harbor, JFrog Artifactory |
-
-</details>
 
 ---
 
-<details>
-<summary><h2>🚀 16. Real-World Scenarios (Click to Expand)</h2></summary>
+## 🚀 16. Real-World Scenarios
 
 ### 📍 Where Docker Is Used in Real Projects
 
-| Use Case | Explanation |
-|----------|--------------|
-| **CI/CD** | Build → Test → Ship container images as part of pipeline |
-| **Microservices** | One container per service for independent development & deployment |
-| **Local Development** | Same image used across Dev, Stage & Prod for consistency |
-| **Scaling** | Scale containers using Kubernetes or Docker Swarm |
-
-</details>
-
-
-
-
-
-
-
-
-
+| Use Case              | Explanation                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| **CI/CD**             | Build → Test → Ship container images as part of pipeline           |
+| **Microservices**     | One container per service for independent development & deployment |
+| **Local Development** | Same image used across Dev, Stage & Prod for consistency           |
+| **Scaling**           | Scale containers using Kubernetes or Docker Swarm                  |
 
