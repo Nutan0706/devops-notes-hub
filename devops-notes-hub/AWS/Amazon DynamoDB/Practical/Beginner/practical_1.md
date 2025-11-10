@@ -48,7 +48,8 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
    * Key name: `Department`
    * Type: `String`
 
-🖼️ *→ Add Screenshot 4 here (filled table creation form)*
+<img width="401" height="309" alt="image" src="https://github.com/user-attachments/assets/705bc536-b395-4f2c-b2b4-7e36b3702af1" />
+
 
 ---
 
@@ -100,4 +101,5 @@ You have successfully created your **first DynamoDB table** with:
 
 * **Partition key:** EmployeeID
 * **Sort key:** Department
+
 
