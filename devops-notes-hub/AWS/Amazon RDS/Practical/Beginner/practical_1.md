@@ -14,9 +14,6 @@ Launch a **MySQL or PostgreSQL RDS instance** using the **AWS Console** with pro
 
 * Open 👉 [https://aws.amazon.com/console](https://aws.amazon.com/console)
 * Login with your **AWS credentials** (Root or IAM user).
-
-🖼️ *→ Add Screenshot 1 here (AWS console home page)*
-
 ---
 
 ### **Step 2: Open the RDS Service**
@@ -24,7 +21,6 @@ Launch a **MySQL or PostgreSQL RDS instance** using the **AWS Console** with pro
 * In the **search bar** at the top, type **“RDS”**.
 * Select **RDS (Relational Database Service)** from the search results.
 
-🖼️ *→ Add Screenshot 2 here (RDS service dashboard)*
 
 ---
 
@@ -33,7 +29,6 @@ Launch a **MySQL or PostgreSQL RDS instance** using the **AWS Console** with pro
 * On the RDS dashboard, click the **“Create database”** button.
 * This starts the **database creation wizard**.
 
-🖼️ *→ Add Screenshot 3 here (Create database button page)*
 
 ---
 
@@ -43,8 +38,7 @@ Launch a **MySQL or PostgreSQL RDS instance** using the **AWS Console** with pro
 * For **Engine options**, choose:
 
   * Either **MySQL** or **PostgreSQL**.
-
-🖼️ *→ Add Screenshot 4 here (database engine selection page)*
+<img width="1323" height="590" alt="image" src="https://github.com/user-attachments/assets/9e1eeaa0-83c8-4d02-8faa-f7f93d350bea" />
 
 ---
 
@@ -53,7 +47,8 @@ Launch a **MySQL or PostgreSQL RDS instance** using the **AWS Console** with pro
 * Select a **DB engine version** (e.g., MySQL 8.0 or PostgreSQL 15).
 * Under **Templates**, choose **Free tier** if available (for learning/practice).
 
-🖼️ *→ Add Screenshot 5 here (engine version and template selection)*
+<img width="1335" height="745" alt="image" src="https://github.com/user-attachments/assets/01b8f83e-f223-4841-ade1-5284af50ed28" />
+
 
 ---
 
@@ -70,7 +65,8 @@ Under **Settings**:
 4. **Confirm password:**
    Re-enter the same password.
 
-🖼️ *→ Add Screenshot 6 here (DB instance configuration)*
+<img width="1299" height="530" alt="image" src="https://github.com/user-attachments/assets/b3589609-2146-4323-98ef-ff2630c99525" />
+
 
 ---
 
@@ -81,7 +77,7 @@ Under **DB instance class**:
 * For free tier → select `db.t3.micro`
 * Storage type → choose **General Purpose (SSD)**
 
-🖼️ *→ Add Screenshot 7 here (instance class and storage section)*
+<img width="881" height="274" alt="image" src="https://github.com/user-attachments/assets/f502a781-68f3-4416-909e-910d6729cb32" />
 
 ---
 
@@ -97,7 +93,8 @@ In the **Connectivity** section:
      OR
    * Create a new one that allows **inbound traffic on port 3306** (for MySQL) or **5432** (for PostgreSQL)
 
-🖼️ *→ Add Screenshot 8 here (connectivity setup page)*
+<img width="989" height="654" alt="image" src="https://github.com/user-attachments/assets/dc2aba7b-1f8b-46dd-a8b8-cadf794ca6e5" />
+
 
 ---
 
@@ -112,7 +109,8 @@ Expand **Additional configuration**:
   * **Encryption:** enabled
   * **Monitoring:** disabled (for free tier)
 
-🖼️ *→ Add Screenshot 9 here (additional configuration section)*
+<img width="882" height="714" alt="image" src="https://github.com/user-attachments/assets/2e553aa3-9a2a-41df-b291-204264100db3" />
+
 
 ---
 
@@ -132,7 +130,8 @@ Expand **Additional configuration**:
 * Click on the DB identifier (e.g., `my-first-rds`) to open details.
 * Copy the **Endpoint** — this will be used to connect from your application or client (like MySQL Workbench or pgAdmin).
 
-🖼️ *→ Add Screenshot 11 here (DB available status and endpoint)*
+<img width="1277" height="179" alt="image" src="https://github.com/user-attachments/assets/74b69b09-cb45-4dcd-8201-952450a18bfc" />
+
 
 ---
 
@@ -149,4 +148,4 @@ You have successfully launched your **first RDS instance** 🎉
 | Instance Class  | db.t3.micro        |
 | Status          | Available          |
 
----
+
