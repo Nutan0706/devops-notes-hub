@@ -1,121 +1,126 @@
 # 🖥️ AWS EC2 – Complete Notes
 
-Amazon **EC2 (Elastic Compute Cloud)** is a core AWS service that provides resizable compute capacity in the cloud. It allows you to launch virtual servers (instances) with pay-as-you-go pricing.
+Amazon **EC2 (Elastic Compute Cloud)** provides **resizable compute capacity** in the AWS cloud.
+It allows you to **launch and manage virtual servers (instances)** using a **pay-as-you-go** model.
 
 ---
 
-<details>
-<summary><strong>1️⃣ What is EC2?</strong></summary>
+## 1️⃣ What is EC2?
 
-- A **virtual server in the cloud** for running applications  
-- Provides **resizable compute capacity**  
-- **Pay-as-you-go** model — pay only for what you use  
+* A **virtual server** in the cloud for running applications.
+* Offers **scalable compute resources** (CPU, memory, network).
+* **Pay only for what you use** — flexible billing.
+* Enables quick provisioning, automation, and integration with other AWS services.
 
-</details>
-
----
-
-<details>
-<summary><strong>2️⃣ Core EC2 Concepts</strong></summary>
-
-| Concept | Description |
-|--------|--------------|
-| **AMI (Amazon Machine Image)** | Blueprint for instance (OS + software + config) |
-| **Instance Type** | Defines CPU, RAM, network, and storage power |
-| **EBS (Elastic Block Store)** | Persistent block storage volumes |
-| **Instance Store** | Temporary storage; data lost if stopped/terminated |
-| **Key Pair** | Used for SSH authentication |
-| **Security Group (SG)** | Virtual firewall controlling inbound & outbound traffic |
-| **Elastic IP** | Static public IPv4 address |
-| **User Data** | Script that runs on 1st boot for automation |
-| **Placement Group** | Controls instance placement: Cluster, Spread, Partition |
-| **ASG (Auto Scaling Group)** | Auto-scale instances based on demand |
-| **Launch Template / Configuration** | Template for ASG launches |
-
-</details>
+💡 **Analogy:** Think of EC2 as your remote computer (VM) hosted in AWS, accessible anytime, anywhere.
 
 ---
 
-<details>
-<summary><strong>3️⃣ EC2 Pricing Models</strong></summary>
+## 2️⃣ Core EC2 Concepts
 
-| Pricing Model | Best For | Savings |
-|--------------|-----------|----------|
-| **On-Demand** | Short-term, unpredictable workloads | ❌ Cheapest |
-| **Reserved Instances (1–3 yrs)** | Predictable long-term usage | ✅ Up to **75%** cheaper |
-| **Spot Instances** | Fault-tolerant, flexible jobs | ✅ Up to **90%** cheaper |
-| **Dedicated Host** | Compliance, licensing needs | 💲 Expensive |
-| **Savings Plans** | Consistent usage across compute services | ✅ Smart & Flexible |
+| Concept                        | Description                                                  |
+| ------------------------------ | ------------------------------------------------------------ |
+| **AMI (Amazon Machine Image)** | Blueprint of an instance (OS + software + configuration).    |
+| **Instance Type**              | Defines compute resources (CPU, RAM, storage, networking).   |
+| **EBS (Elastic Block Store)**  | Persistent block storage for EC2 instances.                  |
+| **Instance Store**             | Temporary (ephemeral) storage tied to instance lifecycle.    |
+| **Key Pair**                   | SSH key used to securely connect to instances.               |
+| **Security Group (SG)**        | Virtual firewall controlling inbound/outbound traffic.       |
+| **Elastic IP**                 | Static public IPv4 address associated with your instance.    |
+| **User Data**                  | Script executed at first boot for automation (setup/config). |
+| **Placement Group**            | Strategy for placing instances (Cluster, Spread, Partition). |
+| **ASG (Auto Scaling Group)**   | Automatically adjusts the number of instances.               |
+| **Launch Template**            | Modern way to configure and launch instances consistently.   |
 
-</details>
-
----
-
-<details>
-<summary><strong>4️⃣ Storage Options</strong></summary>
-
-| Storage | Type | Persistent? | Use Case |
-|--------|--------|-------------|-----------|
-| **EBS** | Block | ✅ Yes | OS, databases |
-| **Instance Store** | Block | ❌ No | High-speed temporary storage |
-| **EFS** | File (POSIX) | ✅ Yes | Multi-instance shared storage |
-| **FSx** | File | ✅ Yes | Windows or HPC workloads |
-
-</details>
+💡 **Tip:** Use Launch Templates + ASGs for production environments for consistency and automation.
 
 ---
 
-<details>
-<summary><strong>5️⃣ EC2 Networking</strong></summary>
+## 3️⃣ EC2 Pricing Models
 
-- **Public IP** — auto-assigned, changes when stopped/started  
-- **Elastic IP** — static public IPv4 that doesn’t change  
-- **ENI (Elastic Network Interface)** — virtual network card  
-- **Security Group vs NACL**  
-  - SG = Instance-level firewall (Stateful)  
-  - NACL = Subnet-level firewall (Stateless)  
+| Pricing Model                    | Best For                                     | Savings             |
+| -------------------------------- | -------------------------------------------- | ------------------- |
+| **On-Demand**                    | Short-term, unpredictable workloads          | ❌ Least savings     |
+| **Reserved Instances (1–3 yrs)** | Steady workloads                             | ✅ Up to 75% savings |
+| **Spot Instances**               | Flexible, fault-tolerant jobs                | ✅ Up to 90% savings |
+| **Dedicated Hosts**              | Compliance/licensing requirements            | 💲 High cost        |
+| **Savings Plans**                | Consistent compute usage across AWS services | ✅ Flexible savings  |
 
-</details>
-
----
-
-<details>
-<summary><strong>6️⃣ High Availability & Scaling</strong></summary>
-
-- **ASG (Auto Scaling Group)** → Automatically adjusts instance count  
-- **Launch Templates** → Recommended for launching instances  
-- **ELB (Elastic Load Balancer)** → Distributes traffic across instances  
-- **Multi-AZ Deployment** → High availability & fault tolerance  
-- **Health Checks** → Auto-replace unhealthy instances  
-
-</details>
+💡 **Pro Tip:** Start with On-Demand → Move to Savings Plans for predictable workloads.
 
 ---
 
-<details>
-<summary><strong>7️⃣ EC2 Spot Instances</strong></summary>
+## 4️⃣ Storage Options
 
-- Lowest-cost EC2 option (**up to 90% cheaper**)  
-- Can be terminated anytime by AWS  
-- Best for:  
-  ✅ Batch jobs  
-  ✅ Big Data & Analytics  
-  ✅ CI/CD runners  
-  ✅ Fault-tolerant workloads  
-- Use **Spot Fleet** or **ASG with mixed instances** for reliability  
+| Storage Type                  | Storage Level | Persistent? | Use Case                                  |
+| ----------------------------- | ------------- | ----------- | ----------------------------------------- |
+| **EBS (Elastic Block Store)** | Block         | ✅ Yes       | OS volumes, Databases                     |
+| **Instance Store**            | Block         | ❌ No        | Temporary or cache data                   |
+| **EFS (Elastic File System)** | File (POSIX)  | ✅ Yes       | Shared storage between multiple instances |
+| **FSx**                       | File          | ✅ Yes       | Windows file systems, HPC workloads       |
 
-</details>
+💡 **Tip:**
+Use **EBS** for boot volumes and **EFS** for shared app data.
+Use **Instance Store** only for non-critical, temporary data.
 
 ---
 
-<details>
-<summary><strong>8️⃣ User Data</strong></summary>
+## 5️⃣ EC2 Networking
 
-- Script that runs only **on first boot**  
-- Ideal for installation, configuration & automation  
-- Runs as **root user**  
+| Concept                             | Description                                                 |
+| ----------------------------------- | ----------------------------------------------------------- |
+| **Public IP**                       | Automatically assigned; changes when instance stops/starts. |
+| **Elastic IP (EIP)**                | Static public IP; persistent even after stop/start.         |
+| **ENI (Elastic Network Interface)** | Virtual network adapter; can attach/detach dynamically.     |
+| **Security Group (SG)**             | Instance-level firewall — **stateful**.                     |
+| **Network ACL (NACL)**              | Subnet-level firewall — **stateless**.                      |
 
-**Example:**
+### 🧩 Security Group vs NACL
+
+| Feature              | Security Group                       | NACL                         |
+| -------------------- | ------------------------------------ | ---------------------------- |
+| **Scope**            | Instance level                       | Subnet level                 |
+| **Type**             | Stateful                             | Stateless                    |
+| **Rules Applied**    | Allow only                           | Allow + Deny                 |
+| **Default Behavior** | Deny all inbound, allow all outbound | Allow all inbound & outbound |
+
+---
+
+## 6️⃣ High Availability & Scaling
+
+| Concept                         | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| **ASG (Auto Scaling Group)**    | Automatically increases/decreases instances based on metrics. |
+| **Launch Template**             | Defines instance config for consistent deployments.           |
+| **ELB (Elastic Load Balancer)** | Distributes traffic across multiple EC2 instances.            |
+| **Multi-AZ Deployment**         | Launches instances in multiple Availability Zones.            |
+| **Health Checks**               | Automatically replaces unhealthy instances.                   |
+
+💡 **Best Practice:** Combine **ASG + ELB + Multi-AZ** for maximum uptime.
+
+---
+
+## 7️⃣ EC2 Spot Instances
+
+* **Cheapest EC2 option** — up to **90% cost savings**.
+* AWS can **terminate** them when capacity/pricing changes.
+* Best suited for:
+
+  * ✅ Batch processing
+  * ✅ Big Data / Analytics
+  * ✅ CI/CD runners
+  * ✅ Fault-tolerant workloads
+
+🔹 Use **Spot Fleet** or **Mixed ASG** to balance cost and reliability.
+
+---
+
+## 8️⃣ User Data
+
+User Data scripts automate initial setup on instance launch.
+Runs as **root user**, and executes only **once on first boot**.
+
+### Example: Install Apache Web Server
 
 ```bash
 #!/bin/bash
@@ -123,35 +128,74 @@ yum update -y
 yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
+echo "<h1>Hello from EC2 Instance</h1>" > /var/www/html/index.html
 ```
-</details>
----
 
-<details> <summary><strong>9️⃣ Monitoring & Logs</strong></summary>
-Tool	Purpose
-CloudWatch	Performance metrics (CPU, RAM, Disk, Network)
-CloudTrail	API activity logs
-EC2 Status Checks	System & Instance-level health
-</details>
+💡 **Tip:** Use User Data for bootstrapping — install apps, configure services, and run init scripts.
 
 ---
 
-<details> 
-<summary><strong>🔟 Common AWS CLI Commands for EC2</strong></summary>
-# List Instances
+## 9️⃣ Monitoring & Logs
+
+| Tool                  | Purpose                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| **Amazon CloudWatch** | Monitors performance metrics (CPU, Memory, Disk I/O, Network).   |
+| **AWS CloudTrail**    | Logs all API-level activities for auditing.                      |
+| **EC2 Status Checks** | Detects hardware/system-level issues (Instance & System checks). |
+
+✅ **Recommended:**
+Set **CloudWatch alarms** to trigger **Auto Scaling** actions automatically.
+
+---
+
+## 🔟 Common AWS CLI Commands for EC2
+
+```bash
+# List all instances
 aws ec2 describe-instances
 
-# Launch an Instance
-aws ec2 run-instances --image-id ami-xxx --instance-type t2.micro --key-name my-key --security-group-ids sg-xxx --subnet-id subnet-xxx
+# Launch an instance
+aws ec2 run-instances \
+  --image-id ami-xxxxxx \
+  --instance-type t2.micro \
+  --key-name my-key \
+  --security-group-ids sg-xxxxxx \
+  --subnet-id subnet-xxxxxx
 
-# Stop Instance
-aws ec2 stop-instances --instance-ids i-xxxx
+# Stop instance
+aws ec2 stop-instances --instance-ids i-xxxxxx
 
-# Terminate Instance
-aws ec2 terminate-instances --instance-ids i-xxxx
+# Start instance
+aws ec2 start-instances --instance-ids i-xxxxxx
 
-# Create AMI from Instance
-aws ec2 create-image --instance-id i-xxxx --name "my-ami"
+# Terminate instance
+aws ec2 terminate-instances --instance-ids i-xxxxxx
+
+# Create AMI from running instance
+aws ec2 create-image --instance-id i-xxxxxx --name "my-custom-ami"
+```
+
+💡 **Tip:** Use `--query` and `--output table` for readable CLI outputs.
+
 ---
-</details>
 
+## 🧠 Quick Revision Hooks
+
+| Concept            | Shortcut Memory Trick                |
+| ------------------ | ------------------------------------ |
+| **EC2**            | Virtual server on AWS                |
+| **AMI**            | OS + configuration image             |
+| **EBS**            | Persistent storage                   |
+| **Instance Store** | Temporary fast storage               |
+| **SG**             | Stateful firewall                    |
+| **NACL**           | Stateless firewall                   |
+| **ASG**            | Auto scales EC2 instances            |
+| **ELB**            | Distributes traffic                  |
+| **User Data**      | Automation script                    |
+| **Spot Instance**  | Cheapest compute, can vanish anytime |
+
+---
+
+✅ **Final Tip:**
+For **production-grade EC2 architecture**, always combine:
+**VPC + Security Group + EBS + ASG + ELB + CloudWatch** — ensuring **performance, cost efficiency, and reliability**.
