@@ -1,7 +1,6 @@
 # 🌐 AWS Route 53 — Interview Questions
 
-This document contains **30+ AWS Route 53 interview questions**, categorized into **Basic**, **Moderate**, **Advanced**, and **Scenario-Based** sections —
-formatted for **GitHub** with collapsible sections, tables, and professional readability.
+This document contains **40+ AWS Route 53 interview questions**, categorized into **Basic**, **Moderate**, **Advanced**, and **Scenario-Based** sections — formatted for GitHub readability.
 
 ---
 
@@ -14,8 +13,7 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 
 ---
 
-<details>
-<summary><h2>🟢 Basic Interview Questions (10)</h2></summary>
+## 🟢 Basic Interview Questions (10)
 
 | #  | Question                                                                               |
 | -- | -------------------------------------------------------------------------------------- |
@@ -30,12 +28,9 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 | 9  | Which DNS record type maps a domain name to an IPv4 address?                           |
 | 10 | Which AWS services commonly integrate with Route 53?                                   |
 
-</details>
-
 ---
 
-<details>
-<summary><h2>🟡 Moderate-Level Questions (10)</h2></summary>
+## 🟡 Moderate-Level Questions (10)
 
 | #  | Question                                                                                    |
 | -- | ------------------------------------------------------------------------------------------- |
@@ -50,12 +45,9 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 | 19 | What mechanisms ensure **high availability** in Route 53?                                   |
 | 20 | How do **Health Checks** integrate with **CloudWatch** for monitoring?                      |
 
-</details>
-
 ---
 
-<details>
-<summary><h2>🔴 Advanced Questions (10)</h2></summary>
+## 🔴 Advanced Questions (10)
 
 | #  | Question                                                                                        |
 | -- | ----------------------------------------------------------------------------------------------- |
@@ -70,12 +62,9 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 | 29 | Why are **Alias queries** free while **CNAME queries** are billed?                              |
 | 30 | Compare **Route 53**, **Google Cloud DNS**, and **Azure DNS** from an architecture perspective. |
 
-</details>
-
 ---
 
-<details>
-<summary><h2>🧠 Scenario-Based Questions (10)</h2></summary>
+## 🧠 Scenario-Based Questions (10)
 
 | #   | Scenario                         | Question                                                                                                                     |
 | --- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -90,8 +79,6 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 | S9  | ⚡ **Combined Policies**          | You want latency-based routing but also need to remove unhealthy endpoints. What two features should you combine?            |
 | S10 | 🗺 **Multi-Region App Delivery** | A client wants a single domain to serve users in US, India, and Japan via their nearest servers. Design this Route 53 setup. |
 
-</details>
-
 ---
 
 ## 🧩 Quick Revision Summary
@@ -101,12 +88,12 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 | **Route 53**              | AWS’s fully managed DNS and domain registration service             |
 | **Hosted Zone**           | Container for all DNS records of a domain                           |
 | **Alias Record**          | AWS-optimized record type for services like S3, CloudFront, and ALB |
-| **Routing Policies**      | Determine how Route 53 responds to DNS queries                      |
-| **Health Checks**         | Detect endpoint health and automate failover                        |
-| **Latency-Based Routing** | Sends users to the region with the lowest latency                   |
-| **Failover Routing**      | Automatically redirects to standby in case of failure               |
-| **Private Hosted Zone**   | DNS for internal VPC-level resolution                               |
-| **Route 53 Resolver**     | Enables hybrid DNS resolution (AWS ↔ On-premises)                   |
+| **Routing Policies**      | Define how Route 53 responds to DNS queries                         |
+| **Health Checks**         | Monitor endpoint health and enable automatic failover               |
+| **Latency-Based Routing** | Sends users to the AWS region with lowest latency                   |
+| **Failover Routing**      | Automatically redirects traffic to standby site during failure      |
+| **Private Hosted Zone**   | DNS for internal resolution within VPC                              |
+| **Route 53 Resolver**     | Enables hybrid DNS (AWS ↔ On-premises integration)                  |
 
 ---
 
@@ -114,6 +101,6 @@ formatted for **GitHub** with collapsible sections, tables, and professional rea
 When preparing for Route 53 interviews — focus on:
 
 * Understanding **Routing Policies** (Weighted, Latency, Failover, Geolocation).
-* Explaining **Alias vs CNAME differences**.
-* Designing **HA architectures** using **Multi-AZ, Health Checks, and Failover Routing**.
-* Real-world hybrid DNS and **VPC Resolver** configurations.
+* Knowing **Alias vs CNAME differences** with examples.
+* Designing **High Availability architectures** using Health Checks + Failover.
+* Explaining **Hybrid DNS** setups using Route 53 Resolver.
