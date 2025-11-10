@@ -16,8 +16,6 @@ Perform **basic CRUD operations (Create, Read, Update, Delete)** manually using 
 * Click **Tables** on the left menu.
 * Select the table you created earlier (e.g., `EmployeeTable`).
 
-🖼️ *→ Add Screenshot 1 here (showing selected table page)*
-
 ---
 
 ### **Step 2: Navigate to the “Explore Table Items” Tab**
@@ -110,4 +108,5 @@ You have successfully performed all **CRUD operations** using the DynamoDB conso
 | **Read**   | View item     | Verified item details     |
 | **Update** | Modify fields | Updated salary and role   |
 | **Delete** | Remove item   | Deleted record from table |
+
 
