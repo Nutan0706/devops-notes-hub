@@ -15,8 +15,6 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
 * Open your browser and go to 👉 [https://aws.amazon.com/console](https://aws.amazon.com/console)
 * Login using your **AWS account credentials** (Root or IAM user).
 
-🖼️ *→ Add Screenshot 1 here (AWS Console home page)*
-
 ---
 
 ### **Step 2: Open DynamoDB Service**
@@ -24,15 +22,14 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
 * In the **AWS Management Console**, go to the **search bar** at the top.
 * Type **“DynamoDB”** and click on **DynamoDB** from the list.
 
-🖼️ *→ Add Screenshot 2 here (DynamoDB service dashboard)*
-
 ---
 
 ### **Step 3: Click on “Create table”**
 
 * On the left-hand side, under **“Tables”**, click on **“Create table”** button.
 
-🖼️ *→ Add Screenshot 3 here (Create Table button page)*
+<img width="909" height="463" alt="image" src="https://github.com/user-attachments/assets/ca4b8fb1-c2c5-498f-8d9f-c4802999de8d" />
+
 
 ---
 
@@ -103,3 +100,4 @@ You have successfully created your **first DynamoDB table** with:
 
 * **Partition key:** EmployeeID
 * **Sort key:** Department
+
