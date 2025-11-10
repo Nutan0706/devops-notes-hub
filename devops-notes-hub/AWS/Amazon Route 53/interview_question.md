@@ -1,32 +1,34 @@
 # 🌐 AWS Route 53 — Interview Questions
 
-This document contains **30 Route 53 Interview Questions** categorized into **Basic**, **Moderate**, **Advanced**, and **Scenario-Based** — formatted for GitHub with collapsible sections and tables.
+This document contains **30+ AWS Route 53 interview questions**, categorized into **Basic**, **Moderate**, **Advanced**, and **Scenario-Based** sections —
+formatted for **GitHub** with collapsible sections, tables, and professional readability.
 
 ---
 
 ## 📑 Table of Contents
-- [Basic Interview Questions (10)](#-basic-interview-questions-10)
-- [Moderate-Level Questions (10)](#-moderate-level-questions-10)
-- [Advanced Questions (10)](#-advanced-questions-10)
-- [Scenario-Based Questions](#-scenario-based-questions)
+
+* [🟢 Basic Interview Questions (10)](#-basic-interview-questions-10)
+* [🟡 Moderate-Level Questions (10)](#-moderate-level-questions-10)
+* [🔴 Advanced Questions (10)](#-advanced-questions-10)
+* [🧠 Scenario-Based Questions (10)](#-scenario-based-questions-10)
 
 ---
 
 <details>
 <summary><h2>🟢 Basic Interview Questions (10)</h2></summary>
 
-| # | Question |
-|---|-----------|
-| 1 | What is Route 53 and why is it called "53"? |
-| 2 | What is a Hosted Zone in Route 53? |
-| 3 | Difference between Public Hosted Zone and Private Hosted Zone. |
-| 4 | What are Alias Records in Route 53? |
-| 5 | What is the use of a CNAME record? |
-| 6 | Can a CNAME record be used at the root domain? Why/Why not? |
-| 7 | What are routing policies in Route 53? Name a few. |
-| 8 | What is a Health Check in Route 53? |
-| 9 | What DNS record type maps a domain name to an IPv4 address? |
-| 10 | What AWS services commonly integrate with Route 53? |
+| #  | Question                                                                               |
+| -- | -------------------------------------------------------------------------------------- |
+| 1  | What is Route 53 and why is it called “53”?                                            |
+| 2  | What is a Hosted Zone in Route 53?                                                     |
+| 3  | What is the difference between a **Public Hosted Zone** and a **Private Hosted Zone**? |
+| 4  | What are **Alias Records** in Route 53?                                                |
+| 5  | What is the purpose of a **CNAME record**?                                             |
+| 6  | Can a CNAME record be used at the root domain? Why or why not?                         |
+| 7  | What are **Routing Policies** in Route 53? Name a few.                                 |
+| 8  | What is a **Health Check** in Route 53?                                                |
+| 9  | Which DNS record type maps a domain name to an IPv4 address?                           |
+| 10 | Which AWS services commonly integrate with Route 53?                                   |
 
 </details>
 
@@ -35,18 +37,18 @@ This document contains **30 Route 53 Interview Questions** categorized into **Ba
 <details>
 <summary><h2>🟡 Moderate-Level Questions (10)</h2></summary>
 
-| # | Question |
-|---|-----------|
-| 11 | When should you use Weighted Routing over Latency-Based Routing? |
-| 12 | Explain the difference between Alias and CNAME records with an example. |
-| 13 | How does Failover Routing work in Route 53? |
-| 14 | What is Multi-Value Answer Routing and how is it different from a Load Balancer? |
-| 15 | Which routing policy helps in A/B testing and how? |
-| 16 | Can Route 53 be used for on-premise environments? If yes, how? |
-| 17 | What is the TTL value in DNS and how does it affect Route 53 responses? |
-| 18 | Explain Geolocation vs Geoproximity Routing. |
-| 19 | What mechanisms ensure high availability in Route 53? |
-| 20 | How do Health Checks integrate with CloudWatch? |
+| #  | Question                                                                                    |
+| -- | ------------------------------------------------------------------------------------------- |
+| 11 | When should you use **Weighted Routing** over **Latency-Based Routing**?                    |
+| 12 | Explain the difference between **Alias** and **CNAME records** with an example.             |
+| 13 | How does **Failover Routing** work in Route 53?                                             |
+| 14 | What is **Multi-Value Answer Routing**, and how does it differ from a Load Balancer?        |
+| 15 | Which routing policy helps in **A/B testing**, and how?                                     |
+| 16 | Can Route 53 be used for **on-premises environments**? If yes, how?                         |
+| 17 | What is the **TTL (Time to Live)** value in DNS, and how does it affect Route 53 responses? |
+| 18 | Explain **Geolocation Routing** vs **Geoproximity Routing**.                                |
+| 19 | What mechanisms ensure **high availability** in Route 53?                                   |
+| 20 | How do **Health Checks** integrate with **CloudWatch** for monitoring?                      |
 
 </details>
 
@@ -55,39 +57,63 @@ This document contains **30 Route 53 Interview Questions** categorized into **Ba
 <details>
 <summary><h2>🔴 Advanced Questions (10)</h2></summary>
 
-| # | Question |
-|---|-----------|
-| 21 | How does Route 53 achieve global fault tolerance and low latency routing? |
-| 22 | How would DNS-based load balancing differ from Application Load Balancer routing? |
-| 23 | Can Route 53 route traffic based on user device type (mobile/web)? If yes/no, explain. |
-| 24 | What is Route 53 Resolver and when do you use it? |
-| 25 | How do you implement **private DNS** resolution across multiple VPCs? |
-| 26 | How does Route 53 support hybrid cloud DNS setups? |
-| 27 | How does caching impact DNS failover timing? |
-| 28 | What happens if all endpoints fail health checks in Multi-Value Routing? |
-| 29 | How do Alias queries remain free while CNAME queries are billed? |
-| 30 | Difference between Route 53 and Google DNS/Azure DNS from architecture perspective. |
+| #  | Question                                                                                        |
+| -- | ----------------------------------------------------------------------------------------------- |
+| 21 | How does Route 53 achieve **global fault tolerance** and **low-latency routing**?               |
+| 22 | How does **DNS-based load balancing** differ from **Application Load Balancer routing**?        |
+| 23 | Can Route 53 route traffic based on **user device type (mobile/web)**? Explain why or why not.  |
+| 24 | What is the **Route 53 Resolver**, and when would you use it?                                   |
+| 25 | How can you implement **private DNS resolution** across multiple VPCs?                          |
+| 26 | How does Route 53 support **hybrid cloud DNS setups**?                                          |
+| 27 | How does **DNS caching** impact failover timing in Route 53?                                    |
+| 28 | What happens if **all endpoints fail health checks** in Multi-Value Answer Routing?             |
+| 29 | Why are **Alias queries** free while **CNAME queries** are billed?                              |
+| 30 | Compare **Route 53**, **Google Cloud DNS**, and **Azure DNS** from an architecture perspective. |
 
 </details>
 
 ---
 
 <details>
-<summary><h2>🧠 Scenario-Based Questions</h2></summary>
+<summary><h2>🧠 Scenario-Based Questions (10)</h2></summary>
 
-| Scenario # | Question |
-|------------|------------|
-| S1 | Your website is hosted in us-east-1, and users in India face latency. Which routing policy will you use and why? |
-| S2 | You want Blue/Green deployment for a new release with 90% traffic to old and 10% to new. Which routing policy suits this? |
-| S3 | Your primary website is down; traffic must go to DR site automatically. How do you configure it in Route 53? |
-| S4 | You need to route EU traffic to EU servers and Asia traffic to Singapore region. Which routing policy helps? |
-| S5 | You want to shift 20% of US traffic to the EU region temporarily. Which routing policy will you use? |
-| S6 | You need DNS resolution for internal services across 3 VPCs. How will you configure this? |
-| S7 | Your app uses on-prem DNS + AWS DNS. How do you integrate them for seamless resolution? |
-| S8 | You're using Multi-Value Routing with 6 IPs, 3 become unhealthy. What will Route 53 return? |
-| S9 | You must route based on latency but also remove unhealthy endpoints. What two features must you combine? |
-| S10 | A client wants a single domain to serve different websites in US, India, and Japan using their nearest servers. Design this. |
+| #   | Scenario                         | Question                                                                                                                     |
+| --- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| S1  | 🌎 **Latency Issue**             | Your website is hosted in `us-east-1`, and users in India face high latency. Which routing policy will you use and why?      |
+| S2  | 🧩 **Blue/Green Deployment**     | You want 90% of traffic on old version and 10% on new. Which routing policy suits this scenario?                             |
+| S3  | 💀 **Disaster Recovery**         | Your primary website is down. How can Route 53 automatically send traffic to a DR site?                                      |
+| S4  | 🌍 **Regional Routing**          | You want EU traffic to go to Frankfurt and Asia traffic to Singapore. Which routing policy will you use?                     |
+| S5  | 🔄 **Traffic Shifting**          | You want to shift 20% of US traffic to the EU temporarily. Which policy fits best?                                           |
+| S6  | 🧱 **Private DNS Across VPCs**   | You need DNS resolution for internal services across 3 VPCs. How will you configure this?                                    |
+| S7  | 🏢 **Hybrid DNS**                | Your app uses both on-prem and AWS DNS. How will you integrate them for seamless resolution?                                 |
+| S8  | 💓 **Unhealthy Endpoints**       | You use Multi-Value Routing with 6 IPs; 3 become unhealthy. What will Route 53 return?                                       |
+| S9  | ⚡ **Combined Policies**          | You want latency-based routing but also need to remove unhealthy endpoints. What two features should you combine?            |
+| S10 | 🗺 **Multi-Region App Delivery** | A client wants a single domain to serve users in US, India, and Japan via their nearest servers. Design this Route 53 setup. |
 
 </details>
 
 ---
+
+## 🧩 Quick Revision Summary
+
+| Concept                   | Description                                                         |
+| ------------------------- | ------------------------------------------------------------------- |
+| **Route 53**              | AWS’s fully managed DNS and domain registration service             |
+| **Hosted Zone**           | Container for all DNS records of a domain                           |
+| **Alias Record**          | AWS-optimized record type for services like S3, CloudFront, and ALB |
+| **Routing Policies**      | Determine how Route 53 responds to DNS queries                      |
+| **Health Checks**         | Detect endpoint health and automate failover                        |
+| **Latency-Based Routing** | Sends users to the region with the lowest latency                   |
+| **Failover Routing**      | Automatically redirects to standby in case of failure               |
+| **Private Hosted Zone**   | DNS for internal VPC-level resolution                               |
+| **Route 53 Resolver**     | Enables hybrid DNS resolution (AWS ↔ On-premises)                   |
+
+---
+
+✅ **Final Tip:**
+When preparing for Route 53 interviews — focus on:
+
+* Understanding **Routing Policies** (Weighted, Latency, Failover, Geolocation).
+* Explaining **Alias vs CNAME differences**.
+* Designing **HA architectures** using **Multi-AZ, Health Checks, and Failover Routing**.
+* Real-world hybrid DNS and **VPC Resolver** configurations.
