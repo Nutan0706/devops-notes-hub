@@ -58,8 +58,6 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
 * Leave the default as **“Provisioned”** or select **“On-demand”** if available.
 * For practice, you can **keep all defaults**.
 
-🖼️ *→ Add Screenshot 5 here (Capacity mode section)*
-
 ---
 
 ### **Step 6: (Optional) Configure Table Settings**
@@ -70,7 +68,6 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
   * **Auto scaling** → leave as default
   * **TTL (Time to Live)** → disable for now
 
-🖼️ *→ Add Screenshot 6 here (optional configuration section)*
 
 ---
 
@@ -79,7 +76,8 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
 * Once done, scroll to the bottom and click the **“Create table”** button.
 * Wait a few seconds for the table to be created.
 
-🖼️ *→ Add Screenshot 7 here (creation in progress)*
+<img width="416" height="284" alt="image" src="https://github.com/user-attachments/assets/cff771f1-33bb-40b5-8121-f9608b42960a" />
+
 
 ---
 
@@ -92,7 +90,8 @@ Create a **DynamoDB table** with a **Partition Key** and **Sort Key** using the 
   * **Primary key** (Partition + Sort key)
   * **Table status** → should show as `Active`
 
-🖼️ *→ Add Screenshot 8 here (final table details view)*
+<img width="208" height="247" alt="image" src="https://github.com/user-attachments/assets/09c6c7c1-659e-4df1-a0a6-053657e99485" />
+
 
 ---
 
@@ -101,5 +100,6 @@ You have successfully created your **first DynamoDB table** with:
 
 * **Partition key:** EmployeeID
 * **Sort key:** Department
+
 
 
