@@ -24,7 +24,8 @@ You will learn how to:
 2. In the **search bar**, type **VPC** and select **VPC** from the services list.
 3. You’ll be redirected to the **VPC Dashboard**.
 
-🖼️ *Add Screenshot Here: VPC Dashboard*
+<img width="1425" height="569" alt="image" src="https://github.com/user-attachments/assets/19b53310-dc37-4762-a0fe-d02bf0731beb" />
+
 
 ---
 
@@ -34,7 +35,8 @@ You will learn how to:
 2. Select **Create VPC** button.
 3. Choose **“VPC only”** option (not VPC and more).
 
-🖼️ *Add Screenshot Here: Create VPC Page*
+<img width="1115" height="814" alt="image" src="https://github.com/user-attachments/assets/bdd86f6c-84ea-4b33-b40a-13e950f85b9a" />
+
 
 ---
 
@@ -51,7 +53,8 @@ Fill in the details as below:
 
 Then click **Create VPC**.
 
-🖼️ *Add Screenshot Here: Configuration Values*
+<img width="914" height="592" alt="image" src="https://github.com/user-attachments/assets/88ea09b8-4171-46c8-8267-816c9dee4865" />
+
 
 ---
 
@@ -66,7 +69,8 @@ Check that:
 * CIDR block is `10.0.0.0/16`
 * State shows **available**
 
-🖼️ *Add Screenshot Here: Custom VPC List*
+<img width="1503" height="627" alt="image" src="https://github.com/user-attachments/assets/37298917-be49-4c22-bad3-b68ac1046f42" />
+
 
 ---
 
@@ -81,8 +85,6 @@ When a new VPC is created, AWS does **not** automatically create:
 
 But you can manually add them later.
 
-🖼️ *Add Screenshot Here: Components Overview*
-
 ---
 
 ## 🧩 Key Notes
@@ -92,4 +94,5 @@ But you can manually add them later.
 | **Default VPC** | Automatically created by AWS, includes subnets in each AZ, route tables, IGW, and SG. |
 | **Custom VPC**  | Fully controlled by you, no default subnets or gateways.                              |
 | **CIDR Block**  | Defines the IP range used by your VPC (e.g., `10.0.0.0/16` means 65,536 IPs).         |
+
 
