@@ -207,3 +207,37 @@ ReplicaSet ensures **3 pods** are always running — no more, no less.
 
 ---
 
+# 🚀 **DaemonSet — Run a Pod on All (or Selected) Nodes**
+
+### **Definition (simple & direct):**
+
+A **DaemonSet** ensures that **one Pod is running on every node** (or a specific group of nodes) in the cluster.
+
+---
+
+## 🔹 **Key Points**
+
+* Automatically adds a pod **to every new node** that joins the cluster.
+* Removes the pod when a node is removed.
+* Used for **node-level background tasks**.
+* Often used for monitoring, logging, and networking agents.
+* You typically do **not** scale DaemonSets (each node runs exactly one pod).
+
+---
+
+## 🔹 **Common Use Cases**
+
+* Logs collection: **Fluentd, Filebeat**
+* Monitoring: **Prometheus Node Exporter**
+* Network plugins: **Calico, Weave**
+* Storage agents
+
+---
+
+## 🔹 **How DaemonSet Works**
+
+* Schedules **one pod per node** based on nodeSelectors, taints/tolerations, or labels.
+* Ensures pod placement even during cluster scaling.
+
+---
+
