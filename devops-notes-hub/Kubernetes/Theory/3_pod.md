@@ -29,3 +29,35 @@ Only when they must work **together tightly**, such as:
 * Adapter container
 
 Example: **nginx + log collector container** in the same pod.
+
+
+Here is a **clean, short, interview-ready explanation** of **Node** in Kubernetes — matching your style.
+
+---
+
+# 🚀 **Node — Worker Machine in Kubernetes**
+
+### **Definition (simple & direct):**
+
+A **Node** is a **worker machine** in Kubernetes.
+It can be a **VM** or a **Physical server** where your **Pods actually run**.
+
+---
+
+# 🔹 **Key Points**
+
+* Node is part of the **data plane**.
+* It runs all the **workloads (Pods/Containers)**.
+* It must run **kubelet**, **kube-proxy**, and a **container runtime**.
+* Nodes join the cluster using **kubeadm** or cloud-managed control plane.
+* Master/Control plane schedules pods to nodes based on resource availability.
+
+---
+
+# 🔹 **Node Types**
+
+* **Worker Node** → runs the applications
+* **Master Node** → controls the cluster (API server, scheduler, etc.)
+
+---
+
