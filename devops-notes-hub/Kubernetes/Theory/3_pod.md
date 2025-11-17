@@ -241,3 +241,48 @@ A **DaemonSet** ensures that **one Pod is running on every node** (or a specific
 
 ---
 
+# 🚀 **StatefulSet — Manages Stateful Applications**
+
+### **Definition (simple & direct):**
+
+A **StatefulSet** is used to manage **stateful applications** where **each Pod needs a stable identity**, **persistent storage**, and **ordered deployment/termination**.
+
+---
+
+## 🔹 **Key Points**
+
+* Pods get **fixed, stable names** like:
+
+  ```
+  web-0, web-1, web-2
+  ```
+* Supports **ordered**:
+
+  * Pod creation
+  * Pod deletion
+  * Pod updates
+* Each pod gets a **persistent storage volume** that stays even if the pod is recreated.
+* Good for distributed systems that need identity.
+
+---
+
+## 🔹 **Use Cases**
+
+* Databases: **MySQL, PostgreSQL**
+* Distributed systems: **Cassandra, Kafka, MongoDB**
+* Clustered apps needing consistent identity
+
+---
+
+## 🔹 **How StatefulSet Works**
+
+* Uses **Headless Service** (`clusterIP: None`) for stable DNS.
+* Ensures:
+
+  * `pod-0` starts first
+  * then `pod-1`
+  * and so on
+* Restart order is also controlled.
+
+---
+
