@@ -325,12 +325,6 @@ You can paste this directly into **kubernetes_concepts.md**.
 
 ---
 
-If you want, I can create:
 
-✅ **A fancy README template**
-✅ **A printable PDF version**
-✅ **An interactive HTML (GitHub Pages) version**
-
-Just tell me!
 
 
