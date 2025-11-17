@@ -285,4 +285,256 @@ A **StatefulSet** is used to manage **stateful applications** where **each Pod n
 * Restart order is also controlled.
 
 ---
+# 🚀 **Job — Run Tasks to Completion (One-Time Jobs)**
 
+### **Definition (simple & direct):**
+
+A **Job** in Kubernetes is used to run **one-time tasks** that must **complete successfully**.
+It ensures a specified number of pods run **to completion**.
+
+---
+
+## 🔹 **Key Points**
+
+* Runs pods **until the task finishes** (success exit code).
+* Automatically retries on failure.
+* Ensures the job completes **exactly N times** (based on `completions`).
+* Used for **batch processing** or **one-time scripts**.
+* Not for long-running apps — that’s for Deployment/StatefulSet.
+
+---
+
+## 🔹 **Common Use Cases**
+
+* Database migrations
+* Backup jobs
+* Sending emails batch
+* Cleanup scripts
+* Data processing tasks
+
+---
+
+## 🔹 **How Job Works**
+
+* You specify:
+
+  ```yaml
+  completions: 1
+  parallelism: 1
+  ```
+* Job creates pod → task completes → pod stops → job marked **Succeeded**.
+
+---
+
+# 🚀 **CronJob — Run Jobs on a Schedule**
+
+### **Definition (simple & direct):**
+
+A **CronJob** runs **Jobs** on a **specific schedule**, similar to a Linux cron.
+Used for recurring or periodic tasks.
+
+---
+
+# 🔹 **Key Points**
+
+* Uses **cron syntax** (e.g., `"0 * * * *"` for every hour).
+* Automatically creates a **Job** at each scheduled time.
+* Retries failed runs depending on Job spec.
+* Supports concurrency policies:
+
+  * `Allow` → allow parallel runs
+  * `Forbid` → skip new run if previous is active
+  * `Replace` → replace active job with a new one
+* Good for repeated batch tasks.
+
+---
+
+# 🔹 **Common Use Cases**
+
+* Nightly backups
+* Log cleanup
+* Email/SMS reminders
+* Scheduled database sync
+* Periodic report generation
+
+---
+
+# 🔹 **How CronJob Works**
+
+* You define a schedule:
+
+  ```yaml
+  schedule: "*/5 * * * *"
+  ```
+
+  → runs every 5 minutes
+
+* Each run creates a new **Job**, and that Job creates pods to finish the work.
+
+---
+
+# 🚀 **Service — Expose Pods (ClusterIP, NodePort, LoadBalancer)**
+
+### **Definition (simple & direct):**
+
+A **Service** is a stable networking endpoint that **exposes Pods** and allows reliable access, even if pod IPs change.
+
+---
+
+# 🔹 **Key Points**
+
+* Pods are temporary → their IP changes → Service gives a **fixed IP**.
+* Works using **labels + selectors** to route traffic to the correct pods.
+* Load balances traffic across pod replicas.
+* Provides **stable DNS name**, e.g. `my-service.default.svc.cluster.local`.
+
+---
+
+# 🔹 **Types of Services**
+
+### **1. ClusterIP (default)**
+
+* Accessible **inside the cluster only**.
+* Most commonly used.
+
+```sh
+kubectl expose deployment web --port=80 --type=ClusterIP
+```
+
+---
+
+### **2. NodePort**
+
+* Exposes service on **each node’s IP** at a static port (30000–32767).
+* Allows external traffic → NodeIP:NodePort.
+
+```sh
+kubectl expose deployment web --port=80 --type=NodePort
+```
+
+---
+
+### **3. LoadBalancer**
+
+* Used in cloud (AWS, GCP, Azure).
+* Creates a **cloud load balancer** and forwards traffic to NodePort → ClusterIP → Pods.
+
+```sh
+kubectl expose deployment web --port=80 --type=LoadBalancer
+```
+
+---
+
+## 🔹 **Why Service?**
+
+* Stable networking
+* Load balancing across pods
+* Easy discovery using DNS
+* Access from internal or external clients
+
+---
+
+# 🚀 **ConfigMap — Externalize Non-Confidential Configuration**
+
+### **Definition (simple & direct):**
+
+A **ConfigMap** is used to **store non-confidential configuration data** (key-value pairs) outside the container image, so you can change config without rebuilding the image.
+
+---
+
+## 🔹 **Key Points**
+
+* Stores **plain text configuration** (not sensitive).
+* Used for:
+
+  * App settings
+  * Environment variables
+  * File-based config
+  * Command-line arguments
+* Can be mounted as:
+
+  * **Environment variables**
+  * **Configuration files** inside the container
+* Helps keep images clean and reusable.
+* Works with Deployments, Pods, StatefulSets, Jobs, etc.
+
+---
+
+## 🔹 **Common Use Cases**
+
+* Database URLs
+* Application modes (`dev`, `prod`)
+* Feature flags
+* Config files like `.properties` or `.json`
+
+---
+
+## 🔹 **How ConfigMap Works**
+
+You create a ConfigMap → reference it in your Pod → Kubernetes injects the values at runtime.
+
+Example:
+
+```yaml
+env:
+  - name: APP_MODE
+    valueFrom:
+      configMapKeyRef:
+        name: app-config
+        key: mode
+```
+
+---
+
+# 🚀 **Secret — Store Sensitive Data (base64 encoded)**
+
+### **Definition (simple & direct):**
+
+A **Secret** is used to store **sensitive data** such as passwords, tokens, SSH keys, API keys — encoded in **base64** to avoid plain text exposure.
+
+---
+
+## 🔹 **Key Points**
+
+* Designed for **confidential info** (unlike ConfigMap).
+* Data is stored in **base64 encoded** format (not encrypted).
+* Can be mounted:
+
+  * As **environment variables**
+  * As **files** inside containers
+* Kubernetes ensures secrets are sent only to **authorized pods**.
+* Works with Deployments, Pods, StatefulSets, Jobs, etc.
+* Better security with:
+
+  * Encryption at rest
+  * RBAC restrictions
+  * External secret managers (AWS Secrets Manager, Vault)
+
+---
+
+## 🔹 **Common Use Cases**
+
+* Database passwords
+* API keys
+* TLS certificates
+* SSH private keys
+* OAuth tokens
+
+---
+
+## 🔹 **How Secret Works**
+
+You create a Secret → Pod references it → Kubernetes injects it securely.
+
+Example:
+
+```yaml
+env:
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db-secret
+        key: password
+```
+
+---
