@@ -1,147 +1,120 @@
-# **🐧 Linux Concepts – Category-wise Table (Badges First Column + One-liners)**
+# **🧩 Git Concepts – Category-wise Table (Badges First Column + One-liners)**
 
 ---
 
-# **1️⃣ Linux Basics** ![](https://img.shields.io/badge/Category-Basics-blue)
+# **1️⃣ Git Basics** ![](https://img.shields.io/badge/Category-Basics-blue)
 
-| Badge                                                 | Concept      | Definition                             |
-| ----------------------------------------------------- | ------------ | -------------------------------------- |
-| ![](https://img.shields.io/badge/Linux-OS-green)      | Linux OS     | Open-source operating system kernel.   |
-| ![](https://img.shields.io/badge/Shell-blue)          | Shell        | Interface to run commands (bash, zsh). |
-| ![](https://img.shields.io/badge/Terminal-grey)       | Terminal     | Program where shell executes.          |
-| ![](https://img.shields.io/badge/Kernel-purple)       | Kernel       | Core of the OS that manages hardware.  |
-| ![](https://img.shields.io/badge/Distribution-orange) | Distribution | Linux version (Ubuntu, CentOS, RHEL).  |
-
----
-
-# **2️⃣ File System & Directories** ![](https://img.shields.io/badge/Category-Filesystem-yellow)
-
-| Badge                                                | Concept    | Definition                         |
-| ---------------------------------------------------- | ---------- | ---------------------------------- |
-| ![](https://img.shields.io/badge/root%20\(/\)-black) | `/` (Root) | Top-most directory.                |
-| ![](https://img.shields.io/badge/home-blue)          | `/home`    | User home directories.             |
-| ![](https://img.shields.io/badge/etc-grey)           | `/etc`     | System configuration files.        |
-| ![](https://img.shields.io/badge/bin-green)          | `/bin`     | Essential user binaries.           |
-| ![](https://img.shields.io/badge/sbin-orange)        | `/sbin`    | System binaries (admin only).      |
-| ![](https://img.shields.io/badge/var-red)            | `/var`     | Logs & variable data.              |
-| ![](https://img.shields.io/badge/tmp-lightgrey)      | `/tmp`     | Temporary files.                   |
-| ![](https://img.shields.io/badge/proc-yellowgreen)   | `/proc`    | Virtual file system for processes. |
+| Badge                                             | Concept    | Definition                               |
+| ------------------------------------------------- | ---------- | ---------------------------------------- |
+| ![](https://img.shields.io/badge/Git-Init-green)  | git init   | Initializes a new Git repository.        |
+| ![](https://img.shields.io/badge/Git-Clone-blue)  | git clone  | Creates a copy of a remote repository.   |
+| ![](https://img.shields.io/badge/Repository-grey) | Repository | Directory where Git tracks file changes. |
+| ![](https://img.shields.io/badge/Commit-orange)   | Commit     | Snapshot of project changes.             |
+| ![](https://img.shields.io/badge/Branch-yellow)   | Branch     | Independent line of development.         |
+| ![](https://img.shields.io/badge/HEAD-purple)     | HEAD       | Pointer to the current commit/branch.    |
 
 ---
 
-# **3️⃣ Linux Commands** ![](https://img.shields.io/badge/Category-Commands-brightgreen)
+# **2️⃣ Git Configuration** ![](https://img.shields.io/badge/Category-Configuration-green)
 
-| Badge                                             | Command | Definition                       |
-| ------------------------------------------------- | ------- | -------------------------------- |
-| ![](https://img.shields.io/badge/ls-blue)         | ls      | List files and directories.      |
-| ![](https://img.shields.io/badge/cd-yellow)       | cd      | Change directory.                |
-| ![](https://img.shields.io/badge/pwd-grey)        | pwd     | Print current working directory. |
-| ![](https://img.shields.io/badge/cat-orange)      | cat     | Display content of files.        |
-| ![](https://img.shields.io/badge/touch-green)     | touch   | Create empty file.               |
-| ![](https://img.shields.io/badge/mkdir-lightblue) | mkdir   | Create a directory.              |
-| ![](https://img.shields.io/badge/rm-red)          | rm      | Remove files or directories.     |
-| ![](https://img.shields.io/badge/cp-purple)       | cp      | Copy files.                      |
-| ![](https://img.shields.io/badge/mv-yellowgreen)  | mv      | Move/rename files.               |
+| Badge                                             | Concept       | Definition                             |
+| ------------------------------------------------- | ------------- | -------------------------------------- |
+| ![](https://img.shields.io/badge/git-config-blue) | git config    | Configure Git username/email/settings. |
+| ![](https://img.shields.io/badge/global-orange)   | Global Config | Applies to all repos for user.         |
+| ![](https://img.shields.io/badge/local-yellow)    | Local Config  | Applies only to the current repo.      |
+| ![](https://img.shields.io/badge/.gitconfig-grey) | .gitconfig    | File storing Git config.               |
 
 ---
 
-# **4️⃣ File Permissions & Ownership** ![](https://img.shields.io/badge/Category-Permissions-red)
+# **3️⃣ Git Staging Area** ![](https://img.shields.io/badge/Category-Staging-orange)
 
-| Badge                                         | Concept | Definition                      |
-| --------------------------------------------- | ------- | ------------------------------- |
-| ![](https://img.shields.io/badge/chmod-blue)  | chmod   | Change permissions.             |
-| ![](https://img.shields.io/badge/chown-green) | chown   | Change file owner.              |
-| ![](https://img.shields.io/badge/umask-grey)  | umask   | Default file permission mask.   |
-| ![](https://img.shields.io/badge/ACL-orange)  | ACL     | Advanced permissions for files. |
-| ![](https://img.shields.io/badge/777-red)     | 777     | Full permissions for all.       |
-
----
-
-# **5️⃣ Process Management** ![](https://img.shields.io/badge/Category-Processes-purple)
-
-| Badge                                              | Concept | Definition                          |
-| -------------------------------------------------- | ------- | ----------------------------------- |
-| ![](https://img.shields.io/badge/ps-blue)          | ps      | Shows running processes.            |
-| ![](https://img.shields.io/badge/top-green)        | top     | Real-time system processes monitor. |
-| ![](https://img.shields.io/badge/htop-yellowgreen) | htop    | Interactive process viewer.         |
-| ![](https://img.shields.io/badge/kill-red)         | kill    | Terminate a process using PID.      |
-| ![](https://img.shields.io/badge/nice-orange)      | nice    | Set process priority.               |
-| ![](https://img.shields.io/badge/systemd-grey)     | systemd | Init system for managing services.  |
+| Badge                                             | Concept      | Definition                             |
+| ------------------------------------------------- | ------------ | -------------------------------------- |
+| ![](https://img.shields.io/badge/git-add-green)   | git add      | Adds changes to staging area.          |
+| ![](https://img.shields.io/badge/git-status-blue) | git status   | Shows tracked/untracked changes.       |
+| ![](https://img.shields.io/badge/.gitignore-grey) | .gitignore   | File to ignore specific files/folders. |
+| ![](https://img.shields.io/badge/staged-yellow)   | Staged Files | Files ready for commit.                |
 
 ---
 
-# **6️⃣ Package Management** ![](https://img.shields.io/badge/Category-Packages-orange)
+# **4️⃣ Git Branching & Merging** ![](https://img.shields.io/badge/Category-Branching-purple)
 
-| Badge                                         | Concept | Definition                           |
-| --------------------------------------------- | ------- | ------------------------------------ |
-| ![](https://img.shields.io/badge/apt-blue)    | apt     | Package manager for Debian/Ubuntu.   |
-| ![](https://img.shields.io/badge/yum-green)   | yum     | Package manager for RHEL/CentOS.     |
-| ![](https://img.shields.io/badge/dnf-yellow)  | dnf     | Modern package manager for Fedora.   |
-| ![](https://img.shields.io/badge/rpm-red)     | rpm     | Install/manage RPM packages.         |
-| ![](https://img.shields.io/badge/snap-purple) | snap    | Universal package management system. |
-
----
-
-# **7️⃣ Networking** ![](https://img.shields.io/badge/Category-Networking-blueviolet)
-
-| Badge                                            | Command  | Definition                                       |
-| ------------------------------------------------ | -------- | ------------------------------------------------ |
-| ![](https://img.shields.io/badge/ifconfig-green) | ifconfig | Shows network interfaces.                        |
-| ![](https://img.shields.io/badge/ip-blue)        | ip       | Modern network utility for routing & interfaces. |
-| ![](https://img.shields.io/badge/ping-yellow)    | ping     | Test network connectivity.                       |
-| ![](https://img.shields.io/badge/netstat-grey)   | netstat  | Shows network connections.                       |
-| ![](https://img.shields.io/badge/curl-orange)    | curl     | Sends HTTP requests.                             |
-| ![](https://img.shields.io/badge/wget-lightblue) | wget     | Download files via HTTP/FTP.                     |
-| ![](https://img.shields.io/badge/SSH-purple)     | ssh      | Connect to remote machines.                      |
+| Badge                                                | Concept            | Definition                                |
+| ---------------------------------------------------- | ------------------ | ----------------------------------------- |
+| ![](https://img.shields.io/badge/git-branch-blue)    | git branch         | Creates or lists branches.                |
+| ![](https://img.shields.io/badge/git-checkout-green) | git checkout       | Switches branches.                        |
+| ![](https://img.shields.io/badge/git-switch-yellow)  | git switch         | Safer alternative to checkout.            |
+| ![](https://img.shields.io/badge/git-merge-orange)   | git merge          | Combines changes from another branch.     |
+| ![](https://img.shields.io/badge/conflict-red)       | Merge Conflict     | Manual fix required when changes clash.   |
+| ![](https://img.shields.io/badge/fast--forward-grey) | Fast-forward Merge | Simple pointer move without merge commit. |
 
 ---
 
-# **8️⃣ Disk & Storage Management** ![](https://img.shields.io/badge/Category-Storage-lightgrey)
+# **5️⃣ Git Commit History** ![](https://img.shields.io/badge/Category-History-lightgrey)
 
-| Badge                                          | Concept | Definition                   |
-| ---------------------------------------------- | ------- | ---------------------------- |
-| ![](https://img.shields.io/badge/df-blue)      | df      | Show disk usage.             |
-| ![](https://img.shields.io/badge/du-green)     | du      | Disk usage of files/folders. |
-| ![](https://img.shields.io/badge/mount-yellow) | mount   | Mount file systems.          |
-| ![](https://img.shields.io/badge/umount-red)   | umount  | Unmount storage.             |
-| ![](https://img.shields.io/badge/fdisk-purple) | fdisk   | Manage disk partitions.      |
-| ![](https://img.shields.io/badge/LVM-orange)   | LVM     | Logical volume management.   |
+| Badge                                                | Concept     | Definition                   |
+| ---------------------------------------------------- | ----------- | ---------------------------- |
+| ![](https://img.shields.io/badge/git-log-blue)       | git log     | Shows commit history.        |
+| ![](https://img.shields.io/badge/commit--hash-green) | Commit Hash | Unique ID for each commit.   |
+| ![](https://img.shields.io/badge/git-show-orange)    | git show    | Shows details of a commit.   |
+| ![](https://img.shields.io/badge/git-blame-red)      | git blame   | Shows who changed each line. |
 
 ---
 
-# **9️⃣ Logs & Monitoring** ![](https://img.shields.io/badge/Category-Monitoring-brightgreen)
+# **6️⃣ Undoing Changes** ![](https://img.shields.io/badge/Category-Undo-red)
 
-| Badge                                             | Concept    | Definition                        |
-| ------------------------------------------------- | ---------- | --------------------------------- |
-| ![](https://img.shields.io/badge/journalctl-blue) | journalctl | View systemd logs.                |
-| ![](https://img.shields.io/badge/dmesg-lightgrey) | dmesg      | Kernel ring buffer logs.          |
-| ![](https://img.shields.io/badge/tail-yellow)     | tail       | Show last lines of a file.        |
-| ![](https://img.shields.io/badge/grep-red)        | grep       | Searches text using patterns.     |
-| ![](https://img.shields.io/badge/awk-green)       | awk        | Pattern scanning & processing.    |
-| ![](https://img.shields.io/badge/sed-purple)      | sed        | Stream editor for modifying text. |
+| Badge                                               | Concept     | Definition                                       |
+| --------------------------------------------------- | ----------- | ------------------------------------------------ |
+| ![](https://img.shields.io/badge/git-reset-blue)    | git reset   | Move HEAD backward, modify staging.              |
+| ![](https://img.shields.io/badge/git-restore-green) | git restore | Restore files to earlier state.                  |
+| ![](https://img.shields.io/badge/git-revert-yellow) | git revert  | Create a new commit that undoes previous commit. |
+| ![](https://img.shields.io/badge/git-clean-orange)  | git clean   | Removes untracked files.                         |
 
 ---
 
-# 🔟 **Users & Authentication** ![](https://img.shields.io/badge/Category-Users-blue)
+# **7️⃣ Remote Repositories** ![](https://img.shields.io/badge/Category-Remote-blueviolet)
 
-| Badge                                                  | Concept  | Definition                |
-| ------------------------------------------------------ | -------- | ------------------------- |
-| ![](https://img.shields.io/badge/useradd-green)        | useradd  | Create a new user.        |
-| ![](https://img.shields.io/badge/passwd-orange)        | passwd   | Change user password.     |
-| ![](https://img.shields.io/badge/sudo-blueviolet)      | sudo     | Execute commands as root. |
-| ![](https://img.shields.io/badge/groupadd-yellowgreen) | groupadd | Create new group.         |
-| ![](https://img.shields.io/badge/SSH--Keys-red)        | SSH Keys | Key-based authentication. |
+| Badge                                              | Concept    | Definition                         |
+| -------------------------------------------------- | ---------- | ---------------------------------- |
+| ![](https://img.shields.io/badge/git-remote-blue)  | git remote | Shows/adds remote repositories.    |
+| ![](https://img.shields.io/badge/git-push-green)   | git push   | Uploads commits to remote repo.    |
+| ![](https://img.shields.io/badge/git-pull-yellow)  | git pull   | Fetch + merge latest changes.      |
+| ![](https://img.shields.io/badge/git-fetch-orange) | git fetch  | Downloads changes without merging. |
+| ![](https://img.shields.io/badge/origin-grey)      | origin     | Default name for remote repo.      |
 
 ---
 
-# **1️⃣1️⃣ Archiving & Compression** ![](https://img.shields.io/badge/Category-Archive-teal)
+# **8️⃣ Git Tags & Releases** ![](https://img.shields.io/badge/Category-Tags-teal)
 
-| Badge                                          | Concept | Definition                 |
-| ---------------------------------------------- | ------- | -------------------------- |
-| ![](https://img.shields.io/badge/tar-blue)     | tar     | Packs files into archives. |
-| ![](https://img.shields.io/badge/gzip-green)   | gzip    | Compression tool.          |
-| ![](https://img.shields.io/badge/unzip-yellow) | unzip   | Extract zip files.         |
-| ![](https://img.shields.io/badge/zip-orange)   | zip     | Compress into .zip.        |
+| Badge                                                | Concept         | Definition                         |
+| ---------------------------------------------------- | --------------- | ---------------------------------- |
+| ![](https://img.shields.io/badge/git-tag-blue)       | git tag         | Marks specific commit for release. |
+| ![](https://img.shields.io/badge/annotated-green)    | Annotated Tag   | Tag with message, metadata.        |
+| ![](https://img.shields.io/badge/lightweight-yellow) | Lightweight Tag | Simple pointer to commit.          |
+| ![](https://img.shields.io/badge/versioning-orange)  | Version Tag     | Tag used for semantic versioning.  |
+
+---
+
+# **9️⃣ Collaboration & Workflows** ![](https://img.shields.io/badge/Category-Workflow-green)
+
+| Badge                                                  | Concept      | Definition                            |
+| ------------------------------------------------------ | ------------ | ------------------------------------- |
+| ![](https://img.shields.io/badge/Fork-blue)            | Fork         | Copy of repo under your account.      |
+| ![](https://img.shields.io/badge/Pull--Request-purple) | Pull Request | Ask to merge code into main branch.   |
+| ![](https://img.shields.io/badge/Review-yellow)        | Code Review  | Reviewing PR code before merge.       |
+| ![](https://img.shields.io/badge/git-rebase-red)       | git rebase   | Reapplies commits on new base branch. |
+| ![](https://img.shields.io/badge/git-stash-grey)       | git stash    | Temporarily save uncommitted changes. |
+
+---
+
+# 🔟 **Git Advanced Concepts** ![](https://img.shields.io/badge/Category-Advanced-orange)
+
+| Badge                                             | Concept    | Definition                                 |
+| ------------------------------------------------- | ---------- | ------------------------------------------ |
+| ![](https://img.shields.io/badge/Submodules-blue) | Submodules | Adding external repo inside a repo.        |
+| ![](https://img.shields.io/badge/Gitflow-green)   | Gitflow    | Branching model for CI/CD.                 |
+| ![](https://img.shields.io/badge/Bisect-yellow)   | git bisect | Find bug by binary search through commits. |
+| ![](https://img.shields.io/badge/Hooks-red)       | Git Hooks  | Scripts executed before/after Git actions. |
 
 ---
 
