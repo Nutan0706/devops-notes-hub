@@ -165,4 +165,45 @@ You give a **YAML spec** → Deployment → creates **ReplicaSet** → manages *
 
 ---
 
+Here is the **clean, crisp, interview-style explanation** for **ReplicaSet — Ensures desired number of Pods are running**, matching your format.
+
+---
+
+# 🚀 **ReplicaSet — Ensures Desired Number of Pods Are Running**
+
+### **Definition (simple & direct):**
+
+A **ReplicaSet** ensures that a **specific number of identical Pods** are always running in the cluster.
+
+---
+
+## 🔹 **Key Points**
+
+* Maintains **desired state** for pod replicas.
+* Automatically **creates new pods** if some fail or get deleted.
+* Uses **labels & selectors** to manage pod groups.
+* Deployment uses ReplicaSet internally — you rarely create RS manually.
+* Best for **stateless workloads**.
+
+---
+
+## 🔹 **Why ReplicaSet?**
+
+* Ensures high availability
+* Keeps the number of running pods constant
+* Self-healing (replaces terminated pods)
+
+---
+
+## 🔹 **How it works**
+
+You specify:
+
+```yaml
+replicas: 3
+```
+
+ReplicaSet ensures **3 pods** are always running — no more, no less.
+
+---
 
