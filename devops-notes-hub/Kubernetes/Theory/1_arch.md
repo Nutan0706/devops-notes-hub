@@ -116,3 +116,106 @@ There are **five main components**:
 |               Worker Nodes (run pods)             |
 +---------------------------------------------------+
 ```
+
+# 🚀 **Kubernetes Worker Node Components (Data Plane)**
+
+Worker nodes run your **applications (Pods)**.
+They contain everything required to **run containers**, **manage networking**, and **communicate** with the master.
+
+There are **4 main worker node components**:
+
+---
+
+## ✅ **1. Kubelet**
+
+**The node agent. Runs on every worker node.**
+
+### What it does:
+
+* Talks to the API server
+* Makes sure the containers defined in PodSpec are actually running
+* Monitors container health
+* Registers the node with the cluster
+
+### Interview line:
+
+> *"Actually kubelet is like the manager of that node. It ensures pod is running exactly as the API server wants."*
+
+---
+
+## ✅ **2. Kube-proxy**
+
+**Handles networking inside the cluster.**
+
+### What it does:
+
+* Maintains networking rules (iptables / IPVS)
+* Forwards traffic to correct pods
+* Enables Service → Pod communication
+* Ensures load-balancing between pods
+
+### Interview line:
+
+> *"Basically kube-proxy manages all service networking and load balancing on the node."*
+
+---
+
+## ✅ **3. Container Runtime**
+
+**Runs the actual containers.**
+
+### Popular runtimes:
+
+* containerd *(default in most clusters)*
+* CRI-O *(OpenShift)*
+* Docker *(deprecated but still works via shim)*
+
+### What it does:
+
+* Pulls container images
+* Starts and stops containers
+* Provides container filesystem
+
+### Interview line:
+
+> *"Container runtime is responsible for actually running the containers. Kubernetes itself does not run containers."*
+
+---
+
+## ✅ **4. Pod (The actual workload)**
+
+Each pod contains:
+
+* One or more containers
+* Storage volumes
+* Network namespace
+
+### Interview line:
+
+> *"Pods are the smallest deployable unit in Kubernetes. All containers run inside pods only."*
+
+---
+
+# 🎯 **Worker Node Architecture Diagram (Simple)**
+
+```
++------------------------------------------------+
+|               Worker Node (Data Plane)         |
+|                                                |
+|   +-----------------------------+              |
+|   |         Kubelet            | <--- Talks to API Server
+|   +-----------------------------+              |
+|                                                |
+|   +-----------------------------+              |
+|   |         Kube-proxy         | <--- Networking & LB
+|   +-----------------------------+              |
+|                                                |
+|   +-----------------------------+              |
+|   |    Container Runtime       | <--- Runs containers
+|   +-----------------------------+              |
+|                                                |
+|   +-----------------------------+              |
+|   |        Pods (Apps)         | <--- Your workloads
+|   +-----------------------------+              |
++------------------------------------------------+
+```
