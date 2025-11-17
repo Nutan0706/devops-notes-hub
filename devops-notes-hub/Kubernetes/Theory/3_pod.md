@@ -10,7 +10,7 @@
 
 ---
 
-# 🔹 **Key Points to Remember**
+## 🔹 **Key Points to Remember**
 
 * Pod is the basic building block of Kubernetes.
 * Containers inside one pod run **together**, always scheduled on the **same node**.
@@ -20,7 +20,7 @@
 
 ---
 
-# 🔹 **When Pods have multiple containers?**
+## 🔹 **When Pods have multiple containers?**
 
 Only when they must work **together tightly**, such as:
 
@@ -44,7 +44,7 @@ It can be a **VM** or a **Physical server** where your **Pods actually run**.
 
 ---
 
-# 🔹 **Key Points**
+## 🔹 **Key Points**
 
 * Node is part of the **data plane**.
 * It runs all the **workloads (Pods/Containers)**.
@@ -54,10 +54,36 @@ It can be a **VM** or a **Physical server** where your **Pods actually run**.
 
 ---
 
-# 🔹 **Node Types**
+## 🔹 **Node Types**
 
 * **Worker Node** → runs the applications
 * **Master Node** → controls the cluster (API server, scheduler, etc.)
 
 ---
+
+Here is the short, clean, interview-ready explanation for **Cluster — Master + Worker Nodes**.
+
+---
+
+# 🚀 **Cluster — Master + Worker Nodes**
+
+### **Definition (simple & direct):**
+
+A **Kubernetes Cluster** is a group of **Master (Control Plane) nodes** + **Worker nodes** working together to run containerized applications.
+
+---
+
+## 🔹 **Key Points**
+
+* Master/Control Plane manages the cluster (API server, scheduler, etc.)
+* Worker nodes run the application pods.
+* All nodes communicate through the Kubernetes API.
+* Cluster ensures high availability, scaling, and self-healing.
+* The cluster can be on **cloud**, **on-prem**, or **local (minikube/kind)**.
+
+---
+
+## 🔹 **Cluster Architecture**
+
+**Cluster = Control Plane (Master) + Data Plane (Workers)**
 
