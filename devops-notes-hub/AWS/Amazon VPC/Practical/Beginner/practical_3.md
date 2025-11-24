@@ -10,7 +10,7 @@ Make the Public Subnet capable of accessing the internet.
 
 ---
 
-# 🚀 Step-by-Step Guide
+## 🚀 Step-by-Step Guide
 
 ---
 
@@ -19,7 +19,8 @@ Make the Public Subnet capable of accessing the internet.
 1. Go to **AWS Console → VPC Dashboard**
 2. From the left panel, click **Internet Gateways**
 
-👉 *Add Screenshot Here*
+<img width="1687" height="145" alt="image" src="https://github.com/user-attachments/assets/8ff09e2f-e3e1-4f15-af30-0887f9bea491" />
+
 
 ---
 
@@ -31,7 +32,8 @@ Make the Public Subnet capable of accessing the internet.
    * `my-vpc-igw`
 3. Click **Create Internet Gateway**
 
-👉 *Add Screenshot Here*
+<img width="1373" height="308" alt="image" src="https://github.com/user-attachments/assets/23952bb7-a79e-4d99-b2f5-d29001e4a982" />
+
 
 ---
 
@@ -42,7 +44,8 @@ Make the Public Subnet capable of accessing the internet.
 3. Choose your VPC (Example: `my-custom-vpc`)
 4. Click **Attach Internet Gateway**
 
-👉 *Add Screenshot Here*
+<img width="1237" height="261" alt="image" src="https://github.com/user-attachments/assets/4d30881c-43d5-43ae-b5eb-df8b56fc42c1" />
+
 
 ---
 
@@ -57,7 +60,8 @@ Make the Public Subnet capable of accessing the internet.
 
    * If unsure, filter by the subnet ID of `public-subnet-1`
 
-👉 *Add Screenshot Here*
+<img width="1323" height="395" alt="image" src="https://github.com/user-attachments/assets/4253906c-5403-419f-95f2-eac27c6e156d" />
+
 
 ---
 
@@ -74,7 +78,8 @@ Make the Public Subnet capable of accessing the internet.
 
 5. Click **Save Changes**
 
-👉 *Add Screenshot Here*
+<img width="1382" height="299" alt="image" src="https://github.com/user-attachments/assets/af3135f6-3540-4a3f-ab24-d2777fd3bc57" />
+
 
 ---
 
@@ -86,7 +91,8 @@ Make the Public Subnet capable of accessing the internet.
 4. Select: `public-subnet-1`
 5. Click **Save associations**
 
-👉 *Add Screenshot Here*
+<img width="1329" height="522" alt="image" src="https://github.com/user-attachments/assets/e8bd7830-d30a-42cf-96d3-bf6fbc2d36a9" />
+
 
 ---
 
@@ -100,4 +106,5 @@ You completed:
 * Linked route table to Public Subnet
 
 Now any EC2 launched in the **Public Subnet** (with auto-assign public IP enabled) will have internet access.
+
 
