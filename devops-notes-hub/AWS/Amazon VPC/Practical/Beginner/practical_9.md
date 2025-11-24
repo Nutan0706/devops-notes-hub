@@ -19,8 +19,6 @@ This section helps you understand:
 1. Go to **AWS Console → VPC Dashboard**
 2. Select **Your Custom VPC**
 
-👉 *Add Screenshot Here*
-
 ---
 
 ## **2️⃣ Check DNS Settings**
@@ -170,3 +168,4 @@ You have successfully:
 ✔ Created a custom DHCP options set
 ✔ Associated it with your VPC
 ✔ Tested DNS behavior inside EC2 instances
+
