@@ -26,7 +26,8 @@ Network ACLs are **stateless** firewalls that control **inbound & outbound traff
    * Default NACL
    * Custom NACLs (if any)
 
-👉 *Add Screenshot Here*
+<img width="1455" height="237" alt="image" src="https://github.com/user-attachments/assets/7a8af402-dc37-4bbc-a359-8e05668b92d3" />
+
 
 ---
 
@@ -37,7 +38,8 @@ Network ACLs are **stateless** firewalls that control **inbound & outbound traff
 3. Select your **custom VPC**
 4. Click **Create Network ACL**
 
-👉 *Add Screenshot Here*
+<img width="1334" height="423" alt="image" src="https://github.com/user-attachments/assets/816546fb-0e4d-477c-a277-bfcb68e180c3" />
+
 
 ---
 
@@ -49,7 +51,8 @@ Network ACLs are **stateless** firewalls that control **inbound & outbound traff
 4. Select your **public-subnet-1**
 5. Click **Save**
 
-👉 *Add Screenshot Here*
+<img width="1338" height="334" alt="image" src="https://github.com/user-attachments/assets/946258f1-7c29-47a7-8c36-01c47fd2dda4" />
+
 
 ---
 
@@ -68,7 +71,8 @@ Network ACLs are **stateless** firewalls that control **inbound & outbound traff
 
 4. Save rules
 
-👉 *Add Screenshot Here*
+<img width="1311" height="193" alt="image" src="https://github.com/user-attachments/assets/b9b27283-acba-4287-bcb3-ac370268f94e" />
+
 
 ---
 
@@ -82,7 +86,8 @@ Network ACLs are **stateless** firewalls that control **inbound & outbound traff
 | 100    | ALL Traffic | ALL      | ALL        | 0.0.0.0/0   | ALLOW      |
 | 200    | ALL Traffic | ALL      | ALL        | 0.0.0.0/0   | DENY       |
 
-👉 *Add Screenshot Here*
+<img width="1334" height="264" alt="image" src="https://github.com/user-attachments/assets/612fd4c9-9485-414a-b5e1-bba431fd3b8f" />
+
 
 ---
 
@@ -98,8 +103,6 @@ Expected:
 ✔️ SSH should work **only from your IP**
 ❌ Other IPs → SSH fails
 
-👉 *Add Screenshot Here*
-
 ---
 
 ## **7️⃣ Modify Rule to Block SSH**
@@ -114,7 +117,6 @@ Now test restrictions:
 Expected:
 ❌ You should NOT be able to SSH into the public EC2
 
-👉 *Add Screenshot Here*
 
 ---
 
@@ -123,7 +125,6 @@ Expected:
 1. Re-add the inbound rule allowing your IP
 2. SSH should work again
 
-👉 *Add Screenshot Here*
 
 ---
 
@@ -138,4 +139,5 @@ You successfully:
 * Tested by modifying rules
 
 A perfect demonstration of **stateless filtering** in AWS.
+
 
