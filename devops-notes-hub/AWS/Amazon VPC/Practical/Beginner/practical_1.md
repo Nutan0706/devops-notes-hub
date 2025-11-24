@@ -3,17 +3,6 @@
 # 🧩 Practical 1: Create a Custom VPC
 
 **Goal:** Create a new VPC with a specific CIDR block (e.g., `10.0.0.0/16`) using the AWS Management Console and understand its default components.
-
----
-
-## 🧠 Objective
-
-You will learn how to:
-
-* Create a custom VPC with a specific IP range.
-* Identify default VPC components.
-* Compare Custom VPC vs Default VPC.
-
 ---
 
 ## 🪜 Step-by-Step Procedure
@@ -94,5 +83,6 @@ But you can manually add them later.
 | **Default VPC** | Automatically created by AWS, includes subnets in each AZ, route tables, IGW, and SG. |
 | **Custom VPC**  | Fully controlled by you, no default subnets or gateways.                              |
 | **CIDR Block**  | Defines the IP range used by your VPC (e.g., `10.0.0.0/16` means 65,536 IPs).         |
+
 
 
