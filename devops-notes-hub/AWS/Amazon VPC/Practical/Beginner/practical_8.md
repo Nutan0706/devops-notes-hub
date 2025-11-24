@@ -25,7 +25,8 @@ This section explains how to:
 1. Open **AWS Console → EC2 Dashboard**
 2. From the left panel, click **Elastic IPs**
 
-👉 *Add Screenshot Here*
+<img width="1899" height="239" alt="image" src="https://github.com/user-attachments/assets/333d27f4-6f06-4e14-9ff7-3cb2d0d941c8" />
+
 
 ---
 
@@ -39,7 +40,8 @@ This section explains how to:
 
 You will now see an Elastic IP address (e.g., `3.110.xx.xx`)
 
-👉 *Add Screenshot Here*
+<img width="1015" height="206" alt="image" src="https://github.com/user-attachments/assets/2b17d24b-36bc-4862-85c0-69de8dd0e6ec" />
+
 
 ---
 
@@ -48,7 +50,8 @@ You will now see an Elastic IP address (e.g., `3.110.xx.xx`)
 1. Open **VPC Console**
 2. Click **NAT Gateways**
 
-👉 *Add Screenshot Here*
+<img width="1711" height="180" alt="image" src="https://github.com/user-attachments/assets/4a801fb3-2637-4ca4-8496-8120bc6c3d6c" />
+
 
 ---
 
@@ -65,7 +68,8 @@ You will now see an Elastic IP address (e.g., `3.110.xx.xx`)
 
 3. Click **Create NAT Gateway**
 
-👉 *Add Screenshot Here*
+<img width="1308" height="730" alt="image" src="https://github.com/user-attachments/assets/798b4506-376e-46a6-bd3f-3e03aa80f8eb" />
+
 
 ---
 
@@ -84,7 +88,8 @@ To allow Private EC2 to access the internet:
 
 5. Save changes
 
-👉 *Add Screenshot Here*
+<img width="1310" height="265" alt="image" src="https://github.com/user-attachments/assets/32c64bf9-067a-48d5-a6c2-ce13a09d8eae" />
+
 
 ---
 
@@ -132,7 +137,6 @@ Expected:
 ✔ Ping & updates work (outbound allowed)
 ❌ No one can SSH into private EC2 from the internet
 
-👉 *Add Screenshot Here*
 
 ---
 
@@ -144,5 +148,6 @@ You now understand:
 * How to attach it to NAT Gateway
 * How NAT enables internet for Private Subnet
 * Why NAT ensures private EC2s stay **secure**
+
 
 
