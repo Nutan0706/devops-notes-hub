@@ -21,16 +21,12 @@ Also understand **Subnet CIDR allocation**.
 1. Go to **AWS Console → VPC**
 2. From the left panel, click **Subnets**
 
-👉 *Add Screenshot Here*
-
 ---
 
 ## **2️⃣ Click "Create Subnet"**
 
 1. Choose your existing **Custom VPC**
 2. Click **Create Subnet**
-
-👉 *Add Screenshot Here*
 
 ---
 
@@ -42,12 +38,13 @@ Fill the fields:
 | --------------------- | ------------------------ |
 | **VPC ID**            | Select your custom VPC   |
 | **Subnet Name**       | `public-subnet-1`        |
-| **Availability Zone** | `ap-south-1a` (any 1 AZ) |
+| **Availability Zone** | `us-east-1a` (any 1 AZ) |
 | **IPv4 CIDR block**   | `10.0.1.0/24`            |
 
 Click **Create Subnet**
 
-👉 *Add Screenshot Here*
+<img width="1084" height="751" alt="image" src="https://github.com/user-attachments/assets/2d7a2576-38b8-47ad-8a95-755e0e5ed343" />
+
 
 ---
 
@@ -60,7 +57,7 @@ Click **Create Subnet**
 
 Click **Save**
 
-👉 *Add Screenshot Here*
+<img width="795" height="558" alt="image" src="https://github.com/user-attachments/assets/eb9666b9-4148-412c-8381-bb691867821d" />
 
 ---
 
@@ -72,12 +69,13 @@ Again click **Create Subnet** and fill:
 | --------------------- | ----------------------------------------------- |
 | **VPC ID**            | Select same custom VPC                          |
 | **Subnet Name**       | `private-subnet-1`                              |
-| **Availability Zone** | `ap-south-1b` (different AZ than public subnet) |
+| **Availability Zone** | `us-east-1b` (different AZ than public subnet) |
 | **IPv4 CIDR block**   | `10.0.2.0/24`                                   |
 
 Click **Create Subnet**
 
-👉 *Add Screenshot Here*
+<img width="1058" height="574" alt="image" src="https://github.com/user-attachments/assets/7831e9bb-cb21-4a6b-8d7a-beb820ab8862" />
+
 
 ---
 
@@ -89,8 +87,6 @@ Check:
 * **Private Subnet** is in **AZ b**
 * CIDRs do not overlap
 * Public subnet has **Auto-assign Public IP ON**
-
-👉 *Add Screenshot Here*
 
 ---
 
@@ -114,4 +110,5 @@ Now your VPC has:
 * **One Public Subnet (ap-south-1a)**
 * **One Private Subnet (ap-south-1b)**
   Perfect for launching EC2, RDS, NAT Gateway setups later.
+
 
