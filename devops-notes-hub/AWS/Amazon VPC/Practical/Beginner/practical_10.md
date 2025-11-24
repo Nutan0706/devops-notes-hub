@@ -33,7 +33,8 @@ Create VPC Peering between two VPCs and test ping between instances.
    * CIDR: `10.1.0.0/16`
 5. Click **Create**.
 
-📸 *Add screenshot here*
+<img width="631" height="216" alt="image" src="https://github.com/user-attachments/assets/3bb7c879-1964-420e-8875-790b617351c2" />
+
 
 ---
 
@@ -43,8 +44,9 @@ Example:
 
 * VPC-A → `10.0.1.0/24`
 * VPC-B → `10.1.1.0/24`
+  <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/d0484d0a-e890-44b2-b662-29b8672ae1f7" />
 
-📸 *Add screenshot here*
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/7c2ed1f7-6b96-41fc-a0fb-0bbf618d64c7" />
 
 ---
 
@@ -57,7 +59,7 @@ Example:
    * Same security group type (SSH/ICMP Allowed)
    * Key pair available for SSH.
 
-📸 *Add screenshot here*
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/7cb1859c-7aa2-4267-ae0c-2c6b9953cf88" />
 
 ---
 
@@ -73,7 +75,8 @@ Example:
 4. Click **Create Peering Connection**
 5. Select the peering connection → Click **Accept Request**
 
-📸 *Add screenshot here*
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/4243d1f8-1d8b-49fe-9d1c-20bbbf8bd8a9" />
+
 
 ---
 
@@ -160,3 +163,4 @@ If everything is correct → **ping will work**.
 📸 *Add screenshot here*
 
 ---
+
