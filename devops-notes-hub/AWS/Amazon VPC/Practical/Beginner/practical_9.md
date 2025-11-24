@@ -33,7 +33,8 @@ Inside the VPC settings:
    * Enable: **DNS hostnames = Yes**
      (Only works if VPC has a public subnet + IGW)
 
-👉 *Add Screenshot Here*
+<img width="1362" height="499" alt="image" src="https://github.com/user-attachments/assets/4d4a6488-d0bf-416c-828c-9f635603f830" />
+
 
 ---
 
@@ -55,7 +56,8 @@ ping ip-10-0-2-45.ec2.internal
 
 (if ping is allowed)
 
-👉 *Add Screenshot Here*
+<img width="707" height="152" alt="image" src="https://github.com/user-attachments/assets/6a7a3371-b1f0-47a4-b4de-fb9012da1d95" />
+
 
 ---
 
@@ -66,7 +68,8 @@ ping ip-10-0-2-45.ec2.internal
 1. Go to **VPC Console**
 2. From left menu, click **DHCP Options Sets**
 
-👉 *Add Screenshot Here*
+<img width="1714" height="193" alt="image" src="https://github.com/user-attachments/assets/0598579e-914e-49c7-a1c0-83d161d25429" />
+
 
 ---
 
@@ -168,4 +171,5 @@ You have successfully:
 ✔ Created a custom DHCP options set
 ✔ Associated it with your VPC
 ✔ Tested DNS behavior inside EC2 instances
+
 
