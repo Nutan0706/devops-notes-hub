@@ -47,8 +47,8 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 ```
 
-👉 **(Add screenshot)**
-`![Step3](images/step3.png)`
+<img width="827" height="180" alt="image" src="https://github.com/user-attachments/assets/594fcdde-3aa2-4755-8ad5-0920ce6216b0" />
+
 
 ---
 
@@ -59,8 +59,8 @@ sudo apt update
 sudo apt install jenkins -y
 ```
 
-👉 **(Add screenshot)**
-`![Step4](images/step4.png)`
+<img width="522" height="312" alt="image" src="https://github.com/user-attachments/assets/6020b244-9b37-45e4-afcf-6b1714f9fee3" />
+
 
 ---
 
@@ -72,8 +72,7 @@ sudo systemctl enable jenkins
 sudo systemctl status jenkins
 ```
 
-👉 **(Add screenshot of jenkins active running)**
-`![Step5](images/step5.png)`
+<img width="857" height="259" alt="image" src="https://github.com/user-attachments/assets/ff1434c3-9b4b-4ec3-987e-cf9ce8ddff13" />
 
 ---
 
@@ -84,8 +83,8 @@ sudo ufw allow 8080
 sudo ufw reload
 ```
 
-👉 **(Add screenshot)**
-`![Step6](images/step6.png)`
+<img width="411" height="91" alt="image" src="https://github.com/user-attachments/assets/44640538-86c3-4376-b7bd-789bc9181c59" />
+
 
 ---
 
@@ -97,8 +96,8 @@ Open:
 http://<EC2-Public-IP>:8080
 ```
 
-👉 **(Add screenshot of Jenkins login screen)**
-`![Step7](images/step7.png)`
+<img width="1462" height="488" alt="image" src="https://github.com/user-attachments/assets/25aac004-873a-408e-b722-22743c1ca4f2" />
+
 
 ---
 
@@ -122,8 +121,7 @@ On Jenkins UI → Choose:
 ✔ **Install Suggested Plugins**
 (wait for installation)
 
-👉 **(Add screenshot)**
-`![Step9](images/step9.png)`
+<img width="1009" height="527" alt="image" src="https://github.com/user-attachments/assets/169f90df-7870-4826-866a-4f8b5b37faf4" />
 
 ---
 
@@ -138,6 +136,7 @@ Fill your:
 
 Click **Save & Continue**
 
-👉 **(Add screenshot)**
-`![Step10](images/step10.png)`
+<img width="793" height="632" alt="image" src="https://github.com/user-attachments/assets/5de82ebc-d805-420d-8bec-9fa876e090ca" />
+
+
 
