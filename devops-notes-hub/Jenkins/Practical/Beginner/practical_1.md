@@ -17,7 +17,6 @@ This guide will help you install **Jenkins on an Ubuntu EC2 instance**, start th
 
 ```bash
 sudo apt update
-sudo apt upgrade -y
 ```
 
 <img width="808" height="198" alt="image" src="https://github.com/user-attachments/assets/fdabf683-effb-46a0-a3dc-c99d14be3e99" />
@@ -30,7 +29,7 @@ sudo apt upgrade -y
 Jenkins needs Java 11 or above.
 
 ```bash
-sudo apt install openjdk-17-jdk -y
+sudo apt install openjdk-17-jre -y
 java -version
 ```
 <img width="660" height="212" alt="image" src="https://github.com/user-attachments/assets/51254bf3-d3b9-4a33-bb44-cde3bcbccca0" />
@@ -42,9 +41,10 @@ java -version
 ```bash
 curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+https://pkg.jenkins.io/debian binary/" | sudo tee \
+/etc/apt/sources.list.d/jenkins.list > /dev/null
 ```
 
 <img width="827" height="180" alt="image" src="https://github.com/user-attachments/assets/594fcdde-3aa2-4755-8ad5-0920ce6216b0" />
@@ -137,6 +137,7 @@ Fill your:
 Click **Save & Continue**
 
 <img width="793" height="632" alt="image" src="https://github.com/user-attachments/assets/5de82ebc-d805-420d-8bec-9fa876e090ca" />
+
 
 
 
