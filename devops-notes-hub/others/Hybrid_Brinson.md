@@ -135,6 +135,8 @@ When EKS completes and files appear in S3, Jenkins takes over.
   * Analytics & downstream processes
 
 *Jenkins acts as a controlled ETL pipeline orchestrator.*
+<img width="195" height="328" alt="image" src="https://github.com/user-attachments/assets/386ccf78-699f-4e46-98a8-2ad82318e560" />
+
 
 ---
 
