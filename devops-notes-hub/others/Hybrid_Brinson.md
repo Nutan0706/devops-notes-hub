@@ -63,7 +63,6 @@ Terraform ensures:
 
 * Infrastructure is **fully automated and reproducible**
 * Scaling policies and node groups are **consistent across environments**
-* Zero manual setup — everything is code-driven (IaC)
 
 ---
 
