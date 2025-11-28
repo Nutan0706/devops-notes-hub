@@ -44,7 +44,7 @@ Once Docker images are ready, the workload is executed on an **EKS cluster (Kube
 
 ---
 
-# **✔️ Terraform Infrastructure Layer
+## ** Terraform Infrastructure Layer
 
 Before running any jobs, we **provision our entire cloud infrastructure using Terraform**.
 Terraform automates the setup of:
