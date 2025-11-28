@@ -38,13 +38,13 @@ For every security, we generate four separate processing jobs:
 
 ---
 
-## **🔹 3. Execution Using EKS (Kubernetes)**
+## **3. Execution Using EKS (Kubernetes)**
 
 Once Docker images are ready, the workload is executed on an **EKS cluster (Kubernetes on AWS)**.
 
 ---
 
-# **✔️ Terraform Infrastructure Layer (Added After Point 3)**
+# **✔️ Terraform Infrastructure Layer
 
 Before running any jobs, we **provision our entire cloud infrastructure using Terraform**.
 Terraform automates the setup of:
