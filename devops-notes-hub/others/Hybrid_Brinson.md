@@ -24,7 +24,7 @@ Each Docker image includes:
 
 * Security-level attribution calculation logic
 * Hybrid Brinson formula implementation
-* Python/R scripts
+* Python
 * Market & benchmark mapping logic
 
 ### **👉 2.2 Docker images are generated for multiple horizons**
