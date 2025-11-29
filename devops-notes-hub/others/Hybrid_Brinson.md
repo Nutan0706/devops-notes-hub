@@ -139,3 +139,30 @@ When EKS completes and files appear in S3, Jenkins takes over.
 
 ---
 
+
+
+### **Hybrid Brinson Model — Key Workflow Pointers**
+
+* Our **Hybrid Brinson model** calculates the **asset allocation**, **security selection**, and **interaction effects** for every Portfolio Manager (PM) account.
+
+* We **create Docker images per security** and **per horizon** (Daily, WTD, QTD, YTD) to modularize the attribution logic.
+
+* **Terraform** provisions the complete infrastructure:
+
+  * EKS cluster
+  * Node groups
+  * Networking, IAM, ECR, S3, CloudWatch
+
+* **Kubernetes (EKS)** runs all attribution jobs in **parallel**, with each security processed in its own pod.
+
+* Once jobs finish, the model **generates CSV outputs** and stores them in **S3** for further processing.
+
+* A **Jenkins pipeline** extracts these CSVs, **cleans and validates** them, and performs final transformations.
+
+* The processed data is then **loaded into Snowflake**, where it is used for:
+
+  * Portfolio analytics
+  * Dashboards
+  * Reporting and downstream processes
+
+
