@@ -10,7 +10,9 @@ The **Proteus** model is designed to calculate **Tracking Error, Volatility**, a
 ### **🔹 Account Setup**
 
 * We create **one account group** that contains all securities of similar characteristics.
-  Example: Equity portfolio, fixed-income portfolio, sector-based portfolio.
+     - Equity portfolio.
+     - fixed-income portfolio.
+     - sector-based portfolio.
 * For each account, we package the required calculation logic, metadata, and security list into a **Docker image**.
 
 ### **🔹 Bogie (Benchmark) Setup**
@@ -151,4 +153,42 @@ Here is a crisp 5–6 line spoken-style version:
 
 **“Basically our Proteus model generates tracking error, volatility, and other risk metrics by comparing each account with its corresponding bogie. First, we containerize account and benchmark data using Docker. Terraform sets up the full EKS infra, and we run warmup jobs to cache account and bogie data so that the main model runs extremely fast. Then we run a combined account-bogie Docker job on EKS, which outputs CSV files into S3. Jenkins picks up those files, loads them into Oracle, and later another scheduled job syncs the processed data from Oracle to Snowflake for reporting.”**
 <img width="295" height="392" alt="image" src="https://github.com/user-attachments/assets/1818fa65-c178-4d53-812f-b30785567511" />
+
+
+
+Here is your statement rewritten into **clear, crisp bullet points** — perfect for interviews or documentation:
+
+---
+
+### **Proteus Model — Key Workflow Pointers**
+
+* Our **Proteus model** calculates **Tracking Error, Volatility, and other portfolio risk metrics** by comparing each **account** with its corresponding **bogie (benchmark)**.
+
+* We **containerize** both account data and benchmark/bogie data using **Docker**, making each component modular and portable.
+
+* **Terraform** provisions the entire infrastructure:
+
+  * EKS cluster
+  * Node groups
+  * Networking, IAM, S3, ECR, etc.
+
+* We run **warmup jobs** on EKS to:
+
+  * Cache account data
+  * Cache bogie data
+    This significantly **accelerates the main model execution**.
+
+* A **combined account–bogie Docker model** is executed on the EKS cluster, pulling most of its inputs from cache for high performance.
+
+* The model generates **CSV outputs** (TE, Vol, Risk decomposition) and stores them in **S3**.
+
+* **Jenkins** post-processes these outputs:
+
+  * Extracts CSV files from S3
+  * Cleans, validates, and transforms the data
+  * Loads processed results into **Oracle**
+
+* A **scheduled ETL pipeline** then moves data from **Oracle to Snowflake**, where it becomes available for analytics, reporting, and dashboards.
+
+---
 
