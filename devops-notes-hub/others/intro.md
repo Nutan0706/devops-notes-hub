@@ -5,8 +5,8 @@
 
 Hi Everyone, my name is **Nutan Patel**. I completed my graduation in Computer Science Engineering from **Chandigarh University**.
 Before that, after my 12th, I went to **Kota** for IIT preparation and
-During my third year of college  I got placed in my current company, and that’s where my corporate journey started — from a fresher to now a **Senior Software Engineer**.
-I have almost **5 years of hands-on experience** in DevOps and Cloud Engineering, including 1 year of training.
+During my third year of college  I got placed in my current company, and that’s where my corporate journey started — from a fresher to now a **Senior Software Engineer** and
+I have almost **5 years of hands-on experience** in DevOps and Cloud, including 1 year of training.
 Most of my work has been in the **fintech domain**.
 
 ---
@@ -38,6 +38,7 @@ These workloads are executed on **EKS** cluster, and after execution we build **
 
 * I love to play **Table Tennis**, where I played for district for my school
 * **Swimming**
+
 
 
 
