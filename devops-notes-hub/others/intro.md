@@ -22,8 +22,8 @@ It is one of the world’s largest asset managers, handling more than **$2 trill
 ## 📌 About the Project
 
 In this project, we closely work with the Portfolio Managers and handle their end-to-end analytics pipeline.
-Our responsibilities include extracting third-party market data from **Bloomberg**, provisioning the necessary compute infrastructure using **Terraform**, and containerizing each PM account with its benchmark details.
-These workloads are executed on **EKS**, and after execution we build **Jenkins pipelines** to validate the results and archive the processed data into **Snowflake**.
+Our responsibilities include extracting third-party market data from **Bloomberg** and then setting up infra infrastructure using **Terraform**, and containerizing each PM account with its benchmark details. and then
+These workloads are executed on **EKS** cluster, and after execution we build **Jenkins pipelines** to validate the results and archive the processed data into **Snowflake**.
 
 ---
 
@@ -38,3 +38,4 @@ These workloads are executed on **EKS**, and after execution we build **Jenkins 
 
 * I love to play **Table Tennis**, where I played for district for my school
 * **Swimming**
+
