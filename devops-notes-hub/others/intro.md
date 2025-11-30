@@ -13,7 +13,7 @@ Most of my work has been in the **fintech domain**.
 
 ## 🏦 My Current Work at PIMCO
 
-Currently, I’m working for a US-based fintech company called **PIMCO**.
+Currently, I’m working for a US-based fintech company called **PIMCO** and
 PIMCO is a global investment management firm, primarily focused on active fixed income and other asset classes.
 It is one of the world’s largest asset managers, handling more than **$2 trillion** in assets under management.
 
@@ -38,6 +38,7 @@ These workloads are executed on **EKS** cluster, and after execution we build **
 
 * I love to play **Table Tennis**, where I played for district for my school
 * **Swimming**
+
 
 
 
