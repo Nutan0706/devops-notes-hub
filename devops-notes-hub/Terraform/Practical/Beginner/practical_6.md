@@ -1,6 +1,4 @@
-Perfect 🔥 — here’s your **complete single `.md` file** for **Terraform Practical #6 — Create Security Group**, written in the same clean GitHub-ready format.
-You can directly copy-paste this as `06-create-security-group.md` in your repo.
-
+#6 — Create Security Group
 
 ## 🪜 Step-by-Step Implementation
 
@@ -301,6 +299,7 @@ Destroy complete! Resources: 1 destroyed.
 | 4    | Apply Configuration   | `terraform apply -auto-approve`    |
 | 5    | Verify Security Group | `aws ec2 describe-security-groups` |
 | 6    | Destroy Resources     | `terraform destroy -auto-approve`  |
+
 
 
 
