@@ -209,5 +209,3 @@ docker rm dev-nginx dev-node
 * [https://docs.docker.com/get-started/08_using_bind_mounts/](https://docs.docker.com/get-started/08_using_bind_mounts/)
 
 
-Would you like the next one — **Practical 4: Create Multi-Stage Docker Builds** — in the same GitHub `.md` format?
-```
