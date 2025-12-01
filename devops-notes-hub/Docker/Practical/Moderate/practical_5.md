@@ -263,6 +263,3 @@ docker compose down -v
 * [https://docs.docker.com/compose/compose-file/](https://docs.docker.com/compose/compose-file/)
 
 
-
-Would you like **Practical 6 — Add Environment Variables in Docker Compose** next in the same GitHub `.md` format?
-```
