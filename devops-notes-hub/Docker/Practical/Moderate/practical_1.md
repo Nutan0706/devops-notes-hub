@@ -64,6 +64,7 @@ CMD ["python", "app.py"]
 ```bash
 docker build -t python-demo .
 ```
+<img width="496" height="238" alt="image" src="https://github.com/user-attachments/assets/d5ec57bc-5d82-434c-9489-7b16a897910d" />
 
 ---
 
@@ -78,6 +79,7 @@ Expected output:
 ```
 Hello from Python Docker Container!
 ```
+<img width="343" height="34" alt="image" src="https://github.com/user-attachments/assets/7e2b0aae-fb9b-4b37-835f-db7341642e7c" />
 
 ---
 
@@ -148,6 +150,7 @@ CMD ["npm", "start"]
 ```bash
 docker build -t node-demo .
 ```
+<img width="478" height="245" alt="image" src="https://github.com/user-attachments/assets/3172dbc5-10ae-465c-a537-b8aa518ac8e6" />
 
 ---
 
@@ -162,6 +165,7 @@ Expected output:
 ```
 Hello from NodeJS Docker Container!
 ```
+<img width="321" height="56" alt="image" src="https://github.com/user-attachments/assets/06c9a333-426c-46c6-be1c-21e93a2adcaf" />
 
 ---
 
@@ -194,6 +198,7 @@ Remove images:
 ```bash
 docker rmi python-demo node-demo
 ```
+![Uploading image.png…]()
 
 ---
 
@@ -202,3 +207,4 @@ docker rmi python-demo node-demo
 * [https://docs.docker.com/language/python/](https://docs.docker.com/language/python/)
 * [https://docs.docker.com/language/nodejs/](https://docs.docker.com/language/nodejs/)
 * [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)
+
